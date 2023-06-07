@@ -446,7 +446,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4696854002244936201, guid: 635e0531edec315409e2c98f1f57ce1c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -519,7 +520,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: OrangeFriend
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2216364976101389421, guid: aea8d24e6d7ce4440918a44d2ab60113, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
