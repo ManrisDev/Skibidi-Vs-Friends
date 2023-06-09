@@ -1177,9 +1177,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7360079724015291705}
+  - component: {fileID: 7360079724015291707}
+  - component: {fileID: 7360079724015291706}
   - component: {fileID: 2126526169210976279}
-  - component: {fileID: 5936770694639013361}
-  - component: {fileID: 2295835568311663733}
   m_Layer: 0
   m_Name: Gate
   m_TagString: Untagged
@@ -1203,8 +1203,44 @@ Transform:
   - {fileID: 7360079722323261706}
   - {fileID: 7360079723488304324}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7360079724015291707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360079724015291704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b275210f80f294898715afc15bfbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 7360079722172878932}
+  _topImage: {fileID: 7360079722096811007}
+  _glassImage: {fileID: 7360079723492558888}
+  _colorPositive: {r: 0.2747864, g: 0.4020103, b: 0.8962264, a: 1}
+  _colorNegative: {r: 0.8980392, g: 0.27450976, b: 0.30244407, a: 1}
+  _expandLable: {fileID: 5531528971855797656}
+  _shrinkLable: {fileID: 5531528972052000868}
+  _upLable: {fileID: 5531528971343405230}
+  _downLable: {fileID: 5531528970156931111}
+--- !u!114 &7360079724015291706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360079724015291704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ce6e446edd59c844b2da479452ee09d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _value: 50
+  _deformationType: 0
+  _gateAppearaence: {fileID: 7360079724015291707}
 --- !u!65 &2126526169210976279
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1226,39 +1262,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.7393477, y: 1.9695046, z: 0.60425454}
   m_Center: {x: 0, y: 0.99896467, z: 0}
---- !u!114 &5936770694639013361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7360079724015291704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edb3e95bf2e320e4388cca18a19ed497, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _value: 0
-  _deformationType: 0
-  _gateAppearaence: {fileID: 0}
---- !u!114 &2295835568311663733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7360079724015291704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3da25a1817fb0d4ea0f06b467c895ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _text: {fileID: 0}
-  _topImage: {fileID: 0}
-  _glassImage: {fileID: 0}
-  _colorPositive: {r: 0, g: 0, b: 0, a: 0}
-  _colorNegative: {r: 0, g: 0, b: 0, a: 0}
-  _expandLable: {fileID: 5531528971855797656}
-  _shrinkLable: {fileID: 5531528972052000868}
-  _upLable: {fileID: 5531528971343405230}
-  _downLable: {fileID: 5531528970156931111}
