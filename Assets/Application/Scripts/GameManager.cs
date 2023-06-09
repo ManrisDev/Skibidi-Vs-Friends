@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
 
     [SerializeField] GameObject _startMenu;
+    [SerializeField] GameObject _gameOverPanel;
     [SerializeField] TextMeshProUGUI _levelText;
     [SerializeField] GameObject _finishWindow;
     [SerializeField] CoinManager _coinManager;
@@ -21,6 +22,12 @@ public class GameManager : MonoBehaviour
     {
         _startMenu.SetActive(false);
         FindObjectOfType<PlayerBehaviour>().Play();
+    }
+
+    public void GameOver()
+    {
+        _gameOverPanel.SetActive(true);
+        Time.timeScale = 0.0f;
     }
 
     public void ShowFinishWindow()

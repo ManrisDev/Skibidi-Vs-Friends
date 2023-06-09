@@ -1,21 +1,20 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class Enemy : MonoBehaviour
+public class ForceManager : MonoBehaviour
 {
     [SerializeField] private int _numberOfForce;
     [SerializeField] private TextMeshProUGUI _countForceText;
     public int NumberOfForce => _numberOfForce;
 
-    public event UnityAction<Enemy> Die;
     private void Start()
     {
         _countForceText.text = _numberOfForce.ToString();
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void AddForce(int value)
     {
-        Die?.Invoke(this);
+        _numberOfForce += value;
+        _countForceText.text = _numberOfForce.ToString();
     }
 }

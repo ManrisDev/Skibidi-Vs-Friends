@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyDie : MonoBehaviour
 {
-    //[SerializeField] private ScoreProgress _scoreProgress;
-    //[SerializeField] private ScoreView _scoreView;
+    [SerializeField] private ForceManager _forceManager;
+    [SerializeField] private GameManager _gameManager;
 
     private List<Enemy> _enemies;
 
@@ -29,8 +29,20 @@ public class EnemyDie : MonoBehaviour
 
     private void OnEnemyDied(Enemy enemy)
     {
-        //_scoreProgress.AddScore(enemy.Value);
-        //_scoreView.UpdateScore();
+        PlayerModifier playerModifier = FindObjectOfType<PlayerModifier>();
+        if (playerModifier)
+        {
+            if(enemy.NumberOfForce < _forceManager.NumberOfForce)
+            {
+                playerModifier.AddWidth(enemy.NumberOfForce);
+                playerModifier.AddHeight(enemy.NumberOfForce);
+                _forceManager.AddForce(enemy.NumberOfForce);
+            }
+            else if(enemy.NumberOfForce >= _forceManager.NumberOfForce)
+            {
+                _gameManager.GameOver();
+            }
+        }
         enemy.Die -= OnEnemyDied;
         _enemies.Remove(enemy);
         Destroy(enemy.gameObject);
