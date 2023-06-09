@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyDie : MonoBehaviour
 {
+    [SerializeField] private ForceManager _forceManager;
+    [SerializeField] private GameManager _gameManager;
+
     private List<Enemy> _enemies;
 
     private void OnEnable()
@@ -29,8 +32,16 @@ public class EnemyDie : MonoBehaviour
         PlayerModifier playerModifier = FindObjectOfType<PlayerModifier>();
         if (playerModifier)
         {
-            playerModifier.AddWidth(5);
-            playerModifier.AddHeight(5);
+            if(enemy.NumberOfForce < _forceManager.NumberOfForce)
+            {
+                playerModifier.AddWidth(enemy.NumberOfForce);
+                playerModifier.AddHeight(enemy.NumberOfForce);
+                _forceManager.AddForce(enemy.NumberOfForce);
+            }
+            else if(enemy.NumberOfForce >= _forceManager.NumberOfForce)
+            {
+                _gameManager.GameOver();
+            }
         }
         enemy.Die -= OnEnemyDied;
         _enemies.Remove(enemy);

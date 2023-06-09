@@ -5,8 +5,8 @@ public class PlayerModifier : MonoBehaviour
 
     [SerializeField] int _width;
     [SerializeField] int _height;
-    float _widthMultiplier = 0.005f;
-    float _heightMultiplier = 0.005f;
+    float _widthMultiplier = 0.003f;
+    float _heightMultiplier = 0.003f;
     [SerializeField] Renderer _renderer;
     [SerializeField] Transform _colliderTransform;
     [SerializeField] Transform _playerModel;

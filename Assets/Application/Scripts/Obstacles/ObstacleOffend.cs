@@ -29,7 +29,7 @@ public class ObstacleOffend : MonoBehaviour
         PlayerModifier playerModifier = FindObjectOfType<PlayerModifier>();
         if (playerModifier)
         {
-            playerModifier.Decrease(5);
+            playerModifier.Decrease(obstacle.ObstacleValue);
         }
         obstacle.Offend -= OnObstacleOffended;
         _obstacles.Remove(obstacle);
