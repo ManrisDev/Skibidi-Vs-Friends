@@ -5,8 +5,8 @@ public class PlayerModifier : MonoBehaviour
 
     [SerializeField] int _width;
     [SerializeField] int _height;
-    float _widthMultiplier = 0.0005f;
-    float _heightMultiplier = 0.01f;
+    float _widthMultiplier = 0.005f;
+    float _heightMultiplier = 0.005f;
     [SerializeField] Renderer _renderer;
     [SerializeField] Transform _colliderTransform;
     [SerializeField] Transform _playerModel;
@@ -22,8 +22,9 @@ public class PlayerModifier : MonoBehaviour
     void Update()
     {
         float offsetY = _height * _heightMultiplier + 0.17f;
-        _playerModel.localScale = new Vector3(1, 1.0f + _height * _heightMultiplier, 1);
-        _colliderTransform.localScale = new Vector3(1, 1.0f + _height * _heightMultiplier, 1);
+        _playerModel.localScale = new Vector3(1.0f + _width * _widthMultiplier, 1.0f + _height * _heightMultiplier, 1.0f + _width * _widthMultiplier);
+        _colliderTransform.localScale = new Vector3(1.0f + _width * _widthMultiplier, 1.0f + _height * _heightMultiplier, 1.0f + _width * _widthMultiplier);
+
 
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -38,7 +39,7 @@ public class PlayerModifier : MonoBehaviour
     public void AddWidth(int value)
     {
         _width += value;
-        UpdateWidth();
+        //UpdateWidth();
         if (value > 0)
         {
             _increaseSound.Play();
@@ -54,10 +55,16 @@ public class PlayerModifier : MonoBehaviour
         }
     }
 
+    public void Decrease(int value)
+    {
+        _height -= value;
+        _width -= value;
+    }
+
     public void SetWidth(int value)
     {
         _width = value;
-        UpdateWidth();
+        //UpdateWidth();
     }
 
     public void SetHeight(int value)
