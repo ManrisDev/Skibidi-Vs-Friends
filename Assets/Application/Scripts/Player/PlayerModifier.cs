@@ -96,8 +96,7 @@ public class PlayerModifier : MonoBehaviour
 
     void Die()
     {
-        FindObjectOfType<GameManager>().ShowFinishWindow();
+        UIBehaviour.Instance.GameOver();
         Destroy(gameObject);
     }
-
 }

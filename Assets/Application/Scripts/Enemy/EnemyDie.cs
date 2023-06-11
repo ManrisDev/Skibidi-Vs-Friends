@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyDie : MonoBehaviour
 {
     [SerializeField] private ForceManager _forceManager;
-    [SerializeField] private GameManager _gameManager;
 
     private List<Enemy> _enemies;
 
@@ -40,7 +39,7 @@ public class EnemyDie : MonoBehaviour
             }
             else if(enemy.NumberOfForce >= _forceManager.NumberOfForce)
             {
-                _gameManager.GameOver();
+                UIBehaviour.Instance.GameOver();
             }
         }
         enemy.Die -= OnEnemyDied;
