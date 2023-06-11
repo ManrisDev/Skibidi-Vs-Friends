@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FinishTrigger : MonoBehaviour
@@ -10,7 +8,7 @@ public class FinishTrigger : MonoBehaviour
         if (playerBehaviour)
         {
             playerBehaviour.StartFinishBehaviour();
-            FindObjectOfType<GameManager>().ShowFinishWindow();
+            UIBehaviour.Instance.Victory();
         }
     }
 
