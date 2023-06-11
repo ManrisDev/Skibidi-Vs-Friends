@@ -44,12 +44,6 @@ public class PlayerModifier : MonoBehaviour
         }
     }
 
-    public void Decrease(int value)
-    {
-        _height -= value;
-        _width -= value;
-    }
-
     public void SetWidth(int value)
     {
         _width = value;
@@ -83,7 +77,7 @@ public class PlayerModifier : MonoBehaviour
         _renderer.material.SetFloat("_PushValue", _width * _widthMultiplier);
     }
 
-    void Die()
+    public void Die()
     {
         UIBehaviour.Instance.GameOver();
         Destroy(gameObject);

@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private int _numberOfForce;
     [SerializeField] private TextMeshProUGUI _countForceText;
+    [SerializeField] private GameObject _hitParticle;
+
     public int NumberOfForce => _numberOfForce;
 
     public event UnityAction<Enemy> Die;
@@ -16,6 +18,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        _hitParticle.SetActive(true);
         Die?.Invoke(this);
     }
 }
