@@ -11,7 +11,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Start()
     {
-        _playerMove.enabled = false;
+        //_playerMove.enabled = false;
         _preFinishBehaviour.enabled = false;
     }
 
