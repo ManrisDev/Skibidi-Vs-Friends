@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
 
 public class BossFight : MonoBehaviour
 {
@@ -11,7 +12,9 @@ public class BossFight : MonoBehaviour
     [SerializeField] private float _speedChangePlayerPosition;
     [SerializeField] private Transform _camera;
     [SerializeField] private Transform _player;
-    [SerializeField] private PlayerBehaviour _playerBehaviour;
+    [SerializeField] private PlayerMove _playerMove;
+    [SerializeField] private CameraMove _cameraMove;
+
     private Boss _boss;
 
     private void Start()
@@ -33,27 +36,19 @@ public class BossFight : MonoBehaviour
 
     private void OnBossFighted(Boss boss)
     {
-        _playerBehaviour.StartPreFinishBehaviour();
+        _playerMove.Stop();
+        _cameraMove.enabled = false;
         //_bossHealthBar.gameObject.SetActive(true);
-        StartCoroutine(ChangeCameraPosition());
-        StartCoroutine(ChangePlayerPosition());
-        _camera.LookAt(transform.position);
+        StartCoroutine(MoveTowardsTarget(_camera, _cameraTargetPosition, _speedChangeCameraPosition));
+        StartCoroutine(MoveTowardsTarget(_player, _playerTargetPosition, _speedChangePlayerPosition));
+        _camera.rotation = Quaternion.Euler(0, -60, 0);
     }
 
-    private IEnumerator ChangePlayerPosition()
+    private IEnumerator MoveTowardsTarget(Transform startPosition, Transform targetPosition, float speedChangePosition)
     {
-        while (_player.position != _playerTargetPosition.position)
+        while (startPosition != targetPosition)
         {
-            _player.position = Vector3.MoveTowards(_player.position, _playerTargetPosition.position, _speedChangePlayerPosition);
-            yield return null;
-        }
-    }
-
-    private IEnumerator ChangeCameraPosition()
-    {
-        while (_camera.position != _cameraTargetPosition.position)
-        {
-            _camera.position = Vector3.MoveTowards(_camera.position, _cameraTargetPosition.position, _speedChangeCameraPosition);
+            startPosition.position = Vector3.MoveTowards(startPosition.position, targetPosition.position, speedChangePosition);
             yield return null;
         }
     }
