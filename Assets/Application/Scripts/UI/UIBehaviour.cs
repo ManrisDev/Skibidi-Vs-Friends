@@ -10,7 +10,6 @@ public class UIBehaviour : MonoBehaviour
 
     [SerializeField] GameObject _startMenuPanel;
     [SerializeField] GameObject _inGamePanel;
-    [SerializeField] GameObject _finalPanel;
     [SerializeField] GameObject _gameOverPanel;
     [SerializeField] GameObject _casesPanel;
 
@@ -35,7 +34,6 @@ public class UIBehaviour : MonoBehaviour
 
     public void Victory()
     {
-        _finalPanel.SetActive(true);
         _casesPanel.SetActive(true);
     }
 
