@@ -8,7 +8,6 @@ public class FinishTrigger : MonoBehaviour
         if (playerBehaviour)
         {
             playerBehaviour.StartFinishBehaviour();
-            UIBehaviour.Instance.Victory();
         }
     }
 

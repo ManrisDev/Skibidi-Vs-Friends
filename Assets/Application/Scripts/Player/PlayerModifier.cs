@@ -21,19 +21,8 @@ public class PlayerModifier : MonoBehaviour
 
     void Update()
     {
-        float offsetY = _height * _heightMultiplier + 0.17f;
         _playerModel.localScale = new Vector3(1.0f + _width * _widthMultiplier, 1.0f + _height * _heightMultiplier, 1.0f + _width * _widthMultiplier);
         _colliderTransform.localScale = new Vector3(1.0f + _width * _widthMultiplier, 1.0f + _height * _heightMultiplier, 1.0f + _width * _widthMultiplier);
-
-
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            AddWidth(20);
-        }
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            AddHeight(20);
-        }
     }
 
     public void AddWidth(int value)
