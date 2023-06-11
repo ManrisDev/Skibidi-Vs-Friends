@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-
+    [SerializeField] GameObject _smoke;
     [SerializeField] PlayerMove _playerMove;
     [SerializeField] PreFinishBehaviour _preFinishBehaviour;
     [SerializeField] Animator _animator;
@@ -15,7 +15,9 @@ public class PlayerBehaviour : MonoBehaviour
         _preFinishBehaviour.enabled = false;
     }
 
-    public void Play() {
+    public void Play() 
+    {
+        _smoke.SetActive(true);
         _playerMove.enabled = true;
     }
 
@@ -25,8 +27,9 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
     public void StartFinishBehaviour() {
+        _playerMove.enabled = false;
         _preFinishBehaviour.enabled = false;
-        _animator.SetTrigger("Dance");
+        //_animator.SetTrigger("Dance");
+        UIBehaviour.Instance.Victory();
     }
-
 }

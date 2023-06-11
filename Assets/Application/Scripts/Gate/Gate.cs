@@ -17,6 +17,7 @@ public class Gate : MonoBehaviour
         PlayerModifier playerModifier = other.attachedRigidbody.GetComponent<PlayerModifier>();
         if (playerModifier)
         {
+            ForceManager.Instance.AddForce(_value);
             if (_deformationType == DeformationType.Width)
             {
                 playerModifier.AddWidth(_value);
