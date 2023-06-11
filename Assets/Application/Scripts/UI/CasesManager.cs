@@ -2,10 +2,13 @@ using TMPro;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class CasesManager : MonoBehaviour
 {
+    [Header("Buttons")]
+    [SerializeField] private GameObject _adsButton;
+    [SerializeField] private GameObject _exitButton;
+
     [Header("Random")]
     [SerializeField] private int minValue = 100;
     [SerializeField] private int maxValue = 200;
@@ -59,16 +62,15 @@ public class CasesManager : MonoBehaviour
                 item.adsIcon.gameObject.SetActive(true);
             }
         }
+
+        _adsButton.SetActive(true);
+        _exitButton.SetActive(true);
     }
 
     public void ExitCases()
     {
         gameObject.SetActive(false);
-    }
-
-    public void WatchAds()
-    {
-        
+        LevelBehaviour.Instance.NextLevel();
     }
 }
 
