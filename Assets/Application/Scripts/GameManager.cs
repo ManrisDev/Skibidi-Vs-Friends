@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
+    [Header("UI")]
     [SerializeField] GameObject _startMenu;
+
     [SerializeField] GameObject _gameOverPanel;
     [SerializeField] TextMeshProUGUI _levelText;
     [SerializeField] GameObject _finishWindow;
@@ -16,6 +15,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _levelText.text = SceneManager.GetActiveScene().name;
+
     }
 
     public void Play()
