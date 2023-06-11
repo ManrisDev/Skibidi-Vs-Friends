@@ -67,6 +67,11 @@ public class CasesManager : MonoBehaviour
         _exitButton.SetActive(true);
     }
 
+    public void WatchAds()
+    {
+        UIBehaviour.Instance.Advertisement();
+    }
+
     public void ExitCases()
     {
         gameObject.SetActive(false);

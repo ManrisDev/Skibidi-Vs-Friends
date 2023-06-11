@@ -52,7 +52,7 @@ public class UIBehaviour : MonoBehaviour
         LevelBehaviour.Instance.Restart();
     }
 
-    public void Adverisement()
+    public void Advertisement()
     {
 
     }
