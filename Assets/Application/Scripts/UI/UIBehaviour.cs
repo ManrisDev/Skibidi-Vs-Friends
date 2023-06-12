@@ -44,6 +44,11 @@ public class UIBehaviour : MonoBehaviour
         _bossFightPanel.SetActive(true);
     }
 
+    public void DamageBoss(int damage)
+    {
+        Boss.Instance.TakeDamage(damage);
+    }
+
     public void Continue()
     {
         _gameOverPanel.SetActive(false);
