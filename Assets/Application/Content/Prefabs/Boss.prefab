@@ -228,6 +228,37 @@ Transform:
   m_Father: {fileID: 623702142979503348}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1021265315872551164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1743849160922173346}
+  m_Layer: 0
+  m_Name: ParticleHitEffectPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1743849160922173346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021265315872551164}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.65, z: 1.28}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2366301769757783704}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1155793091603758231
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +498,37 @@ Transform:
   m_Father: {fileID: 7609340527555255145}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 18.615602, y: 0, z: 0}
+--- !u!1 &1918310063627595756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5516558867778533198}
+  m_Layer: 0
+  m_Name: ParticleDiePosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5516558867778533198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918310063627595756}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2366301769757783704}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1961907680234049452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1382,8 +1444,10 @@ Transform:
   - {fileID: 4196308517128220653}
   - {fileID: 855185088018606468}
   - {fileID: 1067704505307309086}
+  - {fileID: 1743849160922173346}
+  - {fileID: 5516558867778533198}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!114 &4036675657186690037
 MonoBehaviour:
@@ -1421,6 +1485,10 @@ MonoBehaviour:
   _player: {fileID: 0}
   _playerMove: {fileID: 0}
   _cameraMove: {fileID: 0}
+  _effectHitPrefab: {fileID: 0}
+  _particleHitPosition: {fileID: 0}
+  _effectDiePrefab: {fileID: 0}
+  _particleDiePosition: {fileID: 0}
 --- !u!65 &3332818436872194536
 BoxCollider:
   m_ObjectHideFlags: 0

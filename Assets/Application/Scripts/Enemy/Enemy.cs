@@ -6,7 +6,8 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private int _numberOfForce;
     [SerializeField] private TextMeshProUGUI _countForceText;
-    [SerializeField] private GameObject _hitParticle;
+    [SerializeField] private GameObject _effectPrefab;
+    [SerializeField] private Transform _particlePosition;
 
     public int NumberOfForce => _numberOfForce;
 
@@ -18,7 +19,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _hitParticle.SetActive(true);
+        Instantiate(_effectPrefab, _particlePosition.position, transform.rotation);
         Die?.Invoke(this);
     }
 }
