@@ -10,6 +10,7 @@ public class Boss : MonoBehaviour
 
     public event UnityAction<Boss> Fight;
     public event UnityAction<int> HealthChanged;
+    public event UnityAction Die;
 
     public int Health { get; private set; } = 100;
     public int MaxHealth { get; private set; } = 100;
@@ -27,10 +28,8 @@ public class Boss : MonoBehaviour
         if (Health < MinHealth)
         {
             Health = MinHealth;
-            Debug.Log("Босс мертв");
+            Die?.Invoke();
         }
-
-        Debug.Log("У босса теперь - " + Health + " хп");
 
         HealthChanged?.Invoke(Health);
     }
