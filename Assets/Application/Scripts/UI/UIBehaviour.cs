@@ -24,7 +24,6 @@ public class UIBehaviour : MonoBehaviour
     {
         _startMenuPanel.SetActive(true);
         _levelText.text = SceneManager.GetActiveScene().name;
-        _bossFightPanel.SetActive(false);
     }
 
     public void Play()

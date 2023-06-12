@@ -90,11 +90,11 @@ public class PlayerMove : MonoBehaviour
 
     }
 
-    private IEnumerator MoveWithNitro(float timeApplyNitro, float nitroMultiplier)
+    /*private IEnumerator MoveWithNitro(float timeApplyNitro, float nitroMultiplier)
     {
         float defaultMoveSpeed = _currentMoveSpeed;
         _currentMoveSpeed *= nitroMultiplier;
         yield return WaitForSeconds(timeApplyNitro);
         _currentMoveSpeed = defaultMoveSpeed;
-    }
+    }*/
 }
