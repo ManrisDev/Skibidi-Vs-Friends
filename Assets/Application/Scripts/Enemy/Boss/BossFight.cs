@@ -15,6 +15,14 @@ public class BossFight : MonoBehaviour
 
     private Boss _boss;
     private Animator _animator;
+    private bool isFight = false;
+
+    private void Update()
+    {
+        if (isFight)
+            if (Input.GetMouseButton(0))
+                PlayerAnimationController.Instance.BossHit();
+    }
 
     private void OnEnable()
     {
@@ -36,7 +44,8 @@ public class BossFight : MonoBehaviour
     {
         _playerMove.Stop();
         _cameraMove.enabled = false;
-        UIBehaviour.Instance.BossFight();
+        PlayerAnimationController.Instance.Prepair();
+        Invoke("SetFight", 1f);
         StartCoroutine(MoveTowardsTarget(_camera, _cameraTargetPosition, _speedChangeCameraPosition));
         StartCoroutine(MoveTowardsTarget(_player, _playerTargetPosition, _speedChangePlayerPosition));
         _camera.rotation = Quaternion.Euler(0, _rotationAngleCamera, 0);
@@ -45,7 +54,7 @@ public class BossFight : MonoBehaviour
     private void OnBossDied()
     {
         _animator.SetTrigger("Die");
-        UIBehaviour.Instance.Victory();
+        isFight = false;
     }
 
     private IEnumerator MoveTowardsTarget(Transform startPosition, Transform targetPosition, float speedChangePosition)
@@ -55,5 +64,11 @@ public class BossFight : MonoBehaviour
             startPosition.position = Vector3.MoveTowards(startPosition.position, targetPosition.position, speedChangePosition);
             yield return null;
         }
+    }
+
+    private void SetFight()
+    {
+        isFight = true;
+        UIBehaviour.Instance.BossFight();
     }
 }

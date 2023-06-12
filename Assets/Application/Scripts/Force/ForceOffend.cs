@@ -39,6 +39,8 @@ public class ForceOffend : MonoBehaviour
 
         force.Offend -= OnForceOffend;
         _forces.Remove(force);
-        Destroy(force.gameObject);
+
+        Destroy(force.gameObject.transform.GetChild(0).gameObject);
+        force.gameObject.transform.GetChild(1).gameObject.SetActive(true);
     }
 }
