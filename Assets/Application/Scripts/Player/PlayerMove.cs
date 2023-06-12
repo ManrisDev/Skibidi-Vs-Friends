@@ -12,12 +12,14 @@ public class PlayerMove : MonoBehaviour
     private Rigidbody _rigidbody;
     private float _finalTouchX;
     private float _deltaThreshold;
+    private float _originalSpeed;
     private Vector2 _firstTouchPosition;
     private Vector2 _currentTouchPosition;
 
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _originalSpeed = _currentMoveSpeed;
         ResetInputValues();
     }
 
@@ -85,16 +87,15 @@ public class PlayerMove : MonoBehaviour
         _currentMoveSpeed = 0f;
     }
 
-    public void ApplyNitro()
+    public void ApplyNitro(float timeApplyNitro, float nitroMultiplier)
     {
+        _currentMoveSpeed *= nitroMultiplier;
 
+        Invoke("StopNitro", timeApplyNitro);
     }
 
-    /*private IEnumerator MoveWithNitro(float timeApplyNitro, float nitroMultiplier)
+    private void StopNitro()
     {
-        float defaultMoveSpeed = _currentMoveSpeed;
-        _currentMoveSpeed *= nitroMultiplier;
-        yield return WaitForSeconds(timeApplyNitro);
-        _currentMoveSpeed = defaultMoveSpeed;
-    }*/
+        _currentMoveSpeed = _originalSpeed;
+    }
 }
