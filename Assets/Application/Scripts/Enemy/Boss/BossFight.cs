@@ -1,7 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
-using static UnityEngine.GraphicsBuffer;
 
 public class BossFight : MonoBehaviour
 {
@@ -16,10 +14,12 @@ public class BossFight : MonoBehaviour
     [SerializeField] private CameraMove _cameraMove;
 
     private Boss _boss;
+    private Animator _animator;
 
     private void OnEnable()
     {
         _boss = FindObjectOfType<Boss>();
+        _animator = transform.GetChild(0).GetComponent<Animator>();
 
         _boss.Fight += OnBossFighted;
         _boss.Die += OnBossDied;
@@ -31,6 +31,7 @@ public class BossFight : MonoBehaviour
         _boss.Die -= OnBossDied;
     }
 
+    // Сражение началось
     private void OnBossFighted(Boss boss)
     {
         _playerMove.Stop();
@@ -43,6 +44,7 @@ public class BossFight : MonoBehaviour
 
     private void OnBossDied()
     {
+        _animator.SetTrigger("Die");
         UIBehaviour.Instance.Victory();
     }
 

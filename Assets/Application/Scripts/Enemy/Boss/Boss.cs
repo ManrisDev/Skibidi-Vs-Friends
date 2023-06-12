@@ -4,6 +4,8 @@ using UnityEngine.Events;
 
 public class Boss : MonoBehaviour
 {
+    public static Boss Instance;
+    
     [SerializeField] private int _numberOfForce;
     [SerializeField] private TextMeshProUGUI _countForceText;
     [SerializeField] private ForceManager _forceManager;
@@ -15,6 +17,12 @@ public class Boss : MonoBehaviour
     public int Health { get; private set; } = 100;
     public int MaxHealth { get; private set; } = 100;
     public int MinHealth { get; private set; } = 0;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
 
     private void Start()
     {
