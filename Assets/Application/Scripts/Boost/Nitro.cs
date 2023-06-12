@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Nitro : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float _nitroMultiplier;
+    [SerializeField] private float _timeApplyNitro;
 
-    // Update is called once per frame
-    void Update()
+    public float NitroMultiplier => _nitroMultiplier;
+    public float TimeApplyNitro => _timeApplyNitro;
+
+    public event UnityAction<Nitro> Offend;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        Offend?.Invoke(this);
     }
 }
