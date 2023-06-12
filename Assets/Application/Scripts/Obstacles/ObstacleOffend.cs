@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObstacleOffend : MonoBehaviour
 {
-    private List<Obstacle> _obstacles;
+    [SerializeField] private List<Obstacle> _obstacles;
 
     private void OnEnable()
     {
