@@ -36,6 +36,7 @@ public class EnemyDie : MonoBehaviour
                 playerModifier.AddWidth(enemy.NumberOfForce);
                 playerModifier.AddHeight(enemy.NumberOfForce);
                 _forceManager.AddForce(enemy.NumberOfForce);
+                PlayerAnimationController.Instance.Hit();
             }
             else if(enemy.NumberOfForce >= _forceManager.NumberOfForce)
             {
