@@ -6,13 +6,13 @@ public class PlayerBehaviour : MonoBehaviour
 {
     [SerializeField] GameObject _smoke;
     [SerializeField] PlayerMove _playerMove;
-    [SerializeField] PreFinishBehaviour _preFinishBehaviour;
+    //[SerializeField] PreFinishBehaviour _preFinishBehaviour;
     [SerializeField] Animator _animator;
 
     void Start()
     {
         _playerMove.enabled = false;
-        _preFinishBehaviour.enabled = false;
+        //_preFinishBehaviour.enabled = false;
     }
 
     public void Play() 
@@ -23,12 +23,12 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void StartPreFinishBehaviour() {
         _playerMove.enabled = false;
-        _preFinishBehaviour.enabled = true;
+        //_preFinishBehaviour.enabled = true;
     }
 
     public void StartFinishBehaviour() {
         _playerMove.enabled = false;
-        _preFinishBehaviour.enabled = false;
+        //_preFinishBehaviour.enabled = false;
         //_animator.SetTrigger("Dance");
         UIBehaviour.Instance.Victory();
     }

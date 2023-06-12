@@ -12,6 +12,7 @@ public class UIBehaviour : MonoBehaviour
     [SerializeField] GameObject _inGamePanel;
     [SerializeField] GameObject _gameOverPanel;
     [SerializeField] GameObject _casesPanel;
+    [SerializeField] GameObject _bossFightPanel;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class UIBehaviour : MonoBehaviour
     {
         _startMenuPanel.SetActive(true);
         _levelText.text = SceneManager.GetActiveScene().name;
+        _bossFightPanel.SetActive(false);
     }
 
     public void Play()
@@ -34,7 +36,13 @@ public class UIBehaviour : MonoBehaviour
 
     public void Victory()
     {
+        _bossFightPanel.SetActive(false);
         _casesPanel.SetActive(true);
+    }
+
+    public void BossFight()
+    {
+        _bossFightPanel.SetActive(true);
     }
 
     public void Continue()

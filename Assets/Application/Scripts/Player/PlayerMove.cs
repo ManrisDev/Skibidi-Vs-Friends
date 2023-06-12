@@ -78,4 +78,9 @@ public class PlayerMove : MonoBehaviour
         _finalTouchX = 0f;
         _currentTouchPosition = Vector2.zero;
     }
+
+    public void Stop()
+    {
+        _currentMoveSpeed = 0f;
+    }
 }
