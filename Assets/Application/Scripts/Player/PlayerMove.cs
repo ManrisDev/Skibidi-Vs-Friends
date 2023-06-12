@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -82,5 +83,18 @@ public class PlayerMove : MonoBehaviour
     public void Stop()
     {
         _currentMoveSpeed = 0f;
+    }
+
+    public void ApplyNitro()
+    {
+
+    }
+
+    private IEnumerator MoveWithNitro(float timeApplyNitro, float nitroMultiplier)
+    {
+        float defaultMoveSpeed = _currentMoveSpeed;
+        _currentMoveSpeed *= nitroMultiplier;
+        yield return WaitForSeconds(timeApplyNitro);
+        _currentMoveSpeed = defaultMoveSpeed;
     }
 }
