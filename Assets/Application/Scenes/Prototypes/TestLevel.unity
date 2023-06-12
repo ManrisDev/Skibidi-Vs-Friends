@@ -1402,6 +1402,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: ForceMultiplier (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5738933217307620742, guid: fafd754052e77ca4aab71abc446a5ad7,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738933217307620742, guid: fafd754052e77ca4aab71abc446a5ad7,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738933217307620742, guid: fafd754052e77ca4aab71abc446a5ad7,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.03751564
+      objectReference: {fileID: 0}
     - target: {fileID: 8529156383050052075, guid: fafd754052e77ca4aab71abc446a5ad7,
         type: 3}
       propertyPath: m_RootOrder
@@ -20189,6 +20204,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ForceMultiplier (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738933217307620740, guid: fafd754052e77ca4aab71abc446a5ad7,
+        type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738933217307620740, guid: fafd754052e77ca4aab71abc446a5ad7,
+        type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738933217307620740, guid: fafd754052e77ca4aab71abc446a5ad7,
+        type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738933217307620740, guid: fafd754052e77ca4aab71abc446a5ad7,
+        type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8529156383050052075, guid: fafd754052e77ca4aab71abc446a5ad7,
         type: 3}
