@@ -6,6 +6,8 @@ public class Gate : MonoBehaviour
     [SerializeField] private int _value;
     [SerializeField] private DeformationType _deformationType;
     [SerializeField] private GateAppearaence _gateAppearaence;
+    [SerializeField] private GameObject _effectPrefab;
+    [SerializeField] private Transform _particlePosition;
 
     private void OnValidate()
     {
@@ -18,6 +20,7 @@ public class Gate : MonoBehaviour
         if (playerModifier)
         {
             ForceManager.Instance.AddForce(_value);
+
             if (_deformationType == DeformationType.Width)
             {
                 playerModifier.AddWidth(_value);
@@ -26,6 +29,8 @@ public class Gate : MonoBehaviour
             {
                 playerModifier.AddHeight(_value);
             }
+
+            Instantiate(_effectPrefab, _particlePosition.position, transform.rotation);
             Destroy(gameObject);
         }
 
