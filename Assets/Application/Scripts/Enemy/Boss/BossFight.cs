@@ -14,8 +14,7 @@ public class BossFight : MonoBehaviour
     [SerializeField] private CameraMove _cameraMove;
     [SerializeField] private GameObject _effectHitPrefab;
     [SerializeField] private Transform _particleHitPosition;
-    [SerializeField] private GameObject _effectDiePrefab;
-    [SerializeField] private Transform _particleDiePosition;
+    [SerializeField] private ParticleSystem _effectDiePrefab;
 
     private Boss _boss;
     private Animator _animator;
@@ -60,8 +59,8 @@ public class BossFight : MonoBehaviour
 
     private void OnBossDied()
     {
+        _effectDiePrefab.Play();
         _animator.SetTrigger("Die");
-        Instantiate(_effectDiePrefab, _particleDiePosition.position, transform.rotation);
         isFight = false;
     }
 
