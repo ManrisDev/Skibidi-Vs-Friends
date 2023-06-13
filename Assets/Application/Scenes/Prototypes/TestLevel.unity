@@ -8908,12 +8908,6 @@ Transform:
   m_Father: {fileID: 414257712}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &715668884 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1743849160922173346, guid: 181772631a9e9a649a981af035567cf8,
-    type: 3}
-  m_PrefabInstance: {fileID: 3877749328401414802}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &773725137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16571,6 +16565,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339437650}
   m_CullTransparentMesh: 1
+--- !u!198 &1348251190 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7388629540683307657, guid: 181772631a9e9a649a981af035567cf8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3877749328401414802}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1358877471
 GameObject:
   m_ObjectHideFlags: 0
@@ -25893,34 +25893,21 @@ PrefabInstance:
         type: 3}
       propertyPath: _effectDiePrefab
       value: 
-      objectReference: {fileID: 3432958286849152088, guid: 87ee7299dd44ed747af24dbb91bcd33b,
-        type: 3}
-    - target: {fileID: 4807249498108020849, guid: 181772631a9e9a649a981af035567cf8,
-        type: 3}
-      propertyPath: _effectHitPrefab
-      value: 
-      objectReference: {fileID: 1845240806346120, guid: 9629ae2ae85c73b45bd07d4ea6e6f9f7,
-        type: 3}
-    - target: {fileID: 4807249498108020849, guid: 181772631a9e9a649a981af035567cf8,
-        type: 3}
-      propertyPath: _particleDiePosition
-      value: 
-      objectReference: {fileID: 4733340085621846, guid: 9629ae2ae85c73b45bd07d4ea6e6f9f7,
-        type: 3}
-    - target: {fileID: 4807249498108020849, guid: 181772631a9e9a649a981af035567cf8,
-        type: 3}
-      propertyPath: _particleHitPosition
-      value: 
-      objectReference: {fileID: 715668884}
-    - target: {fileID: 5516558867778533198, guid: 181772631a9e9a649a981af035567cf8,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.93
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1348251190}
     - target: {fileID: 5585277940836723801, guid: 181772631a9e9a649a981af035567cf8,
         type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388629540665115625, guid: 181772631a9e9a649a981af035567cf8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157622270857796735, guid: 181772631a9e9a649a981af035567cf8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
