@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class VerticalObstacle : Obstacle
 {
-    public float moveDistance = 2f;  // –ассто€ние, на которое будет двигатьс€ преп€тствие
+    public float moveDistance = 4f;  // –ассто€ние, на которое будет двигатьс€ преп€тствие
     public float moveSpeed = 2f;     // —корость движени€ преп€тстви€
 
     private Vector3 initialPosition;
