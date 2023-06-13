@@ -14,6 +14,7 @@ public class UIBehaviour : MonoBehaviour
     [SerializeField] GameObject _gameOverPanel;
     [SerializeField] GameObject _casesPanel;
     [SerializeField] GameObject _bossFightPanel;
+    [SerializeField] GameObject _forceCanvas;
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class UIBehaviour : MonoBehaviour
     {
         _startMenuPanel.SetActive(false);
         _inGamePanel.SetActive(true);
+        _forceCanvas.SetActive(true);
         FindObjectOfType<PlayerBehaviour>().Play();
     }
 
