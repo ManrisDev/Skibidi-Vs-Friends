@@ -1392,7 +1392,7 @@ GameObject:
   - component: {fileID: 4807249498108020849}
   - component: {fileID: 3332818436872194536}
   m_Layer: 0
-  m_Name: Boss
+  m_Name: OrangeBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1457,7 +1457,7 @@ MonoBehaviour:
   _effectHitPrefab: {fileID: 1845240806346120, guid: 9629ae2ae85c73b45bd07d4ea6e6f9f7,
     type: 3}
   _particleHitPosition: {fileID: 1743849160922173346}
-  _effectDiePrefab: {fileID: 7388629540665115625}
+  _effectDiePrefab: {fileID: 7388629540683307657}
 --- !u!65 &3332818436872194536
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2259,9 +2259,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3969190051579065414}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7388629540665115625 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5880797563127281583, guid: 265d3a5ba69981a4698ceabcedf368b0,
+--- !u!198 &7388629540683307657 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5880797563141009103, guid: 265d3a5ba69981a4698ceabcedf368b0,
     type: 3}
   m_PrefabInstance: {fileID: 3969190051579065414}
   m_PrefabAsset: {fileID: 0}
