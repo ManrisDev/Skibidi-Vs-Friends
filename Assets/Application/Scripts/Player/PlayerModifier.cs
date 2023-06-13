@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerModifier : MonoBehaviour
 {
+    public static PlayerModifier Instance;
 
     [SerializeField] int _width;
     [SerializeField] int _height;
@@ -13,6 +14,12 @@ public class PlayerModifier : MonoBehaviour
 
     [SerializeField] AudioSource _increaseSound;
 
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
+
     private void Start()
     {
         //SetWidth(Progress.Instance.Width);
@@ -23,6 +30,11 @@ public class PlayerModifier : MonoBehaviour
     {
         _playerModel.localScale = new Vector3(1.0f + _width * _widthMultiplier, 1.0f + _height * _heightMultiplier, 1.0f + _width * _widthMultiplier);
         _colliderTransform.localScale = new Vector3(1.0f + _width * _widthMultiplier, 1.0f + _height * _heightMultiplier, 1.0f + _width * _widthMultiplier);
+
+        if (_width <= 0 || _height <= 0)
+        {
+            Die();
+        }
     }
 
     public void AddWidth(int value)
