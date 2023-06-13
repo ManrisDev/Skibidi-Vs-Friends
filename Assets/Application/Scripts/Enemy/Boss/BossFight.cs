@@ -12,6 +12,10 @@ public class BossFight : MonoBehaviour
     [SerializeField] private Transform _player;
     [SerializeField] private PlayerMove _playerMove;
     [SerializeField] private CameraMove _cameraMove;
+    [SerializeField] private GameObject _effectHitPrefab;
+    [SerializeField] private Transform _particleHitPosition;
+    [SerializeField] private GameObject _effectDiePrefab;
+    [SerializeField] private Transform _particleDiePosition;
 
     private Boss _boss;
     private Animator _animator;
@@ -21,7 +25,10 @@ public class BossFight : MonoBehaviour
     {
         if (isFight)
             if (Input.GetMouseButton(0))
+            {
                 PlayerAnimationController.Instance.BossHit();
+                Instantiate(_effectHitPrefab, _particleHitPosition.position, transform.rotation);
+            }
     }
 
     private void OnEnable()
@@ -54,6 +61,7 @@ public class BossFight : MonoBehaviour
     private void OnBossDied()
     {
         _animator.SetTrigger("Die");
+        Instantiate(_effectDiePrefab, _particleDiePosition.position, transform.rotation);
         isFight = false;
     }
 

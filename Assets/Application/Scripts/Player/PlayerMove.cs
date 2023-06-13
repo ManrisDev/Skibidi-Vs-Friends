@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float _sensivityMultiplier;
     [SerializeField] private float _minXposition;
     [SerializeField] private float _maxXposition;
+    [SerializeField] private ParticleSystem _warpSpeedEffect;
 
     private Rigidbody _rigidbody;
     private float _finalTouchX;
@@ -89,13 +90,18 @@ public class PlayerMove : MonoBehaviour
 
     public void ApplyNitro(float timeApplyNitro, float nitroMultiplier)
     {
-        _currentMoveSpeed *= nitroMultiplier;
+        if(_currentMoveSpeed == _originalSpeed)
+        {
+            _currentMoveSpeed *= nitroMultiplier;
+            _warpSpeedEffect.gameObject.SetActive(true);
 
-        Invoke("StopNitro", timeApplyNitro);
+            Invoke("StopNitro", timeApplyNitro);
+        }
     }
 
     private void StopNitro()
     {
         _currentMoveSpeed = _originalSpeed;
+        _warpSpeedEffect.gameObject.SetActive(false);
     }
 }

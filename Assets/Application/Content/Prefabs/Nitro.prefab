@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120d7bdac1104674882e2f041c085b3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nitroMultiplier: 10
+  _nitroMultiplier: 3
   _timeApplyNitro: 2
 --- !u!65 &8113260166262201023
 BoxCollider:
