@@ -24,13 +24,9 @@ public class PlayerMove : MonoBehaviour
         ResetInputValues();
     }
 
-    private void Update()
-    {
-        HandleMovementWithSlide();
-    }
-
     private void FixedUpdate()
     {
+        HandleMovementWithSlide();
         HandleEndlessRun();
     }
 
