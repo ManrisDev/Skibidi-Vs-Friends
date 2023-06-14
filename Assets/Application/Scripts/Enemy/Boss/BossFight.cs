@@ -48,7 +48,7 @@ public class BossFight : MonoBehaviour
     // Сражение началось
     private void OnBossFighted(Boss boss)
     {
-        _playerMove.Stop();
+        //_playerMove.Stop();
         _cameraMove.enabled = false;
         PlayerAnimationController.Instance.Prepair();
         Invoke("SetFight", 1f);

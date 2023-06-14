@@ -3,99 +3,71 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] private float _currentMoveSpeed;
-    [SerializeField] private float _sensivityMultiplier;
-    [SerializeField] private float _minXposition;
-    [SerializeField] private float _maxXposition;
     [SerializeField] private ParticleSystem _warpSpeedEffect;
-    [SerializeField] private float _speedX;
 
-    private Rigidbody _rigidbody;
-    [SerializeField] private float _finalTouchX;
-    [SerializeField] private float _deltaThreshold;
-    [SerializeField] private float _originalSpeed;
-    [SerializeField] private Vector2 _firstTouchPosition;
-    [SerializeField] private Vector2 _currentTouchPosition;
+    // New movement
+    [SerializeField] private float speed = 2;
+    [SerializeField] private float rotationSpeed = 5;
+    [SerializeField] private Vector2 movementLimit = Vector2.one;
 
-    private void Start()
-    {
-        _rigidbody = GetComponent<Rigidbody>();
-        _originalSpeed = _currentMoveSpeed;
-        ResetInputValues();
-    }
+    private float _originalSpeed;
+    private bool _canMove = true;
+    private Vector2 _direction = Vector2.zero;
 
-    private void Update()
-    {
-        HandleMovementWithSlide();
-    }
+    private void Start() => _originalSpeed = speed;
 
     private void FixedUpdate()
     {
-        HandleEndlessRun();
-    }
-
-    private void HandleEndlessRun()
-    {
-        _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, _rigidbody.velocity.y, _currentMoveSpeed * Time.deltaTime);
-    }
-
-    private void HandleMovementWithSlide()
-    {
-        if (Input.GetMouseButtonDown(0))
+        if (CanMove())
         {
-            _firstTouchPosition = Input.mousePosition;
+            // Handle Movement
+            var direction = new Vector3(_direction.x * speed, 0, speed);
+
+            transform.position += direction * Time.fixedDeltaTime;
+
+            // Handle Rotation
+            var currRotation = transform.rotation;
+
+            var targetRotation = Quaternion.Euler(new Vector3(0, Mathf.Atan2(_direction.x, _direction.y) * 90 / Mathf.PI, 0));
+
+            transform.rotation = Quaternion.Lerp(currRotation, targetRotation, Time.fixedDeltaTime * rotationSpeed);
         }
 
-        if (Input.GetMouseButton(0))
+        ValidateLocation();
+    }
+
+    public void StopMovement() => _canMove = false;
+    public bool CanMove() => _canMove;
+    private void ValidateLocation()
+    {
+        var currentLocation = transform.position;
+
+        if (currentLocation.x >= movementLimit.y)
         {
-            _currentTouchPosition = Input.mousePosition;
-            Vector2 touchDelta = (_currentTouchPosition - _firstTouchPosition);
-            touchDelta.x /= Screen.width;
+            currentLocation.x = movementLimit.y;
 
-            if (_firstTouchPosition == _currentTouchPosition)
-            {
-                _rigidbody.velocity = new Vector3(0f, _rigidbody.velocity.y, _rigidbody.velocity.z);
-            }
-
-            _finalTouchX = transform.position.x;
-
-            if (Mathf.Abs(touchDelta.x) >= _deltaThreshold)
-            {
-                _finalTouchX = (transform.position.x + (touchDelta.x * _sensivityMultiplier * Time.deltaTime));
-            }
-
-            float positionX = Mathf.MoveTowards(transform.position.x, _finalTouchX, _speedX * Time.deltaTime);
-            _rigidbody.position = new Vector3(positionX, transform.position.y, transform.position.z);
-            _rigidbody.position = new Vector3(Mathf.Clamp(_rigidbody.position.x, _minXposition, _maxXposition), 
-                _rigidbody.position.y, _rigidbody.position.z);
-
-            _firstTouchPosition = Input.mousePosition;
+            _direction = Vector2.zero;
         }
 
-        if (Input.GetMouseButtonUp(0))
+        else if (currentLocation.x <= movementLimit.x)
         {
-            ResetInputValues();
+            currentLocation.x = movementLimit.x;
+
+            _direction = Vector2.zero;
         }
-    }
 
-    private void ResetInputValues()
-    {
-        _rigidbody.velocity = new Vector3(0f, _rigidbody.velocity.y, _rigidbody.velocity.z);
-        _firstTouchPosition = Vector2.zero;
-        _finalTouchX = 0f;
-        _currentTouchPosition = Vector2.zero;
+        transform.position = currentLocation;
     }
+    private void OnDragged(Vector2 direction) => _direction = direction; 
+    private void OnReleased() => _direction = Vector2.zero;
 
-    public void Stop()
-    {
-        _currentMoveSpeed = 0f;
-    }
+    private void OnPressed() { }
 
-    public void ApplyNitro(float timeApplyNitro, float nitroMultiplier)
+   public void ApplyNitro(float timeApplyNitro, float nitroMultiplier)
     {
-        if (_currentMoveSpeed == _originalSpeed)
+        if (speed == _originalSpeed)
         {
-            _currentMoveSpeed *= nitroMultiplier;
+            speed *= nitroMultiplier;
             _warpSpeedEffect.gameObject.SetActive(true);
 
             Invoke("StopNitro", timeApplyNitro);
@@ -104,7 +76,21 @@ public class PlayerMove : MonoBehaviour
 
     private void StopNitro()
     {
-        _currentMoveSpeed = _originalSpeed;
+        speed = _originalSpeed;
         _warpSpeedEffect.gameObject.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        Joystick.OnJoystickDrag += OnDragged;
+        Joystick.OnJoystickPress += OnPressed;
+        Joystick.OnJoystickRelease += OnReleased;
+    }
+
+    private void OnDisable()
+    {
+        Joystick.OnJoystickDrag -= OnDragged;
+        Joystick.OnJoystickPress -= OnPressed;
+        Joystick.OnJoystickRelease -= OnReleased;
     }
 }
