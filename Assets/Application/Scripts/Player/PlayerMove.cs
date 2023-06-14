@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -9,13 +8,14 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float _minXposition;
     [SerializeField] private float _maxXposition;
     [SerializeField] private ParticleSystem _warpSpeedEffect;
+    [SerializeField] private float _speedX;
 
     private Rigidbody _rigidbody;
-    private float _finalTouchX;
-    private float _deltaThreshold;
-    private float _originalSpeed;
-    private Vector2 _firstTouchPosition;
-    private Vector2 _currentTouchPosition;
+    [SerializeField] private float _finalTouchX;
+    [SerializeField] private float _deltaThreshold;
+    [SerializeField] private float _originalSpeed;
+    [SerializeField] private Vector2 _firstTouchPosition;
+    [SerializeField] private Vector2 _currentTouchPosition;
 
     private void Start()
     {
@@ -24,15 +24,19 @@ public class PlayerMove : MonoBehaviour
         ResetInputValues();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         HandleMovementWithSlide();
+    }
+
+    private void FixedUpdate()
+    {
         HandleEndlessRun();
     }
 
     private void HandleEndlessRun()
     {
-        _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, _rigidbody.velocity.y, _currentMoveSpeed * Time.fixedDeltaTime);
+        _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, _rigidbody.velocity.y, _currentMoveSpeed * Time.deltaTime);
     }
 
     private void HandleMovementWithSlide()
@@ -46,6 +50,7 @@ public class PlayerMove : MonoBehaviour
         {
             _currentTouchPosition = Input.mousePosition;
             Vector2 touchDelta = (_currentTouchPosition - _firstTouchPosition);
+            touchDelta.x /= Screen.width;
 
             if (_firstTouchPosition == _currentTouchPosition)
             {
@@ -56,11 +61,13 @@ public class PlayerMove : MonoBehaviour
 
             if (Mathf.Abs(touchDelta.x) >= _deltaThreshold)
             {
-                _finalTouchX = (transform.position.x + (touchDelta.x * _sensivityMultiplier));
+                _finalTouchX = (transform.position.x + (touchDelta.x * _sensivityMultiplier * Time.deltaTime));
             }
 
-            _rigidbody.position = new Vector3(_finalTouchX, transform.position.y, transform.position.z);
-            _rigidbody.position = new Vector3(Mathf.Clamp(_rigidbody.position.x, _minXposition, _maxXposition), _rigidbody.position.y, _rigidbody.position.z);
+            float positionX = Mathf.MoveTowards(transform.position.x, _finalTouchX, _speedX * Time.deltaTime);
+            _rigidbody.position = new Vector3(positionX, transform.position.y, transform.position.z);
+            _rigidbody.position = new Vector3(Mathf.Clamp(_rigidbody.position.x, _minXposition, _maxXposition), 
+                _rigidbody.position.y, _rigidbody.position.z);
 
             _firstTouchPosition = Input.mousePosition;
         }
@@ -86,7 +93,7 @@ public class PlayerMove : MonoBehaviour
 
     public void ApplyNitro(float timeApplyNitro, float nitroMultiplier)
     {
-        if(_currentMoveSpeed == _originalSpeed)
+        if (_currentMoveSpeed == _originalSpeed)
         {
             _currentMoveSpeed *= nitroMultiplier;
             _warpSpeedEffect.gameObject.SetActive(true);

@@ -7,7 +7,7 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] GameObject _smoke;
     [SerializeField] PlayerMove _playerMove;
     //[SerializeField] PreFinishBehaviour _preFinishBehaviour;
-    [SerializeField] Animator _animator;
+    //[SerializeField] Animator _animator;
 
     void Start()
     {
