@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 3075124980288813643}
   - component: {fileID: 1864413209785294234}
   m_Layer: 0
-  m_Name: PlayerNew
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -299,7 +299,7 @@ Transform:
   - {fileID: 1071571304626177466}
   - {fileID: 608920810879191931}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3101344072971392898
 MonoBehaviour:
@@ -314,9 +314,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _warpSpeedEffect: {fileID: 0}
-  speed: 4
+  speed: 8
   rotationSpeed: 10
-  movementLimit: {x: -1.5, y: 1.5}
+  movementLimit: {x: -3.5, y: 3.5}
 --- !u!54 &6617439916668814354
 Rigidbody:
   m_ObjectHideFlags: 0
