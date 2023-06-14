@@ -3,6 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMove : MonoBehaviour
 {
+    public static PlayerMove Instance;
+
     [SerializeField] private ParticleSystem _warpSpeedEffect;
 
     // New movement
@@ -13,6 +15,14 @@ public class PlayerMove : MonoBehaviour
     private float _originalSpeed;
     private bool _canMove = true;
     private Vector2 _direction = Vector2.zero;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     private void Start() => _originalSpeed = speed;
 
@@ -37,7 +47,11 @@ public class PlayerMove : MonoBehaviour
     }
 
     public void StopMovement() => _canMove = false;
+
+    public void ResumeMovement() => _canMove = true;
+
     public bool CanMove() => _canMove;
+
     private void ValidateLocation()
     {
         var currentLocation = transform.position;
@@ -58,7 +72,9 @@ public class PlayerMove : MonoBehaviour
 
         transform.position = currentLocation;
     }
+
     private void OnDragged(Vector2 direction) => _direction = direction; 
+
     private void OnReleased() => _direction = Vector2.zero;
 
     private void OnPressed() { }

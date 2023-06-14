@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIBehaviour : MonoBehaviour
 {
@@ -14,7 +15,14 @@ public class UIBehaviour : MonoBehaviour
     [SerializeField] GameObject _casesPanel;
     [SerializeField] GameObject _bossFightPanel;
     [SerializeField] GameObject _forceCanvas;
-    [SerializeField] GameObject _joystickPanel;
+
+    [SerializeField] Button musicButton;
+    [SerializeField] Button effectsButton;
+    [SerializeField] Sprite notSprite;
+    [SerializeField] Sprite yesSprite;
+
+    private bool muteMusic = false;
+    private bool muteEffects = false;
 
     private void Awake()
     {
@@ -25,7 +33,7 @@ public class UIBehaviour : MonoBehaviour
     private void Start()
     {
         _startMenuPanel.SetActive(true);
-        _joystickPanel.SetActive(false);
+        PlayerMove.Instance.StopMovement();
         _levelText.text = SceneManager.GetActiveScene().name;
     }
 
@@ -34,8 +42,33 @@ public class UIBehaviour : MonoBehaviour
         _startMenuPanel.SetActive(false);
         _inGamePanel.SetActive(true);
         _forceCanvas.SetActive(true);
-        _joystickPanel.SetActive(true);
+        PlayerMove.Instance.ResumeMovement();
         FindObjectOfType<PlayerBehaviour>().Play();
+    }
+
+    public void Mute(string type)
+    {
+        Image image;
+        bool state;
+        if (type.Equals("music"))
+        {
+            image = musicButton.transform.GetChild(0).GetComponent<Image>();
+            muteMusic = !muteMusic;
+            state = muteMusic;
+            SoundsManager.Instance.Mute(type, muteMusic);
+        }
+        else
+        { 
+            image = effectsButton.transform.GetChild(0).GetComponent<Image>();
+            muteEffects = !muteEffects;
+            state = muteEffects;
+            SoundsManager.Instance.Mute(type, muteEffects);
+        }
+
+        if (!state)
+            image.sprite = yesSprite;
+        else
+            image.sprite = notSprite;
     }
 
     public void Victory()
@@ -47,7 +80,7 @@ public class UIBehaviour : MonoBehaviour
     public void BossFight()
     {
         _bossFightPanel.SetActive(true);
-        _joystickPanel.SetActive(false);
+        PlayerMove.Instance.StopMovement();
     }
 
     public void DamageBoss(int damage)
@@ -58,13 +91,13 @@ public class UIBehaviour : MonoBehaviour
     public void Continue()
     {
         _gameOverPanel.SetActive(false);
-        _joystickPanel.SetActive(true);
+        PlayerMove.Instance.ResumeMovement();
     }
 
     public void GameOver()
     {
         _gameOverPanel.SetActive(true);
-        _joystickPanel.SetActive(false);
+        PlayerMove.Instance.StopMovement();
     }
 
     public void Restart()

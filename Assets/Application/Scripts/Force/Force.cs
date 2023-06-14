@@ -11,6 +11,7 @@ public class Force : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        SoundsManager.Instance.PlaySound("Mushroom");
         Offend?.Invoke(this);
     }
 }

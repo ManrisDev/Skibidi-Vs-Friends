@@ -26,6 +26,7 @@ public class BossFight : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 PlayerAnimationController.Instance.BossHit();
+                SoundsManager.Instance.PlaySound("BossHit");
                 Instantiate(_effectHitPrefab, _particleHitPosition.position, transform.rotation);
             }
     }
