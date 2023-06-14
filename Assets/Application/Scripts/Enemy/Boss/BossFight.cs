@@ -1,38 +1,53 @@
+using Cinemachine;
 using System.Collections;
 using UnityEngine;
 
 public class BossFight : MonoBehaviour
 {
-    [SerializeField] private Transform _cameraTargetPosition;
     [SerializeField] private Transform _playerTargetPosition;
-    [SerializeField] private float _speedChangeCameraPosition;
     [SerializeField] private float _speedChangePlayerPosition;
-    [SerializeField] private float _rotationAngleCamera;
-    [SerializeField] private Transform _camera;
     [SerializeField] private Transform _player;
     [SerializeField] private PlayerMove _playerMove;
-    [SerializeField] private CameraMove _cameraMove;
     [SerializeField] private GameObject _effectHitPrefab;
     [SerializeField] private Transform _particleHitPosition;
     [SerializeField] private ParticleSystem _effectDiePrefab;
+    [SerializeField] private CinemachineVirtualCamera _playerCamera;
+    [SerializeField] private CinemachineVirtualCamera _bossFightCamera;
 
     private Boss _boss;
     private Animator _animator;
-    private bool isFight = false;
+    private bool _isFight = false;
+    private bool _isPreFinish = false;
 
     private void Update()
     {
-        if (isFight)
+        if (_isPreFinish)
+        {
+            // ѕозици€ X постепенно мен€етс€ от текущего значени€ до 0
+            float x = Mathf.MoveTowards(_player.transform.position.x, 0, Time.deltaTime * 2f);
+            _player.transform.position = new Vector3(x, 0, _player.transform.position.z);
+
+            // ѕоворот по Y постепенно мен€етс€ от текущего значени€ до 0
+            float rotation = Mathf.MoveTowardsAngle(_player.transform.eulerAngles.y, 0, Time.deltaTime * 100f);
+            _player.transform.localEulerAngles = new Vector3(0, rotation, 0);
+        }
+
+        if (_isFight)
+        {
             if (Input.GetMouseButton(0))
             {
                 PlayerAnimationController.Instance.BossHit();
                 SoundsManager.Instance.PlaySound("BossHit");
                 Instantiate(_effectHitPrefab, _particleHitPosition.position, transform.rotation);
             }
+        }
     }
 
     private void OnEnable()
     {
+        _bossFightCamera.gameObject.SetActive(false);
+        _playerCamera.gameObject.SetActive(true);
+
         _boss = FindObjectOfType<Boss>();
         _animator = transform.GetChild(0).GetComponent<Animator>();
 
@@ -49,20 +64,18 @@ public class BossFight : MonoBehaviour
     // —ражение началось
     private void OnBossFighted(Boss boss)
     {
-        //_playerMove.Stop();
-        _cameraMove.enabled = false;
+        _isPreFinish = true;
+        _playerMove.StopMovement();
+        SwitchCamera();
         PlayerAnimationController.Instance.Prepair();
         Invoke("SetFight", 1f);
-        StartCoroutine(MoveTowardsTarget(_camera, _cameraTargetPosition, _speedChangeCameraPosition));
-        StartCoroutine(MoveTowardsTarget(_player, _playerTargetPosition, _speedChangePlayerPosition));
-        _camera.rotation = Quaternion.Euler(0, _rotationAngleCamera, 0);
     }
 
     private void OnBossDied()
     {
         _effectDiePrefab.Play();
         _animator.SetTrigger("Die");
-        isFight = false;
+        _isFight = false;
     }
 
     private IEnumerator MoveTowardsTarget(Transform startPosition, Transform targetPosition, float speedChangePosition)
@@ -74,9 +87,15 @@ public class BossFight : MonoBehaviour
         }
     }
 
+    void SwitchCamera()
+    {
+        _bossFightCamera.gameObject.SetActive(true);
+        _playerCamera.gameObject.SetActive(false);
+    }
+
     private void SetFight()
     {
-        isFight = true;
+        _isFight = true;
         UIBehaviour.Instance.BossFight();
     }
 }

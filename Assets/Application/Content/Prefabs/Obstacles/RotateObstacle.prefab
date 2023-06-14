@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1113649241538187443}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 44691841699999348}
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _obstacleValue: 1
   _hitParticle: {fileID: 2428951010242803275}
-  _speed: 360
+  _speed: 300
 --- !u!65 &1167913547522894658
 BoxCollider:
   m_ObjectHideFlags: 0

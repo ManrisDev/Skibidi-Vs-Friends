@@ -141,8 +141,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6964783877486956494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9883618, y: -2.5, z: 75}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5484631641900454311}
@@ -166,6 +166,7 @@ MonoBehaviour:
   _hitParticle: {fileID: 3167749241695387579}
   _amplitude: 2
   _frequency: 2
+  _speedRotation: 0
 --- !u!65 &5345059221287108694
 BoxCollider:
   m_ObjectHideFlags: 0

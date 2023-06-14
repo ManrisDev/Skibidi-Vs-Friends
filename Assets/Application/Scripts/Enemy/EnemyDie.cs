@@ -41,6 +41,7 @@ public class EnemyDie : MonoBehaviour
             }
             else if(enemy.NumberOfForce >= _forceManager.NumberOfForce)
             {
+                CoinManager.Instance.SaveToProgress();
                 PlayerModifier.Instance.Die();
                 UIBehaviour.Instance.GameOver();
             }
