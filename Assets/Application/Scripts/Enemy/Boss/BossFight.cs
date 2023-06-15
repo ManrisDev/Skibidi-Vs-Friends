@@ -14,6 +14,7 @@ public class BossFight : MonoBehaviour
     [SerializeField] private ParticleSystem _effectDiePrefab;
     [SerializeField] private CinemachineVirtualCamera _playerCamera;
     [SerializeField] private CinemachineVirtualCamera _bossFightCamera;
+    [SerializeField] private string _nameBossDiedSound;
 
     private Boss _boss;
     private Animator _animator;
@@ -75,6 +76,8 @@ public class BossFight : MonoBehaviour
 
     private void OnBossDied()
     {
+        SoundsManager.Instance.FadeOut();
+        SoundsManager.Instance.PlaySound(_nameBossDiedSound);
         _effectDiePrefab.Play();
         _animator.SetTrigger("Die");
         _isFight = false;

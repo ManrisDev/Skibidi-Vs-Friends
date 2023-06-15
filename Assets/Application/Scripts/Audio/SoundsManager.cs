@@ -1,5 +1,5 @@
 using System;
-using Unity.VisualScripting.Dependencies.NCalc;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEngine.Rendering.DebugUI;
@@ -15,6 +15,10 @@ public class SoundsManager : MonoBehaviour
     [Header("Clips")]
     [SerializeField] private Music[] backgroundMusic;
     [SerializeField] private Sound[] effects;
+
+    private float _startVolume;
+
+    private float _fadeDuration = 0.5f;
     
     //private int currentClip = 0;
 
@@ -50,6 +54,7 @@ public class SoundsManager : MonoBehaviour
 
         musicAudioSource.clip = backgroundMusic[levelNumber].audio;
         musicAudioSource.Play();
+        _startVolume = musicAudioSource.volume;
     }
 
     public void PlayBackgroundMusic()
@@ -80,6 +85,25 @@ public class SoundsManager : MonoBehaviour
             musicAudioSource.mute = value;
         else
             effectsAudioSource.mute = value;
+    }
+
+    public void FadeOut()
+    {
+        StartCoroutine(FadeOutMusic());
+    }
+
+    private IEnumerator FadeOutMusic()
+    {
+        float elapsedTime = 0f;
+
+        while(elapsedTime < _fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            musicAudioSource.volume = Mathf.Lerp(_startVolume, 0.0f, elapsedTime / _fadeDuration);
+            yield return null;
+        }
+
+        musicAudioSource.Stop();
     }
 }
 

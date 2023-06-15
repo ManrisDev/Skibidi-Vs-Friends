@@ -10,6 +10,8 @@ public class Boss : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _countForceText;
     [SerializeField] private ForceManager _forceManager;
 
+    private bool _isNeedDie = true;
+
     public event UnityAction<Boss> Fight;
     public event UnityAction<int> HealthChanged;
     public event UnityAction Die;
@@ -35,8 +37,12 @@ public class Boss : MonoBehaviour
 
         if (Health < MinHealth)
         {
-            Health = MinHealth;
-            Die?.Invoke();
+            if (_isNeedDie)
+            {
+                _isNeedDie = false;
+                Health = MinHealth;
+                Die?.Invoke();
+            }
         }
 
         HealthChanged?.Invoke(Health);

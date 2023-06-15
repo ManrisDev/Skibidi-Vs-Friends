@@ -7249,6 +7249,18 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: f28e5862159846e43a867afe564fe2f9, type: 3}
   - name: Nitro
     audioClip: {fileID: 8300000, guid: 080c1dc10b3e17c4da6d92793e1e476d, type: 3}
+  - name: HaggyWaggyDied
+    audioClip: {fileID: 8300000, guid: 320652d9693139c4482ca5f717feee52, type: 3}
+  - name: FriendDied
+    audioClip: {fileID: 8300000, guid: b7558dad442e08744b234f4efb252f3a, type: 3}
+  - name: NoobDied
+    audioClip: {fileID: 8300000, guid: 09bbc4b96ff13b841a43394b11d062d0, type: 3}
+  - name: CameramanDied
+    audioClip: {fileID: 8300000, guid: a0968b4540b73fe4a90475ef24e4605d, type: 3}
+  - name: AmogusDied
+    audioClip: {fileID: 8300000, guid: 05da46041de7f5a4b97e7ffb77da96a3, type: 3}
+  - name: EndLevelMusic
+    audioClip: {fileID: 8300000, guid: 57095b4ee98195c45b9b4967f4b6531b, type: 3}
 --- !u!1 &1658714355 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7018095940788706749, guid: bb1ac80c3441a86449614a4270374eaf,
@@ -10627,6 +10639,11 @@ PrefabInstance:
       propertyPath: _forceManager
       value: 
       objectReference: {fileID: 267751177}
+    - target: {fileID: 4036675657186690037, guid: 181772631a9e9a649a981af035567cf8,
+        type: 3}
+      propertyPath: _nameBossDiedSound
+      value: HaggyWaggyDied
+      objectReference: {fileID: 0}
     - target: {fileID: 4807249498108020849, guid: 181772631a9e9a649a981af035567cf8,
         type: 3}
       propertyPath: _player
@@ -10647,6 +10664,11 @@ PrefabInstance:
       propertyPath: _floatingJoystick
       value: 
       objectReference: {fileID: 923690460}
+    - target: {fileID: 4807249498108020849, guid: 181772631a9e9a649a981af035567cf8,
+        type: 3}
+      propertyPath: _nameBossDiedSound
+      value: HaggyWaggyDied
+      objectReference: {fileID: 0}
     - target: {fileID: 5585277940836723801, guid: 181772631a9e9a649a981af035567cf8,
         type: 3}
       propertyPath: m_Name
