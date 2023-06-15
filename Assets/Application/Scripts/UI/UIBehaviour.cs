@@ -33,12 +33,6 @@ public class UIBehaviour : MonoBehaviour
     private void Start()
     {
         _startMenuPanel.SetActive(true);
-<<<<<<< Updated upstream
-        PlayerMove.Instance.StopMovement();
-=======
-        _inGamePanel.SetActive(true);
-        _joystickPanel.SetActive(false);
->>>>>>> Stashed changes
         _levelText.text = SceneManager.GetActiveScene().name;
     }
 

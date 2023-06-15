@@ -4,15 +4,16 @@ public class PlayerModifier : MonoBehaviour
 {
     public static PlayerModifier Instance;
 
-    [SerializeField] int _width;
-    [SerializeField] int _height;
-    float _widthMultiplier = 0.003f;
-    float _heightMultiplier = 0.003f;
-    [SerializeField] Renderer _renderer;
-    [SerializeField] Transform _colliderTransform;
-    [SerializeField] Transform _playerModel;
+    [SerializeField] private int _width;
+    [SerializeField] private int _height;
+    private float _widthMultiplier = 0.003f;
+    private float _heightMultiplier = 0.003f;
+    [SerializeField] private Renderer _renderer;
+    [SerializeField] private Transform _colliderTransform;
+    [SerializeField] private Transform _playerModel;
+    [SerializeField] private GameObject _floatingJoystick;
 
-    [SerializeField] AudioSource _increaseSound;
+    [SerializeField] private AudioSource _increaseSound;
 
     private void Awake()
     {
@@ -92,6 +93,7 @@ public class PlayerModifier : MonoBehaviour
     public void Die()
     {
         UIBehaviour.Instance.GameOver();
-        Destroy(gameObject);
+        _floatingJoystick.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 }
