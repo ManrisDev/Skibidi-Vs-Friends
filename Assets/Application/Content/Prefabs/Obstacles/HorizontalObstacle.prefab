@@ -166,7 +166,7 @@ MonoBehaviour:
   _hitParticle: {fileID: 3167749241695387579}
   _amplitude: 2
   _frequency: 2
-  _speedRotation: 0
+  _speedRotation: 300
 --- !u!65 &5345059221287108694
 BoxCollider:
   m_ObjectHideFlags: 0
