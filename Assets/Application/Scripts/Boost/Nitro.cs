@@ -13,6 +13,7 @@ public class Nitro : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        SoundsManager.Instance.PlaySound("Nitro");
         Offend?.Invoke(this);
     }
 }
