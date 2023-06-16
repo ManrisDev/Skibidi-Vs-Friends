@@ -7,15 +7,18 @@ public class UIBehaviour : MonoBehaviour
 {
     public static UIBehaviour Instance;
 
-    [SerializeField] TextMeshProUGUI _levelText;
-
+    [Header("Panels")]
     [SerializeField] GameObject _startMenuPanel;
     [SerializeField] GameObject _inGamePanel;
     [SerializeField] GameObject _gameOverPanel;
     [SerializeField] GameObject _casesPanel;
     [SerializeField] GameObject _bossFightPanel;
+
+    [Header("Player")]
+    [SerializeField] TextMeshProUGUI _levelText;
     [SerializeField] GameObject _forceCanvas;
 
+    [Header("Sound")]
     [SerializeField] Button musicButton;
     [SerializeField] Button effectsButton;
     [SerializeField] Sprite notSprite;
@@ -33,6 +36,7 @@ public class UIBehaviour : MonoBehaviour
     private void Start()
     {
         _startMenuPanel.SetActive(true);
+        PlayerMove.Instance.StopMovement();
         _levelText.text = SceneManager.GetActiveScene().name;
     }
 

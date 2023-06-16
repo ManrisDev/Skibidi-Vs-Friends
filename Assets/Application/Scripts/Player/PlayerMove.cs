@@ -86,7 +86,7 @@ public class PlayerMove : MonoBehaviour
             speed *= nitroMultiplier;
             _warpSpeedEffect.gameObject.SetActive(true);
 
-            Invoke("StopNitro", timeApplyNitro);
+            Invoke(nameof(StopNitro), timeApplyNitro);
         }
     }
 

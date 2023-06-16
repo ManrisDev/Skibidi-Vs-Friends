@@ -9,7 +9,6 @@ public class BossFight : MonoBehaviour
     [SerializeField] private Transform _player;
     [SerializeField] private PlayerMove _playerMove;
     [SerializeField] private GameObject _effectHitPrefab;
-    [SerializeField] private GameObject _floatingJoystick;
     [SerializeField] private Transform _particleHitPosition;
     [SerializeField] private ParticleSystem _effectDiePrefab;
     [SerializeField] private CinemachineVirtualCamera _playerCamera;
@@ -66,12 +65,12 @@ public class BossFight : MonoBehaviour
     // Сражение началось
     private void OnBossFighted(Boss boss)
     {
-        _floatingJoystick.gameObject.SetActive(false);
+        UIBehaviour.Instance.BossFight();
         _isPreFinish = true;
         _playerMove.StopMovement();
         SwitchCamera();
         PlayerAnimationController.Instance.Prepair();
-        Invoke("SetFight", 1f);
+        Invoke(nameof(SetFight), 1f);
     }
 
     private void OnBossDied()
