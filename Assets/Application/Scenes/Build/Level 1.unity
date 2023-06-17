@@ -1764,6 +1764,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 568880853910851937, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -26.999939
+      objectReference: {fileID: 0}
     - target: {fileID: 2911951396359806550, guid: a78f8acf6b409934fae8a16b5edea551,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1879,15 +1884,30 @@ PrefabInstance:
       propertyPath: _forceCanvas
       value: 
       objectReference: {fileID: 1939918891}
+    - target: {fileID: 4985415143658909139, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -180
+      objectReference: {fileID: 0}
     - target: {fileID: 5085006970092314353, guid: a78f8acf6b409934fae8a16b5edea551,
         type: 3}
       propertyPath: _boss
       value: 
       objectReference: {fileID: 1664134140}
+    - target: {fileID: 6204498866910179851, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8274755869130482666, guid: a78f8acf6b409934fae8a16b5edea551,
         type: 3}
       propertyPath: m_Name
       value: UI Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8706154584161433022, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
