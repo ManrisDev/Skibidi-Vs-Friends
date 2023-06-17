@@ -2,6 +2,8 @@ using TMPro;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using static UnityEditor.Progress;
 
 public class CasesManager : MonoBehaviour
 {
@@ -10,56 +12,78 @@ public class CasesManager : MonoBehaviour
     [SerializeField] private GameObject _exitButton;
 
     [Header("Random")]
-    [SerializeField] private int minValue = 100;
-    [SerializeField] private int maxValue = 200;
+    [SerializeField] private int _minValue = 100;
+    [SerializeField] private int _maxValue = 200;
 
-    [SerializeField] private Item[] items;
-    [SerializeField] private int caseCount = 3;
-    private int openedCases = 0;
+    [SerializeField] private GameObject[] _itemGameObjects;
+    [SerializeField] private List<Item> _items = new();
+    [SerializeField] private int _caseCount = 3;
+
+    private int _openedCases = 0;
+    private int _amount = 0;
 
     private void Start()
     {
+        foreach (var itemGameObject in _itemGameObjects)
+        {
+            _items.Add(new Item
+            {
+                openImage = itemGameObject.transform.GetChild(0).GetComponent<Image>(),
+                closedImage = itemGameObject.transform.GetChild(1).GetComponent<Image>(),
+                textImage = itemGameObject.transform.GetChild(2).gameObject,
+                adsIcon = itemGameObject.transform.GetChild(2).GetChild(1).gameObject,
+                text = itemGameObject.transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>(),
+            });
+        }
+
         GenerateCases();
     }
 
     public void GenerateCases()
     {
-        int randomValue;
-        foreach (var item in items)
+        foreach (var item in _items)
         {
             item.openImage.gameObject.SetActive(false);
-            item.textImage.gameObject.SetActive(false);
+            item.textImage.SetActive(false);
 
-            randomValue = UnityEngine.Random.Range(minValue, maxValue);
-            item.text.text = randomValue.ToString();
+            item.value = UnityEngine.Random.Range(_minValue, _maxValue);
+            item.text.text = item.value.ToString();
         }
     }
 
     public void OpenCase(int buttonId)
     {
-        if (openedCases != caseCount)
+        if (_openedCases < _caseCount + 1)
         {
-            items[buttonId].closedImage.gameObject.SetActive(false);
-            items[buttonId].openImage.gameObject.SetActive(true);
-            items[buttonId].textImage.gameObject.SetActive(true);
-            items[buttonId].text.gameObject.SetActive(true);
-            items[buttonId].isOpened = true;
-            openedCases++;
-            if (openedCases == caseCount)
+            _items[buttonId].closedImage.gameObject.SetActive(false);
+            _items[buttonId].openImage.gameObject.SetActive(true);
+            _items[buttonId].textImage.SetActive(true);
+            _items[buttonId].text.gameObject.SetActive(true);
+            _items[buttonId].isOpened = true;
+
+            _openedCases++;
+            _amount += _items[buttonId].value;
+
+            if (_openedCases == _caseCount)
             {
                 SetAds();
+            }
+            if (_openedCases == _caseCount + 1)
+            {
+                UIBehaviour.Instance.Advertisement();
+                _items[buttonId].adsIcon.SetActive(false);
             }
         }
     }
 
     public void SetAds()
     {
-        foreach (var item in items)
+        foreach (var item in _items)
         {
             if (!item.isOpened)
             {
-                item.textImage.gameObject.SetActive(true);
-                item.adsIcon.gameObject.SetActive(true);
+                item.textImage.SetActive(true);
+                item.adsIcon.SetActive(true);
             }
         }
 
@@ -70,10 +94,13 @@ public class CasesManager : MonoBehaviour
     public void WatchAds()
     {
         UIBehaviour.Instance.Advertisement();
+        _amount *= 2;
     }
 
     public void ExitCases()
     {
+        Progress.Instance.Coins += _amount;
+        UIBehaviour.Instance.UpdateCoins(Progress.Instance.Coins);
         gameObject.SetActive(false);
         LevelBehaviour.Instance.NextLevel();
     }
@@ -85,7 +112,8 @@ public class Item
     public Image closedImage;
     public Image openImage;
     public GameObject textImage;
-    public TextMeshProUGUI text;
     public GameObject adsIcon;
+    public TextMeshProUGUI text;
+    public int value = 0;
     public bool isOpened = false;
 }

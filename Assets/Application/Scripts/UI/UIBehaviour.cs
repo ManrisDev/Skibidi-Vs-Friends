@@ -115,7 +115,7 @@ public class UIBehaviour : MonoBehaviour
 
     public void Advertisement()
     {
-
+        Debug.Log("Показываю рекламу");
     }
 
     public void UpdateCoins(int count)
