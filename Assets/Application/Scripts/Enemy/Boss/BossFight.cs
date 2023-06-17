@@ -80,6 +80,7 @@ public class BossFight : MonoBehaviour
         _effectDiePrefab.Play();
         _animator.SetTrigger("Die");
         _isFight = false;
+        Invoke(nameof(SetVictory), 2f);
     }
 
     private IEnumerator MoveTowardsTarget(Transform startPosition, Transform targetPosition, float speedChangePosition)
@@ -101,5 +102,10 @@ public class BossFight : MonoBehaviour
     {
         _isFight = true;
         UIBehaviour.Instance.BossFight();
+    }
+
+    private void SetVictory()
+    {
+        UIBehaviour.Instance.Victory();
     }
 }

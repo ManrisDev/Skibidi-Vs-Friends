@@ -1415,7 +1415,6 @@ Transform:
   - {fileID: 1067704505307309086}
   - {fileID: 1743849160922173346}
   - {fileID: 7388629540664958921}
-  - {fileID: 7058796958923262763}
   - {fileID: 5902752489635500763}
   m_Father: {fileID: 0}
   m_RootOrder: -1
@@ -1453,12 +1452,11 @@ MonoBehaviour:
   _playerMove: {fileID: 0}
   _effectHitPrefab: {fileID: 1845240806346120, guid: 9629ae2ae85c73b45bd07d4ea6e6f9f7,
     type: 3}
-  _floatingJoystick: {fileID: 0}
   _particleHitPosition: {fileID: 1743849160922173346}
   _effectDiePrefab: {fileID: 7388629540683307657}
   _playerCamera: {fileID: 0}
   _bossFightCamera: {fileID: 3405087451097291983}
-  _nameBossDiedSound: 
+  _nameBossDiedSound: NoobDied
 --- !u!65 &3332818436872194536
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1575,74 +1573,6 @@ Transform:
   m_Father: {fileID: 3910887662844825700}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -29.00923, y: 66.51733, z: -155.21414}
---- !u!1 &5939389099190873540
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7058796958923262763}
-  - component: {fileID: 7779081755858366035}
-  - component: {fileID: 1045005207213783963}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7058796958923262763
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5939389099190873540}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 154.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2366301769757783704}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7779081755858366035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5939389099190873540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!114 &1045005207213783963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5939389099190873540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!1 &6191990370486203899
 GameObject:
   m_ObjectHideFlags: 0
@@ -2352,7 +2282,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4196308517128220653}
   - component: {fileID: 2725586941286848408}
-  - component: {fileID: 1907017963705785747}
   m_Layer: 0
   m_Name: OrangeFriend
   m_TagString: Untagged
@@ -2399,18 +2328,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1907017963705785747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9176786101084940705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf445d7bad00a1b41bc7cc820284350d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3969190051579065414
 PrefabInstance:
   m_ObjectHideFlags: 0

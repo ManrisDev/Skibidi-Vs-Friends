@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6726193351619668041
 MonoBehaviour:
@@ -54,6 +54,14 @@ MonoBehaviour:
   - levelNumber: 2
     audio: {fileID: 8300000, guid: 920495fb54fc1ff459040f962dbdfe97, type: 3}
   - levelNumber: 3
+    audio: {fileID: 8300000, guid: b7558dad442e08744b234f4efb252f3a, type: 3}
+  - levelNumber: 4
+    audio: {fileID: 8300000, guid: b7558dad442e08744b234f4efb252f3a, type: 3}
+  - levelNumber: 5
+    audio: {fileID: 8300000, guid: b7558dad442e08744b234f4efb252f3a, type: 3}
+  - levelNumber: 6
+    audio: {fileID: 8300000, guid: b7558dad442e08744b234f4efb252f3a, type: 3}
+  - levelNumber: 7
     audio: {fileID: 8300000, guid: b7558dad442e08744b234f4efb252f3a, type: 3}
   effects:
   - name: CoinUp

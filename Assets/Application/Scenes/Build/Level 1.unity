@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05560258, g: 0.34245652, b: 0.9833995, a: 1}
+  m_IndirectSpecularColor: {r: 0.055777464, g: 0.34158492, b: 0.9833995, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -381,7 +381,7 @@ PrefabInstance:
     - target: {fileID: 5734624795025209455, guid: 48497d57428228b47a65b6ddf5e997f7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 75.01
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 5734624795025209455, guid: 48497d57428228b47a65b6ddf5e997f7,
         type: 3}
@@ -735,7 +735,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261970294}
   m_LocalRotation: {x: 0.18257843, y: 0.0018017525, z: -0.00033458564, w: 0.9831896}
-  m_LocalPosition: {x: 0, y: 6.39, z: 67.15}
+  m_LocalPosition: {x: 0, y: 6.39, z: -207.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -788,6 +788,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1626883722}
   m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &273102061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 273102064}
+  - component: {fileID: 273102063}
+  - component: {fileID: 273102062}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &273102062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273102061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &273102063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273102061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &273102064
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273102061}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &399563934
 GameObject:
@@ -1764,6 +1832,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2566588439379222077, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2911951396359806550, guid: a78f8acf6b409934fae8a16b5edea551,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2343,7 +2416,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685822007}
   m_LocalRotation: {x: 0.18257843, y: 0.0018017525, z: -0.00033458564, w: 0.9831896}
-  m_LocalPosition: {x: 0, y: 6.39, z: 67.15}
+  m_LocalPosition: {x: 0, y: 6.39, z: -207.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3312,11 +3385,6 @@ PrefabInstance:
       propertyPath: _forceManager
       value: 
       objectReference: {fileID: 267751177}
-    - target: {fileID: 4036675657186690037, guid: 181772631a9e9a649a981af035567cf8,
-        type: 3}
-      propertyPath: _nameBossDiedSound
-      value: HaggyWaggyDied
-      objectReference: {fileID: 0}
     - target: {fileID: 4807249498108020849, guid: 181772631a9e9a649a981af035567cf8,
         type: 3}
       propertyPath: _player
@@ -3332,16 +3400,6 @@ PrefabInstance:
       propertyPath: _playerCamera
       value: 
       objectReference: {fileID: 261970295}
-    - target: {fileID: 4807249498108020849, guid: 181772631a9e9a649a981af035567cf8,
-        type: 3}
-      propertyPath: _floatingJoystick
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807249498108020849, guid: 181772631a9e9a649a981af035567cf8,
-        type: 3}
-      propertyPath: _nameBossDiedSound
-      value: NoobDied
-      objectReference: {fileID: 0}
     - target: {fileID: 5585277940836723801, guid: 181772631a9e9a649a981af035567cf8,
         type: 3}
       propertyPath: m_Name
