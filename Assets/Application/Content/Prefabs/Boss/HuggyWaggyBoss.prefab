@@ -678,15 +678,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3481386155950996248}
-  m_LocalRotation: {x: -0.000000009965117, y: -0.0000001988732, z: -0.16647452, w: 0.9860458}
-  m_LocalPosition: {x: -0.00000012616438, y: 0.2389212, z: 0.0000000022054376}
+  m_LocalRotation: {x: 0.00000047207612, y: 0.00000005557357, z: 0.5053139, w: 0.86293566}
+  m_LocalPosition: {x: -0.0001161471, y: 0.23889425, z: 0.000001024468}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5544348686687843945}
   m_Father: {fileID: 8242776430503551406}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 60.704}
 --- !u!1 &3602434602747269783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,6 +1187,7 @@ GameObject:
   - component: {fileID: 4036675657186690037}
   - component: {fileID: 4807249498108020849}
   - component: {fileID: 3332818436872194536}
+  - component: {fileID: 2181247550708731532}
   m_Layer: 0
   m_Name: HuggyWaggyBoss
   m_TagString: Untagged
@@ -1252,8 +1253,8 @@ MonoBehaviour:
   _particleHitPosition: {fileID: 1743849160922173346}
   _effectDiePrefab: {fileID: 7388629540683307657}
   _playerCamera: {fileID: 0}
-  _bossFightCamera: {fileID: 0}
-  _nameBossDiedSound: 
+  _bossFightCamera: {fileID: 8665055954326015964}
+  _nameBossDiedSound: HaggyWaggyDied
 --- !u!65 &3332818436872194536
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1275,6 +1276,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.8095236, y: 8.020518, z: 1.1369324}
   m_Center: {x: -0.26229048, y: 3.5102606, z: 3.9630356}
+--- !u!95 &2181247550708731532
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5585277940836723801}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 527d88f5a14725d439c189f7c5012a8d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5687392998919530455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,15 +1853,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7150853643602963858}
-  m_LocalRotation: {x: -0.000000009095176, y: 0.00000019872631, z: 0.16647452, w: 0.9860458}
-  m_LocalPosition: {x: 0.00000012616438, y: 0.2389212, z: 0.000000005267422}
+  m_LocalRotation: {x: 0.000000055073265, y: 0.00000005223753, z: -0.46275926, w: 0.886484}
+  m_LocalPosition: {x: 0.000095427036, y: 0.2389197, z: 0.000001046798}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7326708545551983125}
   m_Father: {fileID: 961683378272650135}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -55.131}
 --- !u!1 &7262711069492939104
 GameObject:
   m_ObjectHideFlags: 0

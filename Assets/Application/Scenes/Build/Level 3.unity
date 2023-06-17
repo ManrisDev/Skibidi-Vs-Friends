@@ -429,6 +429,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 159801311}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &159801313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5061000175809047305, guid: 48497d57428228b47a65b6ddf5e997f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 159801311}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &234130496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1832,6 +1838,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2911951396359806550, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4561586789143582483}
+    - target: {fileID: 2911951396359806550, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TakeDamage
+      objectReference: {fileID: 0}
     - target: {fileID: 3227535361982765825, guid: a78f8acf6b409934fae8a16b5edea551,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1937,6 +1953,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3914886286988772161, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: _forceCanvas
+      value: 
+      objectReference: {fileID: 159801313}
+    - target: {fileID: 5085006970092314353, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: _boss
+      value: 
+      objectReference: {fileID: 4561586789143582483}
     - target: {fileID: 8274755869130482666, guid: a78f8acf6b409934fae8a16b5edea551,
         type: 3}
       propertyPath: m_Name
@@ -3372,6 +3398,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b74fd01bc0c057c4c878bc5197788f55, type: 3}
+--- !u!114 &4561586789143582483 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4036675657186690037, guid: b74fd01bc0c057c4c878bc5197788f55,
+    type: 3}
+  m_PrefabInstance: {fileID: 4561586789143582482}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa8bcee8191d8f438fc40576a274fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4661886566705496330
 PrefabInstance:
   m_ObjectHideFlags: 0

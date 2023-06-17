@@ -425,7 +425,7 @@ MonoBehaviour:
   _effectDiePrefab: {fileID: 7388629540683307657}
   _playerCamera: {fileID: 0}
   _bossFightCamera: {fileID: 3013021214301986396}
-  _nameBossDiedSound: HaggyWaggyDied
+  _nameBossDiedSound: KissyDied
 --- !u!65 &3332818436872194536
 BoxCollider:
   m_ObjectHideFlags: 0

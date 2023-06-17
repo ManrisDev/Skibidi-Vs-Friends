@@ -1084,7 +1084,7 @@ MonoBehaviour:
   _effectDiePrefab: {fileID: 7388629540683307657}
   _playerCamera: {fileID: 0}
   _bossFightCamera: {fileID: 4320004342018974440}
-  _nameBossDiedSound: FriendDied
+  _nameBossDiedSound: BlueDied
 --- !u!65 &3332818436872194536
 BoxCollider:
   m_ObjectHideFlags: 0
