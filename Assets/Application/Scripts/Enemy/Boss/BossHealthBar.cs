@@ -7,7 +7,7 @@ public class BossHealthBar : MonoBehaviour
     [SerializeField] private Boss _boss;
     [SerializeField] private Slider _healthBar;
 
-    private float _speedChangeValue = 0.5f;
+    [SerializeField] private float _speedChangeValue = 0.8f;
     private Coroutine _changeHealth;
 
     private void Start()

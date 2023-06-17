@@ -10,5 +10,4 @@ public class FinishTrigger : MonoBehaviour
             playerBehaviour.StartFinishBehaviour();
         }
     }
-
 }

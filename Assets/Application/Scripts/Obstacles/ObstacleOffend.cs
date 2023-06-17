@@ -26,12 +26,7 @@ public class ObstacleOffend : MonoBehaviour
 
     private void OnObstacleOffended(Obstacle obstacle)
     {
-        PlayerModifier playerModifier = FindObjectOfType<PlayerModifier>();
-
-        if (playerModifier)
-        {
-            playerModifier.Die();
-        }
+        PlayerModifier.Instance.Die();
 
         obstacle.Offend -= OnObstacleOffended;
     }

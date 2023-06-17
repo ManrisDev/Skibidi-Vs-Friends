@@ -96,12 +96,15 @@ public class UIBehaviour : MonoBehaviour
     public void Continue()
     {
         _gameOverPanel.SetActive(false);
+        _joystickPanel.SetActive(true);
+        PlayerModifier.Instance.Reberth();
         PlayerMove.Instance.ResumeMovement();
     }
 
     public void GameOver()
     {
         _gameOverPanel.SetActive(true);
+        _joystickPanel.SetActive(false);
         PlayerMove.Instance.StopMovement();
     }
 

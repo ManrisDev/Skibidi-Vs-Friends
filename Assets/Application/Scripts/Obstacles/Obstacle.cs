@@ -14,9 +14,4 @@ public class Obstacle : MonoBehaviour
         _hitParticle.SetActive(true);
         Offend?.Invoke(this);
     }
-
-    protected virtual void Move()
-    {
-
-    }
 }

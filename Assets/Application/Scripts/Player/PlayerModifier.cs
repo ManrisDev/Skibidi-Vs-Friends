@@ -11,7 +11,6 @@ public class PlayerModifier : MonoBehaviour
     [SerializeField] private Renderer _renderer;
     [SerializeField] private Transform _colliderTransform;
     [SerializeField] private Transform _playerModel;
-    [SerializeField] private GameObject _floatingJoystick;
 
     [SerializeField] private AudioSource _increaseSound;
 
@@ -19,12 +18,6 @@ public class PlayerModifier : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
-    }
-
-    private void Start()
-    {
-        //SetWidth(Progress.Instance.Width);
-        //SetHeight(Progress.Instance.Height);
     }
 
     void Update()
@@ -81,7 +74,11 @@ public class PlayerModifier : MonoBehaviour
     public void Die()
     {
         UIBehaviour.Instance.GameOver();
-        _floatingJoystick.gameObject.SetActive(false);
         gameObject.SetActive(false);
+    }
+
+    public void Reberth()
+    {
+        gameObject.SetActive(true);
     }
 }
