@@ -544,7 +544,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1629773237596953609}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3914886286988772161}
+        m_TargetAssemblyTypeName: UIBehaviour, Assembly-CSharp
+        m_MethodName: WidthIncrease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &889495521280429553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1719,6 +1731,7 @@ GameObject:
   - component: {fileID: 5613597509028904322}
   - component: {fileID: 3907380750566123809}
   - component: {fileID: 440229493531239744}
+  - component: {fileID: 3192923950399148925}
   m_Layer: 5
   m_Name: Start Menu
   m_TagString: Untagged
@@ -1789,6 +1802,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3192923950399148925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2566588439379222077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2fe1d720feadd5459c398f853cc0c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CostOfHeightImprovements: 10
+  CostOfWidthImprovements: 20
 --- !u!1 &2667912166918264684
 GameObject:
   m_ObjectHideFlags: 0
@@ -4289,7 +4316,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3777981715513070772}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3914886286988772161}
+        m_TargetAssemblyTypeName: UIBehaviour, Assembly-CSharp
+        m_MethodName: HeightIncrease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6448748873102900685
 GameObject:
   m_ObjectHideFlags: 0
@@ -4957,7 +4996,7 @@ RectTransform:
   - {fileID: 1787782928442007049}
   - {fileID: 2653374661885059422}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5044,8 +5083,12 @@ MonoBehaviour:
   _gameOverPanel: {fileID: 1856826758812215901}
   _casesPanel: {fileID: 9077480408064776109}
   _bossFightPanel: {fileID: 4056540459438824034}
-  _levelText: {fileID: 8089891213200091481}
+  _joystickPanel: {fileID: 2653374661885059423}
   _forceCanvas: {fileID: 0}
+  _levelText: {fileID: 8089891213200091481}
+  _coinText: {fileID: 2314755970719697268}
+  _widthCostText: {fileID: 317343183996811784}
+  _heightCostText: {fileID: 5090401041139927663}
   musicButton: {fileID: 6204498866910179851}
   effectsButton: {fileID: 6052512292580010090}
   notSprite: {fileID: 21300120, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}

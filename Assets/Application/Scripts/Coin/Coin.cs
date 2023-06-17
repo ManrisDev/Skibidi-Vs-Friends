@@ -15,7 +15,7 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        FindObjectOfType<CoinManager>().AddOne();
+        CoinManager.Instance.AddMoney(1);
         SoundsManager.Instance.PlaySound("CoinUp");
         Destroy(gameObject);
         Instantiate(_effectPrefab, transform.position, transform.rotation);

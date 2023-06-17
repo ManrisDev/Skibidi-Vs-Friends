@@ -13,10 +13,14 @@ public class UIBehaviour : MonoBehaviour
     [SerializeField] GameObject _gameOverPanel;
     [SerializeField] GameObject _casesPanel;
     [SerializeField] GameObject _bossFightPanel;
+    [SerializeField] GameObject _joystickPanel;
 
     [Header("Player")]
-    [SerializeField] TextMeshProUGUI _levelText;
     [SerializeField] GameObject _forceCanvas;
+    [SerializeField] TextMeshProUGUI _levelText;
+    [SerializeField] TextMeshProUGUI _coinText;
+    [SerializeField] TextMeshProUGUI _widthCostText;
+    [SerializeField] TextMeshProUGUI _heightCostText;
 
     [Header("Sound")]
     [SerializeField] Button musicButton;
@@ -26,6 +30,9 @@ public class UIBehaviour : MonoBehaviour
 
     private bool muteMusic = false;
     private bool muteEffects = false;
+
+    private readonly string WidthType = "width";
+    private readonly string HeightType = "height";
 
     private void Awake()
     {
@@ -83,12 +90,7 @@ public class UIBehaviour : MonoBehaviour
     public void BossFight()
     {
         _bossFightPanel.SetActive(true);
-        PlayerMove.Instance.StopMovement();
-    }
-
-    public void DamageBoss(int damage)
-    {
-        Boss.Instance.TakeDamage(damage);
+        _joystickPanel.SetActive(false);
     }
 
     public void Continue()
@@ -111,5 +113,30 @@ public class UIBehaviour : MonoBehaviour
     public void Advertisement()
     {
 
+    }
+
+    public void UpdateCoins(int count)
+    {
+        _coinText.text = count.ToString();
+    }
+
+    public void UpdateWidthCost(int cost)
+    {
+        _widthCostText.text = cost.ToString();
+    }
+
+    public void UpdateHeightCost(int cost)
+    {
+        _heightCostText.text = cost.ToString();
+    }
+
+    public void HeightIncrease()
+    {
+        CoinManager.Instance.SpendMoney(ImprovementsBehaviour.Instance.CostOfHeightImprovements, HeightType);
+    }
+
+    public void WidthIncrease()
+    {
+        CoinManager.Instance.SpendMoney(ImprovementsBehaviour.Instance.CostOfWidthImprovements, WidthType);
     }
 }

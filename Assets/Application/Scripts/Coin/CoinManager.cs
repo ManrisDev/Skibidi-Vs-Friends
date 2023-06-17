@@ -1,12 +1,8 @@
-using TMPro;
 using UnityEngine;
 
 public class CoinManager : MonoBehaviour
 {
     public static CoinManager Instance;
-
-    public int NumberOfCoins;
-    [SerializeField] private TextMeshProUGUI _text;
 
     private void Awake()
     {
@@ -18,23 +14,38 @@ public class CoinManager : MonoBehaviour
 
     private void Start()
     {
-        NumberOfCoins = Progress.Instance.Coins;
-        _text.text = NumberOfCoins.ToString();
+        UpdateView();
     }
 
-    public void AddOne()
+    public void AddMoney(int value)
     {
-        NumberOfCoins += 1;
-        _text.text = NumberOfCoins.ToString();
+        Progress.Instance.Coins += value;
+        UpdateView();
     }
 
-    public void SaveToProgress() {
-        Progress.Instance.Coins = NumberOfCoins;
+    // 1-width 2-height
+    public void SpendMoney(int value, string typeOfReduction) {
+        if (value <= Progress.Instance.Coins)
+        {
+            Progress.Instance.Coins -= value;
+            if (typeOfReduction.Equals("width"))
+            {
+                ImprovementsBehaviour.Instance.IncreaseCostOfWidthImprovements();
+                PlayerModifier.Instance.AddWidth(25);
+            }
+            else if (typeOfReduction.Equals("height"))
+            {
+                ImprovementsBehaviour.Instance.IncreaseCostOfHeightImprovements();
+                PlayerModifier.Instance.AddHeight(25);
+            }
+            ForceManager.Instance.AddForce(25);
+
+            UpdateView();
+        }
     }
 
-    public void SpendMoney(int value) {
-        NumberOfCoins -= value;
-        _text.text = NumberOfCoins.ToString();
+    public void UpdateView()
+    {
+        UIBehaviour.Instance.UpdateCoins(Progress.Instance.Coins);
     }
-
 }

@@ -41,7 +41,6 @@ public class PlayerModifier : MonoBehaviour
     public void AddWidth(int value)
     {
         _width += value;
-        //UpdateWidth();
         if (value > 0)
         {
             _increaseSound.Play();
@@ -55,17 +54,6 @@ public class PlayerModifier : MonoBehaviour
         {
             _increaseSound.Play();
         }
-    }
-
-    public void SetWidth(int value)
-    {
-        _width = value;
-        //UpdateWidth();
-    }
-
-    public void SetHeight(int value)
-    {
-        _height = value;
     }
 
     public void HitBarrier()

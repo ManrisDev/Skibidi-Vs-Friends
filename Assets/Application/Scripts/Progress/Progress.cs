@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using TMPro;
 using UnityEngine;
-
 
 public class Progress : MonoBehaviour
 {
-
-    public int Coins;
-    public int Width;
-    public int Height;
-
     public static Progress Instance;
+
+    public int Coins = 1000;
+
     private void Awake()
     {
         if (Instance == null)
@@ -26,5 +19,4 @@ public class Progress : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }

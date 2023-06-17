@@ -17,7 +17,6 @@ public class LevelBehaviour : MonoBehaviour
     {
         int next = SceneManager.GetActiveScene().buildIndex + 1;
         if (next < SceneManager.sceneCountInBuildSettings) {
-            _coinManager.SaveToProgress();
             SceneManager.LoadScene(next);
         }
     }
