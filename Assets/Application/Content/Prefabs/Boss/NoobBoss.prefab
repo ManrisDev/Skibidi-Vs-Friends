@@ -57,7 +57,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3282160361385127742}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 5.67, z: 0}
+  m_LocalPosition: {x: 0, y: 5.7, z: 0}
   m_LocalScale: {x: 93.00145, y: 95.56799, z: 94.93767}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 4036675657186690037}
   - component: {fileID: 4807249498108020849}
   - component: {fileID: 3332818436872194536}
+  - component: {fileID: 2832489114746835954}
   m_Layer: 0
   m_Name: NoobBoss
   m_TagString: Untagged
@@ -244,7 +245,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5585277940836723801}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 76.73}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -255,7 +256,7 @@ Transform:
   - {fileID: 1743849160922173346}
   - {fileID: 7388629540664958921}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!114 &4036675657186690037
 MonoBehaviour:
@@ -284,19 +285,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f5b69cc17c15047bf1dae74ace88be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cameraTargetPosition: {fileID: 855185088018606468}
   _playerTargetPosition: {fileID: 1067704505307309086}
-  _speedChangeCameraPosition: 0.05
   _speedChangePlayerPosition: 0.05
-  _rotationAngleCamera: -60
-  _camera: {fileID: 0}
   _player: {fileID: 0}
   _playerMove: {fileID: 0}
-  _cameraMove: {fileID: 0}
   _effectHitPrefab: {fileID: 1845240806346120, guid: 9629ae2ae85c73b45bd07d4ea6e6f9f7,
     type: 3}
   _particleHitPosition: {fileID: 1743849160922173346}
   _effectDiePrefab: {fileID: 7388629540683307657}
+  _playerCamera: {fileID: 0}
+  _bossFightCamera: {fileID: 0}
+  _nameBossDiedSound: 
 --- !u!65 &3332818436872194536
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -318,6 +317,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.8095236, y: 8.020518, z: 1.1369324}
   m_Center: {x: -0.26229048, y: 3.5102606, z: 3.9630356}
+--- !u!95 &2832489114746835954
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5585277940836723801}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 735cb47b1624a374fa9d03dfcbaff5fe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6191990370486203899
 GameObject:
   m_ObjectHideFlags: 0

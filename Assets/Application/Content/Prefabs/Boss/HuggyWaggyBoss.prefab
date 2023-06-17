@@ -1072,7 +1072,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5585277940836723801}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 76.73}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1112,19 +1112,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f5b69cc17c15047bf1dae74ace88be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cameraTargetPosition: {fileID: 855185088018606468}
   _playerTargetPosition: {fileID: 1067704505307309086}
-  _speedChangeCameraPosition: 0.05
   _speedChangePlayerPosition: 0.05
-  _rotationAngleCamera: -60
-  _camera: {fileID: 0}
   _player: {fileID: 0}
   _playerMove: {fileID: 0}
-  _cameraMove: {fileID: 0}
   _effectHitPrefab: {fileID: 1845240806346120, guid: 9629ae2ae85c73b45bd07d4ea6e6f9f7,
     type: 3}
+  _floatingJoystick: {fileID: 0}
   _particleHitPosition: {fileID: 1743849160922173346}
   _effectDiePrefab: {fileID: 7388629540683307657}
+  _playerCamera: {fileID: 0}
+  _bossFightCamera: {fileID: 0}
+  _nameBossDiedSound: 
 --- !u!65 &3332818436872194536
 BoxCollider:
   m_ObjectHideFlags: 0
