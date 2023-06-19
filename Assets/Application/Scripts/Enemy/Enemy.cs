@@ -26,5 +26,6 @@ public class Enemy : MonoBehaviour
     public void SetForce(int value)
     {
         _numberOfForce = value;
+        _countForceText.text = _numberOfForce.ToString();
     }
 }
