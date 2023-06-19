@@ -1937,26 +1937,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 166175188388446714, guid: a78f8acf6b409934fae8a16b5edea551,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166175188388446714, guid: a78f8acf6b409934fae8a16b5edea551,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166175188388446714, guid: a78f8acf6b409934fae8a16b5edea551,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566588439379222077, guid: a78f8acf6b409934fae8a16b5edea551,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2911951396359806550, guid: a78f8acf6b409934fae8a16b5edea551,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2067,26 +2047,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3654222746005878838, guid: a78f8acf6b409934fae8a16b5edea551,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3654222746005878838, guid: a78f8acf6b409934fae8a16b5edea551,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3914886286988772161, guid: a78f8acf6b409934fae8a16b5edea551,
         type: 3}
       propertyPath: _forceCanvas
       value: 
       objectReference: {fileID: 1939918891}
-    - target: {fileID: 4056540459438824034, guid: a78f8acf6b409934fae8a16b5edea551,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5085006970092314353, guid: a78f8acf6b409934fae8a16b5edea551,
         type: 3}
       propertyPath: _boss
