@@ -22,4 +22,9 @@ public class Enemy : MonoBehaviour
         Instantiate(_effectPrefab, _particlePosition.position, transform.rotation);
         Die?.Invoke(this);
     }
+
+    public void SetForce(int value)
+    {
+        _numberOfForce = value;
+    }
 }
