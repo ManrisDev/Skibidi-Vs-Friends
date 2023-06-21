@@ -17,7 +17,7 @@ public class CasesManager : MonoBehaviour
 
     [SerializeField] private GameObject[] _itemGameObjects;
     [SerializeField] private List<Item> _items = new();
-    [SerializeField] private int _caseCount = 3;
+    [SerializeField] private int _caseCount = 2;
 
     private int _openedCases = 0;
     private int _amount = 0;
@@ -68,11 +68,11 @@ public class CasesManager : MonoBehaviour
             {
                 SetAds();
             }
-            if (_openedCases == _caseCount + 1)
-            {
-                UIBehaviour.Instance.Advertisement();
-                _items[buttonId].adsIcon.SetActive(false);
-            }
+        }
+        else if (!_items[buttonId].isOpened)
+        {
+            UIBehaviour.Instance.Advertisement();
+            _items[buttonId].adsIcon.SetActive(false);
         }
     }
 

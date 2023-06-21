@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class ForceGenerator : MonoBehaviour
 {
-    [SerializeField] private Vector2 _forceStep = Vector2.zero;
+    [SerializeField] private Vector2 _forceBorderMultiplier = new(1.2f, 1.5f);
 
-    private readonly List<GameObject> _enemiesZones = new();
+    private readonly List<GameObject> _enemies = new();
 
-    private float _force = 1;
+    private float _force = 4;
 
     private void Start()
     {
         for (int i = 0; i < gameObject.transform.childCount; i++)
         {
-            _enemiesZones.Add(gameObject.transform.GetChild(i).gameObject);
+            _enemies.Add(gameObject.transform.GetChild(i).gameObject);
         }
 
         GenerateForces();
@@ -21,13 +21,10 @@ public class ForceGenerator : MonoBehaviour
 
     public void GenerateForces()
     {
-        foreach (GameObject enemyZone in _enemiesZones)
+        foreach(GameObject enemy in _enemies)
         {
-            for (int i = 0; i < enemyZone.transform.childCount; i++)
-            {
-                enemyZone.transform.GetChild(i).GetComponent<Enemy>().SetForce(Mathf.CeilToInt(_force));
-                _force = Random.Range(_force - _forceStep.x, _force + _forceStep.y);
-            }
+            enemy.GetComponent<Enemy>().SetForce(Mathf.CeilToInt(_force));
+            _force = Random.Range(_force * _forceBorderMultiplier.x, _force * _forceBorderMultiplier.y);
         }
     }
 }

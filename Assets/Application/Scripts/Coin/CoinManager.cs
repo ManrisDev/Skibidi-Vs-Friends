@@ -4,6 +4,8 @@ public class CoinManager : MonoBehaviour
 {
     public static CoinManager Instance;
 
+    [SerializeField] private int _forceAmount = 15;
+
     private void Awake()
     {
         if(Instance == null)
@@ -31,14 +33,14 @@ public class CoinManager : MonoBehaviour
             if (typeOfReduction.Equals("width"))
             {
                 ImprovementsBehaviour.Instance.IncreaseCostOfWidthImprovements();
-                PlayerModifier.Instance.AddWidth(25);
+                PlayerModifier.Instance.AddWidth(_forceAmount);
             }
             else if (typeOfReduction.Equals("height"))
             {
                 ImprovementsBehaviour.Instance.IncreaseCostOfHeightImprovements();
-                PlayerModifier.Instance.AddHeight(25);
+                PlayerModifier.Instance.AddHeight(_forceAmount);
             }
-            ForceManager.Instance.AddForce(25);
+            ForceManager.Instance.AddForce(_forceAmount);
 
             UpdateView();
         }
