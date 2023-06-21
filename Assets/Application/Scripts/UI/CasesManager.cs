@@ -16,7 +16,7 @@ public class CasesManager : MonoBehaviour
 
     [SerializeField] private GameObject[] _itemGameObjects;
     [SerializeField] private List<Item> _items = new();
-    [SerializeField] private int _caseCount = 2;
+    [SerializeField] private int _freeCaseCount = 2;
 
     private int _openedCases = 0;
     private int _amount = 0;
@@ -50,29 +50,37 @@ public class CasesManager : MonoBehaviour
         }
     }
 
-    public void OpenCase(int buttonId)
+    public void TryOpenCase(int buttonId)
     {
-        if (_openedCases < _caseCount + 1)
+        if (!_items[buttonId].isOpened)
         {
-            _items[buttonId].closedImage.gameObject.SetActive(false);
-            _items[buttonId].openImage.gameObject.SetActive(true);
-            _items[buttonId].textImage.SetActive(true);
-            _items[buttonId].text.gameObject.SetActive(true);
-            _items[buttonId].isOpened = true;
-
-            _openedCases++;
-            _amount += _items[buttonId].value;
-
-            if (_openedCases == _caseCount)
+            if (_openedCases < _freeCaseCount)
             {
-                SetAds();
+                OpenCase(buttonId);
+                if (_openedCases == _freeCaseCount)
+                {
+                    SetAds();
+                }
+            }
+            else
+            {
+                UIBehaviour.Instance.Advertisement();
+                OpenCase(buttonId);
             }
         }
-        else if (!_items[buttonId].isOpened)
-        {
-            UIBehaviour.Instance.Advertisement();
-            _items[buttonId].adsIcon.SetActive(false);
-        }
+    }
+
+    private void OpenCase(int buttonId)
+    {
+        _items[buttonId].closedImage.gameObject.SetActive(false);
+        _items[buttonId].openImage.gameObject.SetActive(true);
+        _items[buttonId].textImage.SetActive(true);
+        _items[buttonId].text.gameObject.SetActive(true);
+        _items[buttonId].adsIcon.SetActive(false);
+        _items[buttonId].isOpened = true;
+
+        _openedCases++;
+        _amount += _items[buttonId].value;
     }
 
     public void SetAds()
