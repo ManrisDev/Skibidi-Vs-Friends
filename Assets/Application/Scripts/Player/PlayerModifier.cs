@@ -12,7 +12,7 @@ public class PlayerModifier : MonoBehaviour
     [SerializeField] private Transform _colliderTransform;
     [SerializeField] private Transform _playerModel;
 
-    [SerializeField] private AudioSource _increaseSound;
+    //[SerializeField] private AudioSource _increaseSound;
 
     private void Awake()
     {
@@ -36,7 +36,7 @@ public class PlayerModifier : MonoBehaviour
         _width += value;
         if (value > 0)
         {
-            _increaseSound.Play();
+            //_increaseSound.Play();
         }
     }
 
@@ -45,11 +45,12 @@ public class PlayerModifier : MonoBehaviour
         _height += value;
         if (value > 0)
         {
-            _increaseSound.Play();
+            //_increaseSound.Play();
         }
     }
 
-    public void HitBarrier()
+    public void 
+        Barrier()
     {
         if (_height > 0)
         {

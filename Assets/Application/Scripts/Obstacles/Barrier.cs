@@ -11,7 +11,7 @@ public class Barrier : MonoBehaviour
     {
         PlayerModifier playerModifier = other.attachedRigidbody.GetComponent<PlayerModifier>();
         if (playerModifier) {
-            playerModifier.HitBarrier();
+            //playerModifier.HitBarrier();
             Destroy(gameObject);
             Instantiate(_bricksEffectPrefab, transform.position, transform.rotation);
         }

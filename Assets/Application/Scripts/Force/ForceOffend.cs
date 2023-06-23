@@ -32,6 +32,7 @@ public class ForceOffend : MonoBehaviour
 
         if (playerModifier)
         {
+            SoundsManager.Instance.PlaySound("Mushroom");
             playerModifier.AddWidth(force.ForceValue);
             playerModifier.AddHeight(force.ForceValue);
             _forceManager.AddForce(force.ForceValue);

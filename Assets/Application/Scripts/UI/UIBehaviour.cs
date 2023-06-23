@@ -136,10 +136,12 @@ public class UIBehaviour : MonoBehaviour
     public void HeightIncrease()
     {
         CoinManager.Instance.SpendMoney(ImprovementsBehaviour.Instance.CostOfHeightImprovements, HeightType);
+        SoundsManager.Instance.PlaySound("Increase");
     }
 
     public void WidthIncrease()
     {
         CoinManager.Instance.SpendMoney(ImprovementsBehaviour.Instance.CostOfWidthImprovements, WidthType);
+        SoundsManager.Instance.PlaySound("Increase");
     }
 }
