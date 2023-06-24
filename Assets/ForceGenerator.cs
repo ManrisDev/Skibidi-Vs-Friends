@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ForceGenerator : MonoBehaviour
 {
-    [SerializeField] private Vector2 _forceBorderMultiplier = new(1.2f, 1.5f);
+    [SerializeField] private Vector2 _forceMultiplie = new(1.3f, 1.6f);
 
     private readonly List<GameObject> _enemies = new();
 
@@ -24,7 +24,7 @@ public class ForceGenerator : MonoBehaviour
         foreach(GameObject enemy in _enemies)
         {
             enemy.GetComponent<Enemy>().SetForce(Mathf.CeilToInt(_force));
-            _force = Random.Range(_force * _forceBorderMultiplier.x, _force * _forceBorderMultiplier.y);
+            _force = Random.Range(_force * _forceMultiplie.x, _force * _forceMultiplie.y);
         }
     }
 }

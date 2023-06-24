@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2445cc7716c1c914894a63dd8243f94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _forceBorderMultiplier: {x: 1.2, y: 1.5}
+  _forceMultiplie: {x: 1.3, y: 1.6}
 --- !u!1 &17198568
 GameObject:
   m_ObjectHideFlags: 0
@@ -3978,7 +3978,7 @@ PrefabInstance:
     - target: {fileID: 4036675657186690037, guid: 7e10ae074deb32d4da49828344fe1a52,
         type: 3}
       propertyPath: _numberOfForce
-      value: 100
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 4807249498108020849, guid: 7e10ae074deb32d4da49828344fe1a52,
         type: 3}

@@ -102,6 +102,7 @@ public class CasesManager : MonoBehaviour
     {
         UIBehaviour.Instance.Advertisement();
         _amount *= 2;
+        _adsButton.SetActive(false);
     }
 
     public void ExitCases()
