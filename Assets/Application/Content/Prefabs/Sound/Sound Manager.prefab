@@ -91,13 +91,15 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 5a2b6b8d4828f5c4eada3befb80de544, type: 3}
   effects:
   - name: CoinUp
-    audioClip: {fileID: 8300000, guid: 4671e2288ab46ce40aa58a77bf025c8b, type: 3}
+    audioClip: {fileID: 8300000, guid: 1ac4ce4e2862be94594dd83a574cb594, type: 3}
   - name: Mushroom
     audioClip: {fileID: 8300000, guid: cc437aa4b000ee04f9a725f3c7631266, type: 3}
   - name: BossHit
     audioClip: {fileID: 8300000, guid: f28e5862159846e43a867afe564fe2f9, type: 3}
   - name: EnemyHit
     audioClip: {fileID: 8300000, guid: f28e5862159846e43a867afe564fe2f9, type: 3}
+  - name: Teleport
+    audioClip: {fileID: 8300000, guid: b9546b5271aa6e14c98db3bc23517722, type: 3}
   - name: Nitro
     audioClip: {fileID: 8300000, guid: 080c1dc10b3e17c4da6d92793e1e476d, type: 3}
   - name: HaggyWaggyDied

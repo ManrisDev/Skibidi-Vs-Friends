@@ -62,14 +62,14 @@ public class UIBehaviour : MonoBehaviour
         bool state;
         if (type.Equals("music"))
         {
-            image = musicButton.transform.GetChild(0).GetComponent<Image>();
+            image = musicButton.transform.GetChild(1).GetComponent<Image>();
             muteMusic = !muteMusic;
             state = muteMusic;
             SoundsManager.Instance.Mute(type, muteMusic);
         }
         else
         { 
-            image = effectsButton.transform.GetChild(0).GetComponent<Image>();
+            image = effectsButton.transform.GetChild(1).GetComponent<Image>();
             muteEffects = !muteEffects;
             state = muteEffects;
             SoundsManager.Instance.Mute(type, muteEffects);

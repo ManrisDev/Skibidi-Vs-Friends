@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05662787, g: 0.34171617, b: 0.9833995, a: 1}
+  m_IndirectSpecularColor: {r: 0.05560258, g: 0.34245652, b: 0.9833995, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -283,11 +283,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerNew
       objectReference: {fileID: 0}
-    - target: {fileID: 2987412403220748377, guid: 48497d57428228b47a65b6ddf5e997f7,
-        type: 3}
-      propertyPath: _increaseSound
-      value: 
-      objectReference: {fileID: 1874188063}
     - target: {fileID: 3101344072971392898, guid: 48497d57428228b47a65b6ddf5e997f7,
         type: 3}
       propertyPath: _warpSpeedEffect
@@ -4087,6 +4082,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2653374661885059422, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653374661885059422, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653374661885059422, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653374661885059422, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653374661885059422, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653374661885059422, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653374661885059422, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653374661885059422, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2911951396359806550, guid: a78f8acf6b409934fae8a16b5edea551,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4212,7 +4247,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Canvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2653374661885059421, guid: a78f8acf6b409934fae8a16b5edea551, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a78f8acf6b409934fae8a16b5edea551, type: 3}
 --- !u!1 &1511531467
 GameObject:
@@ -13808,12 +13844,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c6a62a9995749649b72b1749ee4d812, type: 3}
---- !u!82 &1874188063 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 7869830845475265203, guid: 93be813e93d358249828ba5567fa7a18,
-    type: 3}
-  m_PrefabInstance: {fileID: 8417553666013130299}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1912562596
 GameObject:
   m_ObjectHideFlags: 0
@@ -23490,7 +23520,7 @@ PrefabInstance:
     - target: {fileID: 5352705957905221004, guid: 93be813e93d358249828ba5567fa7a18,
         type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5352705957905221004, guid: 93be813e93d358249828ba5567fa7a18,
         type: 3}

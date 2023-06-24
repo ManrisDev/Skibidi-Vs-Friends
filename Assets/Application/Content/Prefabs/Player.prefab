@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _warpSpeedEffect: {fileID: 0}
-  speed: 8
+  speed: 10
   rotationSpeed: 10
   movementLimit: {x: -3.5, y: 3.5}
 --- !u!54 &6617439916668814354
@@ -221,7 +221,6 @@ MonoBehaviour:
   _renderer: {fileID: 4531288855483915195}
   _colliderTransform: {fileID: 8534572619028190943}
   _playerModel: {fileID: 6459865644258390755}
-  _increaseSound: {fileID: 0}
 --- !u!114 &3075124980288813643
 MonoBehaviour:
   m_ObjectHideFlags: 0
