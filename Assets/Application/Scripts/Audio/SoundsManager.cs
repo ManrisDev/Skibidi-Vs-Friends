@@ -74,7 +74,7 @@ public class SoundsManager : MonoBehaviour
             Debug.LogError(name + " not found.");
             return;
         }
-
+        effectsAudioSource.volume = s.Volume;
         effectsAudioSource.PlayOneShot(s.audioClip);
     }
 

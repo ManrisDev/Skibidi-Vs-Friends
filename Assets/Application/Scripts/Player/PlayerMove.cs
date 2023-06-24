@@ -15,6 +15,7 @@ public class PlayerMove : MonoBehaviour
     private float _originalSpeed;
     private bool _canMove = true;
     private Vector2 _direction = Vector2.zero;
+    private bool _extendNitro = false;
 
     private void Awake()
     {
@@ -85,15 +86,23 @@ public class PlayerMove : MonoBehaviour
         {
             speed *= nitroMultiplier;
             _warpSpeedEffect.gameObject.SetActive(true);
-
-            Invoke(nameof(StopNitro), timeApplyNitro);
         }
+        else
+        {
+            _extendNitro = true;
+        }
+
+        Invoke(nameof(StopNitro), timeApplyNitro);
     }
 
     private void StopNitro()
     {
-        speed = _originalSpeed;
-        _warpSpeedEffect.gameObject.SetActive(false);
+        if (!_extendNitro)
+        {
+            speed = _originalSpeed;
+            _warpSpeedEffect.gameObject.SetActive(false);
+        }
+        _extendNitro = false;
     }
 
     private void OnEnable()
