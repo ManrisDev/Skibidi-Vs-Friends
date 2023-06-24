@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 1, g: 1, b: 1, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: e888bdf6b22fcc242a525c402432772f, type: 2}
   m_HaloStrength: 0.5
@@ -13878,26 +13878,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Directional light
       objectReference: {fileID: 0}
-    - target: {fileID: 7495988111976558448, guid: 2f5c3a41f6d14fc47ad6f41fa7057587,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 8115409103057474673, guid: 2f5c3a41f6d14fc47ad6f41fa7057587,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8115409103057474673, guid: 2f5c3a41f6d14fc47ad6f41fa7057587,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8115409103057474673, guid: 2f5c3a41f6d14fc47ad6f41fa7057587,
-        type: 3}
-      propertyPath: m_Shadows.m_Type
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8245485573610056523, guid: 2f5c3a41f6d14fc47ad6f41fa7057587,
         type: 3}
       propertyPath: m_RootOrder
@@ -13953,8 +13933,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.121
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5961404034854470690, guid: 2f5c3a41f6d14fc47ad6f41fa7057587, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f5c3a41f6d14fc47ad6f41fa7057587, type: 3}
 --- !u!1 &2007491182
 GameObject:
