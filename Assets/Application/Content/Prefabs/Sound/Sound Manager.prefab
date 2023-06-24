@@ -91,31 +91,44 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 5a2b6b8d4828f5c4eada3befb80de544, type: 3}
   effects:
   - name: CoinUp
-    audioClip: {fileID: 8300000, guid: 1ac4ce4e2862be94594dd83a574cb594, type: 3}
+    audioClip: {fileID: 8300000, guid: 4671e2288ab46ce40aa58a77bf025c8b, type: 3}
+    Volume: 0.7
   - name: Mushroom
     audioClip: {fileID: 8300000, guid: cc437aa4b000ee04f9a725f3c7631266, type: 3}
+    Volume: 1
   - name: BossHit
     audioClip: {fileID: 8300000, guid: f28e5862159846e43a867afe564fe2f9, type: 3}
+    Volume: 0.7
   - name: EnemyHit
     audioClip: {fileID: 8300000, guid: f28e5862159846e43a867afe564fe2f9, type: 3}
+    Volume: 0.7
   - name: Teleport
     audioClip: {fileID: 8300000, guid: b9546b5271aa6e14c98db3bc23517722, type: 3}
+    Volume: 0.7
   - name: Nitro
     audioClip: {fileID: 8300000, guid: 080c1dc10b3e17c4da6d92793e1e476d, type: 3}
+    Volume: 0.7
   - name: HaggyWaggyDied
     audioClip: {fileID: 8300000, guid: 320652d9693139c4482ca5f717feee52, type: 3}
+    Volume: 0.7
   - name: AmogusDied
     audioClip: {fileID: 8300000, guid: 05da46041de7f5a4b97e7ffb77da96a3, type: 3}
+    Volume: 0.7
   - name: BlueDied
     audioClip: {fileID: 8300000, guid: 7c7559c07d4dc724d88e527ee5d0bf1c, type: 3}
+    Volume: 0.7
   - name: CameramanDied
     audioClip: {fileID: 8300000, guid: 5bad1788de72bca409c8896b9bf0315e, type: 3}
+    Volume: 0.7
   - name: KissyDied
     audioClip: {fileID: 8300000, guid: 0558a9f075c7c3e48948ae1978fd383c, type: 3}
+    Volume: 0.7
   - name: OrangeDied
     audioClip: {fileID: 8300000, guid: 65f27e916c8360c489938cf29af349ff, type: 3}
+    Volume: 0.7
   - name: Increase
     audioClip: {fileID: 8300000, guid: b906894a774d90d4ab815693b7c662bc, type: 3}
+    Volume: 0.7
 --- !u!82 &7869830845475265203
 AudioSource:
   m_ObjectHideFlags: 0
