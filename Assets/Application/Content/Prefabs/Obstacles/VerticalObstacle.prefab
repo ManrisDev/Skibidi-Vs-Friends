@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4790684373814312425}
   - component: {fileID: 1392158086532158960}
   - component: {fileID: 6000045689164286175}
-  - component: {fileID: 6367395014634063768}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -84,26 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &6367395014634063768
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6932830054197944123}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 15498f5bad3426849ade6946b12ef182, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7467253843027117931
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,6 +126,7 @@ GameObject:
   - component: {fileID: 4910575896729654772}
   - component: {fileID: 365361877107569236}
   - component: {fileID: 7302149040653496829}
+  - component: {fileID: 1377650950479972869}
   m_Layer: 0
   m_Name: VerticalObstacle
   m_TagString: Untagged
@@ -198,6 +178,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.0113583, y: 0.50565505, z: 1}
   m_Center: {x: 0.0043334365, y: 0.0028537512, z: 0}
+--- !u!95 &1377650950479972869
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7715487192567943454}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: daba3893289097849838be4da2a7a8a3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &4506669801505526130
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8229825984558994989}
   - component: {fileID: 6973160926649248046}
-  - component: {fileID: 1167913547522894658}
+  - component: {fileID: 7487014222139715693}
+  - component: {fileID: 4384651418692368140}
   m_Layer: 0
   m_Name: RotateObstacle
   m_TagString: Untagged
@@ -49,8 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _obstacleValue: 1
   _hitParticle: {fileID: 2428951010242803275}
-  _speed: 300
---- !u!65 &1167913547522894658
+--- !u!65 &7487014222139715693
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,11 +58,31 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113649241538187443}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0.012330294, y: 0.48028475, z: 0.02004373}
+  m_Size: {x: 2.9815316, y: 0.68967026, z: 0.7136753}
+  m_Center: {x: 0.014653444, y: 0.5032308, z: 0.018850893}
+--- !u!95 &4384651418692368140
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113649241538187443}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b5ed73459491a443b18ea8634ee8baa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1165904475167756545
 GameObject:
   m_ObjectHideFlags: 0
