@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8777975718783832887}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Obstacles3Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227693463370152634}
-  m_LocalRotation: {x: -0, y: -0.0730081, z: -0, w: 0.9973314}
+  m_LocalRotation: {x: 0, y: -0.073011965, z: 0, w: 0.9973311}
   m_LocalPosition: {x: -0.65, y: 0.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -49,7 +49,7 @@ PrefabInstance:
     - target: {fileID: 2253520025365502912, guid: c3b4e097475e06e4b9e408a76a01b240,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 3.750001
       objectReference: {fileID: 0}
     - target: {fileID: 2253520025365502912, guid: c3b4e097475e06e4b9e408a76a01b240,
         type: 3}
@@ -59,7 +59,7 @@ PrefabInstance:
     - target: {fileID: 2253520025365502912, guid: c3b4e097475e06e4b9e408a76a01b240,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4
+      value: -1.2499952
       objectReference: {fileID: 0}
     - target: {fileID: 2253520025365502912, guid: c3b4e097475e06e4b9e408a76a01b240,
         type: 3}
@@ -124,7 +124,7 @@ PrefabInstance:
     - target: {fileID: 2253520025365502912, guid: c3b4e097475e06e4b9e408a76a01b240,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.0000005
       objectReference: {fileID: 0}
     - target: {fileID: 2253520025365502912, guid: c3b4e097475e06e4b9e408a76a01b240,
         type: 3}
@@ -134,7 +134,7 @@ PrefabInstance:
     - target: {fileID: 2253520025365502912, guid: c3b4e097475e06e4b9e408a76a01b240,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -10.5
       objectReference: {fileID: 0}
     - target: {fileID: 2253520025365502912, guid: c3b4e097475e06e4b9e408a76a01b240,
         type: 3}
@@ -199,7 +199,7 @@ PrefabInstance:
     - target: {fileID: 2253520025365502912, guid: c3b4e097475e06e4b9e408a76a01b240,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: -0.24999964
       objectReference: {fileID: 0}
     - target: {fileID: 2253520025365502912, guid: c3b4e097475e06e4b9e408a76a01b240,
         type: 3}
@@ -209,7 +209,7 @@ PrefabInstance:
     - target: {fileID: 2253520025365502912, guid: c3b4e097475e06e4b9e408a76a01b240,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: -5.7499995
       objectReference: {fileID: 0}
     - target: {fileID: 2253520025365502912, guid: c3b4e097475e06e4b9e408a76a01b240,
         type: 3}

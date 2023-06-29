@@ -45,13 +45,9 @@ public class SoundsManager : MonoBehaviour
         int levelNumber = SceneManager.GetActiveScene().buildIndex;
         Music m = Array.Find(backgroundMusic, music => music.levelNumber == levelNumber + 1);
 
-        if (m == null)
-        {
-            Debug.LogError("Music for level " + levelNumber + " not found.");
-            return;
-        }
+        m ??= Array.Find(backgroundMusic, music => music.levelNumber == UnityEngine.Random.Range(0, backgroundMusic.Length) + 1);
 
-        musicAudioSource.clip = backgroundMusic[levelNumber].audio;
+        musicAudioSource.clip = m.audio;
         musicAudioSource.Play();
         _startVolume = musicAudioSource.volume;
     }
