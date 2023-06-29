@@ -1,5 +1,19 @@
 {
   "dependencies": {
+    "com.charix.webutility": {
+      "version": "https://github.com/TheAkseon/com.charix.webutility.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "39474778b9dbb18a8090a9b82ca1cc37ef5fbb74"
+    },
+    "com.charix.yandexgames": {
+      "version": "https://github.com/TheAkseon/com.charix.yandexgames.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "9b213b2f77f86345f6a57e4b4330260b1450a3e4"
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
