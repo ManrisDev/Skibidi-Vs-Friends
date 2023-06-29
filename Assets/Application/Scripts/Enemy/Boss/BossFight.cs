@@ -17,7 +17,7 @@ public class BossFight : MonoBehaviour
 
     private Boss _boss;
     private Animator _animator;
-    private bool _isFight = false;
+    public bool _isFight = false;
     private bool _isPreFinish = false;
 
     private void Update()

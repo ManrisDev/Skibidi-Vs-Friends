@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
@@ -28,24 +29,28 @@ public class Boss : MonoBehaviour
 
     private void Start()
     {
+        _numberOfForce = 30 + SceneManager.GetActiveScene().buildIndex * 5;
         _countForceText.text = _numberOfForce.ToString();
     }
 
     public void TakeDamage(int amountDifference)
     {
-        Health -= amountDifference;
-
-        if (Health < MinHealth)
+        if (FindObjectOfType<BossFight>()._isFight)
         {
-            if (_isNeedDie)
-            {
-                _isNeedDie = false;
-                Health = MinHealth;
-                Die?.Invoke();
-            }
-        }
+            Health -= amountDifference;
 
-        HealthChanged?.Invoke(Health);
+            if (Health < MinHealth)
+            {
+                if (_isNeedDie)
+                {
+                    _isNeedDie = false;
+                    Health = MinHealth;
+                    Die?.Invoke();
+                }
+            }
+
+            HealthChanged?.Invoke(Health);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
