@@ -1429,7 +1429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa8bcee8191d8f438fc40576a274fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _numberOfForce: 200
+  _numberOfForce: 300
   _countForceText: {fileID: 5387334808167901063}
   _forceManager: {fileID: 0}
 --- !u!114 &4807249498108020849

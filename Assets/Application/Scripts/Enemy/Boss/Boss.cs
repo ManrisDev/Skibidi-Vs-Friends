@@ -60,7 +60,7 @@ public class Boss : MonoBehaviour
             }
             else if (_numberOfForce >= _forceManager.NumberOfForce)
             {
-                UIBehaviour.Instance.GameOver();
+                UIBehaviour.Instance.GameOver(true);
             }
         }
     }

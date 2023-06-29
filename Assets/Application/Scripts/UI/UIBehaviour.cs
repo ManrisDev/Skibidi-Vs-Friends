@@ -28,6 +28,10 @@ public class UIBehaviour : MonoBehaviour
     [SerializeField] Sprite notSprite;
     [SerializeField] Sprite yesSprite;
 
+    [Header("Game Over Panel")]
+    [SerializeField] GameObject _continueButton;
+    [SerializeField] GameObject _restartButton;
+
     private bool muteMusic = false;
     private bool muteEffects = false;
 
@@ -93,6 +97,8 @@ public class UIBehaviour : MonoBehaviour
         _joystickPanel.SetActive(false);
     }
 
+
+
     public void Continue()
     {
         _gameOverPanel.SetActive(false);
@@ -101,11 +107,20 @@ public class UIBehaviour : MonoBehaviour
         PlayerMove.Instance.ResumeMovement();
     }
 
-    public void GameOver()
+    public void GameOver(bool _isBoss)
     {
+        if (_isBoss)
+            BlockContinueButton();
+
         _gameOverPanel.SetActive(true);
         _joystickPanel.SetActive(false);
         PlayerMove.Instance.StopMovement();
+    }
+
+    private void BlockContinueButton()
+    {
+        _continueButton.SetActive(false);
+        _restartButton.GetComponent<RectTransform>().localPosition = new Vector3(0, -440, 0);
     }
 
     public void Restart()

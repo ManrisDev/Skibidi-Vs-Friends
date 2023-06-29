@@ -43,7 +43,6 @@ public class EnemyDie : MonoBehaviour
             else if(enemy.NumberOfForce >= _forceManager.NumberOfForce)
             {
                 PlayerModifier.Instance.Die();
-                UIBehaviour.Instance.GameOver();
             }
         }
         enemy.Die -= OnEnemyDied;

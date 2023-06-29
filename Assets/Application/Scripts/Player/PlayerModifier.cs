@@ -74,7 +74,7 @@ public class PlayerModifier : MonoBehaviour
 
     public void Die()
     {
-        UIBehaviour.Instance.GameOver();
+        UIBehaviour.Instance.GameOver(false);
         gameObject.SetActive(false);
     }
 
