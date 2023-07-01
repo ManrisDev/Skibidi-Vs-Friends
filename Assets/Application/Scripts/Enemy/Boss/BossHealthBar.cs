@@ -19,6 +19,7 @@ public class BossHealthBar : MonoBehaviour
 
     private void OnEnable()
     {
+        _boss = FindObjectOfType<Boss>();
         _boss.HealthChanged += OnHealthChanged;
     }
 

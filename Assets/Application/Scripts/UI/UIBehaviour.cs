@@ -49,6 +49,7 @@ public class UIBehaviour : MonoBehaviour
         _startMenuPanel.SetActive(true);
         PlayerMove.Instance.StopMovement();
         _levelText.text = SceneManager.GetActiveScene().name;
+        _forceCanvas = FindObjectOfType<PlayerMove>().gameObject.transform.GetChild(3).gameObject;
     }
 
     public void Play()
@@ -158,5 +159,10 @@ public class UIBehaviour : MonoBehaviour
     {
         CoinManager.Instance.SpendMoney(ImprovementsBehaviour.Instance.CostOfWidthImprovements, WidthType);
         SoundsManager.Instance.PlaySound("Increase");
+    }
+
+    public void HitBoss(int _damageCount) 
+    {
+        FindObjectOfType<Boss>().TakeDamage(_damageCount);
     }
 }

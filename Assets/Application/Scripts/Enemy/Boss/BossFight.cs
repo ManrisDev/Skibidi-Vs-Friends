@@ -6,19 +6,28 @@ public class BossFight : MonoBehaviour
 {
     [SerializeField] private Transform _playerTargetPosition;
     [SerializeField] private float _speedChangePlayerPosition;
-    [SerializeField] private Transform _player;
-    [SerializeField] private PlayerMove _playerMove;
     [SerializeField] private GameObject _effectHitPrefab;
     [SerializeField] private Transform _particleHitPosition;
     [SerializeField] private ParticleSystem _effectDiePrefab;
-    [SerializeField] private CinemachineVirtualCamera _playerCamera;
     [SerializeField] private CinemachineVirtualCamera _bossFightCamera;
     [SerializeField] private string _nameBossDiedSound;
+
+    [Header("Player references")]
+    [SerializeField] private Transform _player;
+    [SerializeField] private PlayerMove _playerMove;
+    [SerializeField] private CinemachineVirtualCamera _playerCamera;
 
     private Boss _boss;
     private Animator _animator;
     public bool _isFight = false;
     private bool _isPreFinish = false;
+
+    private void Awake()
+    {
+        _player = FindObjectOfType<PlayerMove>().transform;
+        _playerMove = FindObjectOfType<PlayerMove>();
+        _playerCamera = FindObjectOfType<CinemachineVirtualCamera>();
+    }
 
     private void Update()
     {

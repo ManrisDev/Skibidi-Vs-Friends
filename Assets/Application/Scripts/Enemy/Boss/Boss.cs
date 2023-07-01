@@ -25,6 +25,8 @@ public class Boss : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
+
+        _forceManager = FindObjectOfType<ForceManager>();
     }
 
     private void Start()
