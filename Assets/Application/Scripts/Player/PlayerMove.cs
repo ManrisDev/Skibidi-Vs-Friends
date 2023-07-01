@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -11,11 +12,15 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float speed = 2;
     [SerializeField] private float rotationSpeed = 5;
     [SerializeField] private Vector2 movementLimit = Vector2.one;
+    [SerializeField] private float _timeApplyInvulnerble = 0.1f;
 
     private float _originalSpeed;
     private bool _canMove = true;
     private Vector2 _direction = Vector2.zero;
     private bool _extendNitro = false;
+    private bool _isInvulnerble = false;
+
+    public bool IsInvulnerble => _isInvulnerble;
 
     private void Awake()
     {
@@ -52,6 +57,17 @@ public class PlayerMove : MonoBehaviour
     public void ResumeMovement() => _canMove = true;
 
     public bool CanMove() => _canMove;
+
+    public void ApplyInvulnerable()
+    {
+        _isInvulnerble = true;
+        Invoke(nameof(StopInvulnerable), _timeApplyInvulnerble);
+    }
+
+    private void StopInvulnerable()
+    {
+        _isInvulnerble = false;
+    }
 
     private void ValidateLocation()
     {

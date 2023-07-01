@@ -8,7 +8,7 @@ public class CoinManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -21,15 +21,16 @@ public class CoinManager : MonoBehaviour
 
     public void AddMoney(int value)
     {
-        Progress.Instance.Coins += value;
+        SaveData.Instance.Data.Coins += value;
+        SaveData.Instance.SaveYandex();
         UpdateView();
     }
 
     // 1-width 2-height
     public void SpendMoney(int value, string typeOfReduction) {
-        if (value <= Progress.Instance.Coins)
+        if (value <= SaveData.Instance.Data.Coins)
         {
-            Progress.Instance.Coins -= value;
+            SaveData.Instance.Data.Coins -= value;
             if (typeOfReduction.Equals("width"))
             {
                 ImprovementsBehaviour.Instance.IncreaseCostOfWidthImprovements();
@@ -48,6 +49,6 @@ public class CoinManager : MonoBehaviour
 
     public void UpdateView()
     {
-        UIBehaviour.Instance.UpdateCoins(Progress.Instance.Coins);
+        UIBehaviour.Instance.UpdateCoins(SaveData.Instance.Data.Coins);
     }
 }

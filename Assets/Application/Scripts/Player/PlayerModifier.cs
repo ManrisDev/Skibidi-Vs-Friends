@@ -1,3 +1,4 @@
+using Agava.YandexGames;
 using UnityEngine;
 
 public class PlayerModifier : MonoBehaviour
@@ -74,6 +75,9 @@ public class PlayerModifier : MonoBehaviour
 
     public void Die()
     {
+#if UNITY_WEBGL && !UNITY_EDITOR
+        YandexAds.Instance.ShowInterstitial();
+#endif
         UIBehaviour.Instance.GameOver(false);
         gameObject.SetActive(false);
     }

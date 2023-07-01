@@ -26,8 +26,11 @@ public class ObstacleOffend : MonoBehaviour
 
     private void OnObstacleOffended(Obstacle obstacle)
     {
-        PlayerModifier.Instance.Die();
+        if(PlayerMove.Instance.IsInvulnerble == false)
+        {
+            PlayerModifier.Instance.Die();
 
-        obstacle.Offend -= OnObstacleOffended;
+            obstacle.Offend -= OnObstacleOffended;
+        }
     }
 }

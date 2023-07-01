@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Application/Scenes/Build/LoadingScene.unity
+    guid: a30cbae01eabf0540b6e1faaa5b9bf65
+  - enabled: 1
     path: Assets/Application/Scenes/Build/Level 1.unity
     guid: fd728d330aac8f94cb9f1a8b5af7542b
   - enabled: 1
@@ -13,6 +16,7 @@ EditorBuildSettings:
     guid: ba23b50a31f346a498e14a7c8ba2ca50
   - enabled: 1
     path: Assets/Application/Scenes/Build/Level 3.unity
+<<<<<<< Updated upstream
     guid: f6b2606b72d640841a8c931d2b500fbd
   - enabled: 1
     path: Assets/Application/Scenes/Build/Level 4.unity
@@ -95,4 +99,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Application/Scenes/Build/Level 30.unity
     guid: e3d2f2e7f4a666f4b84fbd6148ceced6
+=======
+    guid: e44d25d3c1c0995429187024d8cec0a6
+  - enabled: 1
+    path: Assets/Application/Scenes/Build/Level 4.unity
+    guid: 94b0d00eaa6e61548a4c0e6e93aee247
+  - enabled: 1
+    path: Assets/Application/Scenes/Build/Level 5.unity
+    guid: ab7da44139931a7439478f92e0151299
+>>>>>>> Stashed changes
   m_configObjects: {}

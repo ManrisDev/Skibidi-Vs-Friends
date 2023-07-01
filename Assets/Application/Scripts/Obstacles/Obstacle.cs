@@ -11,7 +11,10 @@ public class Obstacle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _hitParticle.SetActive(true);
-        Offend?.Invoke(this);
+        if(PlayerMove.Instance.IsInvulnerble == false)
+        {
+            _hitParticle.SetActive(true);
+            Offend?.Invoke(this);
+        }
     }
 }

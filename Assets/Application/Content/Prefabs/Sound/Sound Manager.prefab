@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5352705957905221004
 Transform:
@@ -50,9 +50,9 @@ MonoBehaviour:
   effectsAudioSource: {fileID: 3147668368595296508}
   backgroundMusic:
   - levelNumber: 1
-    audio: {fileID: 8300000, guid: 1adeda5e6bdafde48837a738ec53ab82, type: 3}
-  - levelNumber: 2
     audio: {fileID: 8300000, guid: 63d0393501b850d46a4bf2dc8b8831a1, type: 3}
+  - levelNumber: 2
+    audio: {fileID: 8300000, guid: 1adeda5e6bdafde48837a738ec53ab82, type: 3}
   - levelNumber: 3
     audio: {fileID: 8300000, guid: 36a485ca9da3c3846a4e7320560f64ef, type: 3}
   - levelNumber: 4

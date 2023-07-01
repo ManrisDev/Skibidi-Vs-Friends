@@ -81,6 +81,8 @@ public class CasesManager : MonoBehaviour
 
         _openedCases++;
         _amount += _items[buttonId].value;
+        SaveData.Instance.Data.Coins += _items[buttonId].value;
+        UIBehaviour.Instance.UpdateCoins(SaveData.Instance.Data.Coins);
     }
 
     public void SetAds()
@@ -101,16 +103,17 @@ public class CasesManager : MonoBehaviour
     public void WatchAds()
     {
         UIBehaviour.Instance.Advertisement();
-        _amount *= 2;
+        SaveData.Instance.Data.Coins += _amount;
+        CoinManager.Instance.UpdateView();
+        UIBehaviour.Instance.UpdateCoins(SaveData.Instance.Data.Coins);
         _adsButton.SetActive(false);
     }
 
     public void ExitCases()
     {
-        Progress.Instance.Coins += _amount;
-        UIBehaviour.Instance.UpdateCoins(Progress.Instance.Coins);
         gameObject.SetActive(false);
         LevelBehaviour.Instance.NextLevel();
+        SaveData.Instance.SaveYandex();
     }
 }
 

@@ -19,8 +19,11 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Instantiate(_effectPrefab, _particlePosition.position, transform.rotation);
-        Die?.Invoke(this);
+        if (PlayerMove.Instance.IsInvulnerble == false)
+        {
+            Instantiate(_effectPrefab, _particlePosition.position, transform.rotation);
+            Die?.Invoke(this);
+        }
     }
 
     public void SetForce(int value)

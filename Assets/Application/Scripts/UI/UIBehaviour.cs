@@ -1,7 +1,9 @@
+using Agava.YandexGames;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static System.Net.Mime.MediaTypeNames;
 
 public class UIBehaviour : MonoBehaviour
 {
@@ -41,7 +43,9 @@ public class UIBehaviour : MonoBehaviour
     private void Awake()
     {
         if (Instance == null)
+        {
             Instance = this;
+        }
     }
 
     private void Start()
@@ -63,18 +67,18 @@ public class UIBehaviour : MonoBehaviour
 
     public void Mute(string type)
     {
-        Image image;
+        UnityEngine.UI.Image image;
         bool state;
         if (type.Equals("music"))
         {
-            image = musicButton.transform.GetChild(1).GetComponent<Image>();
+            image = musicButton.transform.GetChild(1).GetComponent<UnityEngine.UI.Image>();
             muteMusic = !muteMusic;
             state = muteMusic;
             SoundsManager.Instance.Mute(type, muteMusic);
         }
         else
         { 
-            image = effectsButton.transform.GetChild(1).GetComponent<Image>();
+            image = effectsButton.transform.GetChild(1).GetComponent<UnityEngine.UI.Image>();
             muteEffects = !muteEffects;
             state = muteEffects;
             SoundsManager.Instance.Mute(type, muteEffects);
@@ -98,14 +102,16 @@ public class UIBehaviour : MonoBehaviour
         _joystickPanel.SetActive(false);
     }
 
-
-
     public void Continue()
     {
+        Time.timeScale = 0f;
+        YandexAds.Instance.ShowRewardAd();
+
         _gameOverPanel.SetActive(false);
         _joystickPanel.SetActive(true);
         PlayerModifier.Instance.Reberth();
         PlayerMove.Instance.ResumeMovement();
+        PlayerMove.Instance.ApplyInvulnerable();
     }
 
     public void GameOver(bool _isBoss)
@@ -131,7 +137,9 @@ public class UIBehaviour : MonoBehaviour
 
     public void Advertisement()
     {
-        Debug.Log("Показываю рекламу");
+#if UNITY_WEBGL && !UNITY_EDITOR
+        YandexAds.Instance.ShowRewardAd();
+#endif
     }
 
     public void UpdateCoins(int count)

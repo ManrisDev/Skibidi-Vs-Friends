@@ -28,13 +28,13 @@ public class SoundsManager : MonoBehaviour
             Instance = this;
             //DontDestroyOnLoad(gameObject);
         }
-        /*else
-            Destroy(gameObject);*/
+        //else
+            //Destroy(gameObject);
     }
 
     private void Update()
     {
-        if (!musicAudioSource.isPlaying)
+        if (!musicAudioSource.isPlaying && SceneManager.GetActiveScene().buildIndex != 0)
         {
             PlayBackgroundMusic();
         }
@@ -43,7 +43,7 @@ public class SoundsManager : MonoBehaviour
     private void Start()
     {
         int levelNumber = SceneManager.GetActiveScene().buildIndex;
-        Music m = Array.Find(backgroundMusic, music => music.levelNumber == levelNumber + 1);
+        Music m = Array.Find(backgroundMusic, music => music.levelNumber == levelNumber);
 
         m ??= Array.Find(backgroundMusic, music => music.levelNumber == UnityEngine.Random.Range(0, backgroundMusic.Length) + 1);
 

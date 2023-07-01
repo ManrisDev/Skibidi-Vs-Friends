@@ -40,7 +40,7 @@ public class EnemyDie : MonoBehaviour
                 SoundsManager.Instance.PlaySound("EnemyHit");
                 SoundsManager.Instance.PlaySound("Teleport");
             }
-            else if(enemy.NumberOfForce >= _forceManager.NumberOfForce)
+            else if(enemy.NumberOfForce >= _forceManager.NumberOfForce && !PlayerMove.Instance.IsInvulnerble)
             {
                 PlayerModifier.Instance.Die();
             }
