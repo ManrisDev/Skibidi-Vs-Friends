@@ -52,7 +52,7 @@ public class UIBehaviour : MonoBehaviour
     {
         _startMenuPanel.SetActive(true);
         PlayerMove.Instance.StopMovement();
-        _levelText.text = SceneManager.GetActiveScene().name;
+        _levelText.text = "Level " + SaveData.Instance.Data.FakeLevel;
         _forceCanvas = FindObjectOfType<PlayerMove>().gameObject.transform.GetChild(3).gameObject;
     }
 
@@ -104,8 +104,10 @@ public class UIBehaviour : MonoBehaviour
 
     public void Continue()
     {
+#if UNITY_WEBGL && !UNITY_EDITOR
         Time.timeScale = 0f;
         YandexAds.Instance.ShowRewardAd();
+#endif
 
         _gameOverPanel.SetActive(false);
         _joystickPanel.SetActive(true);

@@ -15,6 +15,7 @@ public class Obstacle : MonoBehaviour
         {
             _hitParticle.SetActive(true);
             Offend?.Invoke(this);
+            Destroy(gameObject);
         }
     }
 }

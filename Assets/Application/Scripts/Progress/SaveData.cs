@@ -92,4 +92,5 @@ public class DataHolder
     public int Coins;
     public int Score;
     public int CurrentLevel;
+    public int FakeLevel;
 }

@@ -43,11 +43,22 @@ public class SoundsManager : MonoBehaviour
     private void Start()
     {
         int levelNumber = SceneManager.GetActiveScene().buildIndex;
-        Music m = Array.Find(backgroundMusic, music => music.levelNumber == levelNumber);
 
-        m ??= Array.Find(backgroundMusic, music => music.levelNumber == UnityEngine.Random.Range(0, backgroundMusic.Length) + 1);
+        if(levelNumber <= backgroundMusic.Length)
+        {
+            Music m = Array.Find(backgroundMusic, music => music.levelNumber == levelNumber);
 
-        musicAudioSource.clip = m.audio;
+            //m ??= Array.Find(backgroundMusic, music => music.levelNumber == UnityEngine.Random.Range(0, backgroundMusic.Length) + 1);
+
+            musicAudioSource.clip = m.audio;
+        }
+        else
+        {
+            Music r = backgroundMusic[UnityEngine.Random.Range(0, backgroundMusic.Length)];
+
+            musicAudioSource.clip = r.audio;
+        }
+
         musicAudioSource.Play();
         _startVolume = musicAudioSource.volume;
     }

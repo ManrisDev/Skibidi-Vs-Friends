@@ -3,6 +3,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 
 public class CasesManager : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class CasesManager : MonoBehaviour
 
     private void Start()
     {
+        _adsButton.SetActive(false);
+
         foreach (var itemGameObject in _itemGameObjects)
         {
             _items.Add(new Item
@@ -57,6 +60,12 @@ public class CasesManager : MonoBehaviour
             if (_openedCases < _freeCaseCount)
             {
                 OpenCase(buttonId);
+
+                if(_adsButton.activeSelf == false)
+                {
+                    _adsButton.SetActive(true);
+                }
+
                 if (_openedCases == _freeCaseCount)
                 {
                     SetAds();
@@ -64,10 +73,29 @@ public class CasesManager : MonoBehaviour
             }
             else
             {
-                UIBehaviour.Instance.Advertisement();
+#if UNITY_WEBGL && !UNITY_EDITOR
+                YandexAds.Instance.ShowRewardAd();
+                StartCoroutine(CheckRewarded(buttonId));
+#else
                 OpenCase(buttonId);
+#endif
+
+                if (_adsButton.activeSelf == false)
+                {
+                    _adsButton.SetActive(true);
+                }
             }
         }
+    }
+
+    private IEnumerator CheckRewarded(int buttonId)
+    {
+        while(YandexAds.Instance.IsRewarded == false)
+        {
+            yield return null;
+        }
+
+        OpenCase(buttonId);
     }
 
     private void OpenCase(int buttonId)

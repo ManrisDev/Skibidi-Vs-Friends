@@ -50,9 +50,9 @@ MonoBehaviour:
   effectsAudioSource: {fileID: 3147668368595296508}
   backgroundMusic:
   - levelNumber: 1
-    audio: {fileID: 8300000, guid: 63d0393501b850d46a4bf2dc8b8831a1, type: 3}
-  - levelNumber: 2
     audio: {fileID: 8300000, guid: 1adeda5e6bdafde48837a738ec53ab82, type: 3}
+  - levelNumber: 2
+    audio: {fileID: 8300000, guid: 63d0393501b850d46a4bf2dc8b8831a1, type: 3}
   - levelNumber: 3
     audio: {fileID: 8300000, guid: 36a485ca9da3c3846a4e7320560f64ef, type: 3}
   - levelNumber: 4
@@ -60,34 +60,6 @@ MonoBehaviour:
   - levelNumber: 5
     audio: {fileID: 8300000, guid: 3208a5ce7e4ad4c4696cd00b44cc06bb, type: 3}
   - levelNumber: 6
-    audio: {fileID: 8300000, guid: 5a2b6b8d4828f5c4eada3befb80de544, type: 3}
-  - levelNumber: 7
-    audio: {fileID: 8300000, guid: 5a2b6b8d4828f5c4eada3befb80de544, type: 3}
-  - levelNumber: 8
-    audio: {fileID: 8300000, guid: 5a2b6b8d4828f5c4eada3befb80de544, type: 3}
-  - levelNumber: 9
-    audio: {fileID: 8300000, guid: 5a2b6b8d4828f5c4eada3befb80de544, type: 3}
-  - levelNumber: 10
-    audio: {fileID: 8300000, guid: 5a2b6b8d4828f5c4eada3befb80de544, type: 3}
-  - levelNumber: 11
-    audio: {fileID: 8300000, guid: 5a2b6b8d4828f5c4eada3befb80de544, type: 3}
-  - levelNumber: 12
-    audio: {fileID: 8300000, guid: 5a2b6b8d4828f5c4eada3befb80de544, type: 3}
-  - levelNumber: 13
-    audio: {fileID: 8300000, guid: 5a2b6b8d4828f5c4eada3befb80de544, type: 3}
-  - levelNumber: 14
-    audio: {fileID: 8300000, guid: 5a2b6b8d4828f5c4eada3befb80de544, type: 3}
-  - levelNumber: 15
-    audio: {fileID: 8300000, guid: 5a2b6b8d4828f5c4eada3befb80de544, type: 3}
-  - levelNumber: 16
-    audio: {fileID: 8300000, guid: 5a2b6b8d4828f5c4eada3befb80de544, type: 3}
-  - levelNumber: 17
-    audio: {fileID: 8300000, guid: 5a2b6b8d4828f5c4eada3befb80de544, type: 3}
-  - levelNumber: 18
-    audio: {fileID: 8300000, guid: 5a2b6b8d4828f5c4eada3befb80de544, type: 3}
-  - levelNumber: 19
-    audio: {fileID: 8300000, guid: 5a2b6b8d4828f5c4eada3befb80de544, type: 3}
-  - levelNumber: 20
     audio: {fileID: 8300000, guid: 5a2b6b8d4828f5c4eada3befb80de544, type: 3}
   effects:
   - name: CoinUp

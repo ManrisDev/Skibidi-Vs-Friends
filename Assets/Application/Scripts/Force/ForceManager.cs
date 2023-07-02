@@ -23,6 +23,8 @@ public class ForceManager : MonoBehaviour
     public void AddForce(int value)
     {
         _numberOfForce += value;
+        SaveData.Instance.Data.Score += value;
         _countForceText.text = _numberOfForce.ToString();
+        SaveData.Instance.SaveYandex();
     }
 }

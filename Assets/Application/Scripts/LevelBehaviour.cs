@@ -18,17 +18,18 @@ public class LevelBehaviour : MonoBehaviour
     {
         int next = SceneManager.GetActiveScene().buildIndex + 1;
 
-        if (next < SceneManager.sceneCountInBuildSettings)
+        if (next < SceneManager.sceneCountInBuildSettings && SaveData.Instance.Data.FakeLevel < 30)
         {
+            SaveData.Instance.Data.FakeLevel = next;
             SaveData.Instance.Data.CurrentLevel = SceneManager.GetActiveScene().buildIndex + 1;
             SaveData.Instance.Data.Score += ForceManager.Instance.NumberOfForce;
             SaveData.Instance.Save();
         }
         else
         {
-            next = 1;
-            SaveData.Instance.Data.CurrentLevel = 1;
-            SaveData.Instance.Data.Score += ForceManager.Instance.NumberOfForce;
+            SaveData.Instance.Data.FakeLevel += 1;
+            next = Random.Range(1, SceneManager.sceneCountInBuildSettings);
+            SaveData.Instance.Data.CurrentLevel = next;
             SaveData.Instance.Save();
         }
 #if UNITY_WEBGL && !UNITY_EDITOR

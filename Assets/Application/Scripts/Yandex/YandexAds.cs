@@ -1,9 +1,13 @@
 using Agava.YandexGames;
+using System;
 using UnityEngine;
 
 public class YandexAds : MonoBehaviour
 {
     public static YandexAds Instance;
+
+    private bool _isRewarded = false;
+    public bool IsRewarded => _isRewarded;
 
     private void Awake()
     {
@@ -25,9 +29,9 @@ public class YandexAds : MonoBehaviour
 #endif
     }
 
-    public void ShowRewardAd()
+    public void ShowRewardAd(Action onRewardedCallback = null)
     {
-        VideoAd.Show(OnAdOpen, null, OnAdClose);
+        VideoAd.Show(OnAdOpen, OnAdRewarded, OnAdClose);
 #if UNITY_WEBGL && !UNITY_EDITOR
 #endif
     }
@@ -44,6 +48,12 @@ public class YandexAds : MonoBehaviour
         YandexSDK.Instance.IsAdRunning = false;
         Time.timeScale = 1;
         AudioListener.volume = 1;
+        _isRewarded = false;
+    }
+
+    public void OnAdRewarded()
+    {
+        _isRewarded = true;
     }
 
     public void OnIterstitialAddClose(bool value)

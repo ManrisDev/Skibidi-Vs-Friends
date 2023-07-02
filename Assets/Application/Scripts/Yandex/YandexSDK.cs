@@ -37,9 +37,10 @@ public class YandexSDK : MonoBehaviour
         _levelLoader = FindObjectOfType<LevelLoader>();
         SaveData.Instance.Load();
 
-        if(SaveData.Instance.Data.CurrentLevel == 0)
+        if (SaveData.Instance.Data.CurrentLevel == 0 && SaveData.Instance.Data.FakeLevel == 0)
         {
             SaveData.Instance.Data.CurrentLevel = 1;
+            SaveData.Instance.Data.FakeLevel = 1;
         }
 
         _levelLoader.LoadLevel(SaveData.Instance.Data.CurrentLevel);
@@ -85,12 +86,13 @@ public class YandexSDK : MonoBehaviour
             _levelLoader = FindObjectOfType<LevelLoader>();
             SaveData.Instance.Load();
 
-            if (SaveData.Instance.Data.CurrentLevel == 0)
+            if (SaveData.Instance.Data.CurrentLevel == 0 && SaveData.Instance.Data.FakeLevel == 0)
             {
                 SaveData.Instance.Data.CurrentLevel = 1;
+                SaveData.Instance.Data.FakeLevel = 1;
             }
 
-            //SaveData.Instance.SetLeaderboardScore();
+            SaveData.Instance.SetLeaderboardScore();
             _levelLoader.LoadLevel(SaveData.Instance.Data.CurrentLevel);
         }
     }
