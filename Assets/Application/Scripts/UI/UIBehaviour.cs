@@ -1,9 +1,6 @@
-using Agava.YandexGames;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static System.Net.Mime.MediaTypeNames;
 
 public class UIBehaviour : MonoBehaviour
 {
@@ -34,6 +31,8 @@ public class UIBehaviour : MonoBehaviour
     [SerializeField] GameObject _continueButton;
     [SerializeField] GameObject _restartButton;
 
+    [SerializeField] Vector3 _inGameForceCanvasPosition = new(38.7f, -0.52f, -1.15f);
+
     private bool muteMusic = false;
     private bool muteEffects = false;
 
@@ -53,14 +52,14 @@ public class UIBehaviour : MonoBehaviour
         _startMenuPanel.SetActive(true);
         PlayerMove.Instance.StopMovement();
         _levelText.text = "Level " + SaveData.Instance.Data.FakeLevel;
-        _forceCanvas = FindObjectOfType<PlayerMove>().gameObject.transform.GetChild(3).gameObject;
+        _forceCanvas = PlayerMove.Instance.gameObject.transform.GetChild(3).gameObject;
     }
 
     public void Play()
     {
         _startMenuPanel.SetActive(false);
         _inGamePanel.SetActive(true);
-        _forceCanvas.SetActive(true);
+        _forceCanvas.transform.localPosition = _inGameForceCanvasPosition;
         PlayerMove.Instance.ResumeMovement();
         FindObjectOfType<PlayerBehaviour>().Play();
     }

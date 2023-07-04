@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05662764, g: 0.34171155, b: 0.9833995, a: 1}
+  m_IndirectSpecularColor: {r: 0.05560258, g: 0.34245652, b: 0.9833995, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -282,11 +282,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerNew
-      objectReference: {fileID: 0}
-    - target: {fileID: 3101344072971392898, guid: 48497d57428228b47a65b6ddf5e997f7,
-        type: 3}
-      propertyPath: rotationSpeed
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3101344072971392898, guid: 48497d57428228b47a65b6ddf5e997f7,
         type: 3}
@@ -3163,6 +3158,46 @@ PrefabInstance:
       propertyPath: _forceCanvas
       value: 
       objectReference: {fileID: 1939918891}
+    - target: {fileID: 3914886286988772161, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: _forceCanvasOffset.x
+      value: 38.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914886286988772161, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: _forceCanvasOffset.y
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914886286988772161, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: _forceCanvasOffset.z
+      value: -0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914886286988772161, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: _startForceCanvasPosition.x
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914886286988772161, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: _startForceCanvasPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914886286988772161, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: _inGameForceCanvasPosition.x
+      value: 38.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914886286988772161, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: _inGameForceCanvasPosition.y
+      value: -0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914886286988772161, guid: a78f8acf6b409934fae8a16b5edea551,
+        type: 3}
+      propertyPath: _inGameForceCanvasPosition.z
+      value: -1.15
+      objectReference: {fileID: 0}
     - target: {fileID: 8274755869130482666, guid: a78f8acf6b409934fae8a16b5edea551,
         type: 3}
       propertyPath: m_Name

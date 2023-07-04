@@ -186,8 +186,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _warpSpeedEffect: {fileID: 0}
   speed: 10
-  rotationSpeed: 16
+  rotationSpeed: 10
   movementLimit: {x: -3.5, y: 3.5}
+  _timeApplyInvulnerble: 0.1
 --- !u!54 &6617439916668814354
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -367,8 +368,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4285923327
+  m_fontColor: {r: 1, g: 1, b: 0.45882356, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -445,7 +446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &608920810879191931
 RectTransform:
   m_ObjectHideFlags: 0
@@ -464,7 +465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -12.254, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 38.659, y: -0.3823784}
+  m_AnchoredPosition: {x: 38.659, y: 0.53}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6814440871838457751
