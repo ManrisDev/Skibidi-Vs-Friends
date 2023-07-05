@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class YandexSDK : MonoBehaviour
 {
+    [SerializeField] private Localization _localization;
+
     private LevelLoader _levelLoader;
     private const string _saveKey = "SaveData";
     private string _language;
@@ -49,6 +51,7 @@ public class YandexSDK : MonoBehaviour
         yield return YandexGamesSdk.Initialize();
 
         _language = YandexGamesSdk.Environment.i18n.lang;
+        _localization.SetLanguage(_language);
 
         yield return GetData();
 
@@ -92,17 +95,17 @@ public class YandexSDK : MonoBehaviour
                 SaveData.Instance.Data.FakeLevel = 1;
             }
 
-            SaveData.Instance.SetLeaderboardScore();
+            //SaveData.Instance.SetLeaderboardScore();
             _levelLoader.LoadLevel(SaveData.Instance.Data.CurrentLevel);
         }
     }
 
     private IEnumerator GetData()
     {
-        if (!PlayerAccount.IsAuthorized)
+        /*if (!PlayerAccount.IsAuthorized)
         {
             PlayerAccount.Authorize();
-        }
+        }*/
 
         if (PlayerAccount.IsAuthorized)
         {

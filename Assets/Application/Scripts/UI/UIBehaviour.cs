@@ -52,7 +52,7 @@ public class UIBehaviour : MonoBehaviour
     {
         _startMenuPanel.SetActive(true);
         PlayerMove.Instance.StopMovement();
-        _levelText.text = "Level " + SaveData.Instance.Data.FakeLevel;
+        _levelText.text = SaveData.Instance.Data.FakeLevel.ToString();
         muteEffects = SaveData.Instance.Data.muteEffects;
         muteMusic = SaveData.Instance.Data.muteMusic;
         _forceCanvas = PlayerMove.Instance.gameObject.transform.GetChild(3).gameObject;

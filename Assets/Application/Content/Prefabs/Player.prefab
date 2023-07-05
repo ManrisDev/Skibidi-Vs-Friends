@@ -5581,6 +5581,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skibidi-toi-rig
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 46ec6d3ab74e41b45b8535c01744ab0b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7876023681238672744, guid: 46ec6d3ab74e41b45b8535c01744ab0b,
         type: 3}
       propertyPath: m_LocalScale.x

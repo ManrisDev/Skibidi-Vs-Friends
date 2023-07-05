@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbaa1cad69ce0154a81a5699612dc6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _localization: {fileID: 0}
+  IsAdRunning: 0
