@@ -280,7 +280,7 @@ Transform:
   - {fileID: 855185088018606468}
   - {fileID: 1067704505307309086}
   - {fileID: 1743849160922173346}
-  - {fileID: 5165232575568886327}
+  - {fileID: 2356503513175585975}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
@@ -313,15 +313,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerTargetPosition: {fileID: 1067704505307309086}
   _speedChangePlayerPosition: 0.05
-  _player: {fileID: 0}
-  _playerMove: {fileID: 0}
   _effectHitPrefab: {fileID: 1845240806346120, guid: 9629ae2ae85c73b45bd07d4ea6e6f9f7,
     type: 3}
   _particleHitPosition: {fileID: 1743849160922173346}
   _effectDiePrefab: {fileID: 7388629540683307657}
-  _playerCamera: {fileID: 0}
   _bossFightCamera: {fileID: 3013021214301986396}
   _nameBossDiedSound: KissyDied
+  _player: {fileID: 0}
+  _playerMove: {fileID: 0}
+  _playerCamera: {fileID: 0}
   _isFight: 0
 --- !u!65 &3332818436872194536
 BoxCollider:
@@ -367,6 +367,38 @@ Transform:
   m_Father: {fileID: 2366301769757783704}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6915765872775311931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2356503513175585975}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2356503513175585975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6915765872775311931}
+  m_LocalRotation: {x: -0.026757842, y: -0.883725, z: 0.051423248, w: -0.4644026}
+  m_LocalPosition: {x: -13.33, y: 6.77, z: 10.379997}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5165232575568886327}
+  m_Father: {fileID: 2366301769757783704}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 6.646, y: 124.554, z: -0.027}
 --- !u!1 &8120673243950473179
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5165232575568886327}
   - component: {fileID: 3013021214301986396}
+  - component: {fileID: 1664345566153717222}
   m_Layer: 0
   m_Name: BossFightCamera
   m_TagString: Untagged
@@ -422,15 +455,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8353444344199122994}
-  m_LocalRotation: {x: -0.039227836, y: -0.88202405, z: 0.07515257, w: -0.46351585}
-  m_LocalPosition: {x: -11.33, y: 6.43, z: 9.8}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8851036694906904194}
-  m_Father: {fileID: 2366301769757783704}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 9.726, y: -55.447, z: -0.027}
+  m_Father: {fileID: 2356503513175585975}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3013021214301986396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,6 +502,26 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 8851036694906904194}
+--- !u!95 &1664345566153717222
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8353444344199122994}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e5e4229482b5424aa360994c17ad26b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &502314234969313431
 PrefabInstance:
   m_ObjectHideFlags: 0

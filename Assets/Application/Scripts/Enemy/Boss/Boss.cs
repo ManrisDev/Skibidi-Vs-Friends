@@ -37,6 +37,8 @@ public class Boss : MonoBehaviour
 
     public void TakeDamage(int amountDifference)
     {
+        CameraShake();
+
         if (FindObjectOfType<BossFight>()._isFight)
         {
             Health -= amountDifference;
@@ -53,6 +55,11 @@ public class Boss : MonoBehaviour
 
             HealthChanged?.Invoke(Health);
         }
+    }
+
+    private void CameraShake()
+    {
+        GetComponent<BossFight>()._bossFightCamera.GetComponent<Animator>().SetTrigger("Shake");
     }
 
     private void OnTriggerEnter(Collider other)
