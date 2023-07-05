@@ -172,6 +172,6 @@ public class UIBehaviour : MonoBehaviour
 
     public void HitBoss(int _damageCount) 
     {
-        FindObjectOfType<Boss>().TakeDamage(_damageCount);
+        Boss.Instance.TakeDamage(_damageCount);
     }
 }
