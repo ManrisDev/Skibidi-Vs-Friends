@@ -95,11 +95,11 @@ MonoBehaviour:
   - name: KissyDied
     audioClip: {fileID: 8300000, guid: 0558a9f075c7c3e48948ae1978fd383c, type: 3}
     Volume: 0.7
-  - name: OrangeDied
-    audioClip: {fileID: 8300000, guid: 65f27e916c8360c489938cf29af349ff, type: 3}
-    Volume: 0.7
   - name: Increase
     audioClip: {fileID: 8300000, guid: b906894a774d90d4ab815693b7c662bc, type: 3}
+    Volume: 0.7
+  - name: OrangeDied
+    audioClip: {fileID: 8300000, guid: 65f27e916c8360c489938cf29af349ff, type: 3}
     Volume: 0.7
 --- !u!82 &7869830845475265203
 AudioSource:

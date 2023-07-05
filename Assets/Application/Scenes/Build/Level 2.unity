@@ -21417,7 +21417,7 @@ PrefabInstance:
     - target: {fileID: 5352705957905221004, guid: 93be813e93d358249828ba5567fa7a18,
         type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5352705957905221004, guid: 93be813e93d358249828ba5567fa7a18,
         type: 3}
@@ -21469,20 +21469,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6726193351619668041, guid: 93be813e93d358249828ba5567fa7a18,
-        type: 3}
-      propertyPath: effects.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6726193351619668041, guid: 93be813e93d358249828ba5567fa7a18,
-        type: 3}
-      propertyPath: effects.Array.data[11].name
-      value: Increase
-      objectReference: {fileID: 0}
-    - target: {fileID: 6726193351619668041, guid: 93be813e93d358249828ba5567fa7a18,
-        type: 3}
-      propertyPath: effects.Array.data[11].audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: b906894a774d90d4ab815693b7c662bc, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93be813e93d358249828ba5567fa7a18, type: 3}

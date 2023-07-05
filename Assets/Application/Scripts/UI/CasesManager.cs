@@ -98,6 +98,19 @@ public class CasesManager : MonoBehaviour
         OpenCase(buttonId);
     }
 
+    private IEnumerator CheckRewarded()
+    {
+        while (YandexAds.Instance.IsRewarded == false)
+        {
+            yield return null;
+        }
+
+        SaveData.Instance.Data.Coins += _amount;
+        CoinManager.Instance.UpdateView();
+        UIBehaviour.Instance.UpdateCoins(SaveData.Instance.Data.Coins);
+        _adsButton.SetActive(false);
+    }
+
     private void OpenCase(int buttonId)
     {
         _items[buttonId].closedImage.gameObject.SetActive(false);
@@ -130,11 +143,15 @@ public class CasesManager : MonoBehaviour
 
     public void WatchAds()
     {
-        UIBehaviour.Instance.Advertisement();
+#if UNITY_WEBGL && !UNITY_EDITOR
+        YandexAds.Instance.ShowRewardAd();
+        StartCoroutine(CheckRewarded());
+#else
         SaveData.Instance.Data.Coins += _amount;
         CoinManager.Instance.UpdateView();
         UIBehaviour.Instance.UpdateCoins(SaveData.Instance.Data.Coins);
         _adsButton.SetActive(false);
+#endif
     }
 
     public void ExitCases()

@@ -31,8 +31,8 @@ public class YandexAds : MonoBehaviour
 
     public void ShowRewardAd(Action onRewardedCallback = null)
     {
-        VideoAd.Show(OnAdOpen, OnAdRewarded, OnAdClose);
 #if UNITY_WEBGL && !UNITY_EDITOR
+        VideoAd.Show(OnAdOpen, OnAdRewarded, OnAdClose);
 #endif
     }
 

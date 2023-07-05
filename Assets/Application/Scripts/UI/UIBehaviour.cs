@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,8 +34,8 @@ public class UIBehaviour : MonoBehaviour
 
     [SerializeField] Vector3 _inGameForceCanvasPosition = new(38.7f, -0.52f, -1.15f);
 
-    private bool muteMusic = false;
-    private bool muteEffects = false;
+    private bool muteMusic;
+    private bool muteEffects;
 
     private readonly string WidthType = "width";
     private readonly string HeightType = "height";
@@ -52,7 +53,37 @@ public class UIBehaviour : MonoBehaviour
         _startMenuPanel.SetActive(true);
         PlayerMove.Instance.StopMovement();
         _levelText.text = "Level " + SaveData.Instance.Data.FakeLevel;
+        muteEffects = SaveData.Instance.Data.muteEffects;
+        muteMusic = SaveData.Instance.Data.muteMusic;
         _forceCanvas = PlayerMove.Instance.gameObject.transform.GetChild(3).gameObject;
+
+        if (SaveData.Instance.Data.muteMusic == true)
+        {
+            Image image;
+            bool state;
+            image = musicButton.transform.GetChild(1).GetComponent<UnityEngine.UI.Image>();
+            state = muteMusic;
+            SoundsManager.Instance.Mute("music", muteMusic);
+
+            if (!state)
+                image.sprite = yesSprite;
+            else
+                image.sprite = notSprite;
+        }
+
+        if (SaveData.Instance.Data.muteEffects == true)
+        {
+            Image image;
+            bool state;
+            image = effectsButton.transform.GetChild(1).GetComponent<UnityEngine.UI.Image>();
+            state = muteEffects;
+            SoundsManager.Instance.Mute("effects", muteEffects);
+
+            if (!state)
+                image.sprite = yesSprite;
+            else
+                image.sprite = notSprite;
+        }
     }
 
     public void Play()
@@ -72,6 +103,7 @@ public class UIBehaviour : MonoBehaviour
         {
             image = musicButton.transform.GetChild(1).GetComponent<UnityEngine.UI.Image>();
             muteMusic = !muteMusic;
+            SaveData.Instance.Data.muteMusic = muteMusic;
             state = muteMusic;
             SoundsManager.Instance.Mute(type, muteMusic);
         }
@@ -79,6 +111,7 @@ public class UIBehaviour : MonoBehaviour
         { 
             image = effectsButton.transform.GetChild(1).GetComponent<UnityEngine.UI.Image>();
             muteEffects = !muteEffects;
+            SaveData.Instance.Data.muteEffects = muteEffects;
             state = muteEffects;
             SoundsManager.Instance.Mute(type, muteEffects);
         }
@@ -87,6 +120,11 @@ public class UIBehaviour : MonoBehaviour
             image.sprite = yesSprite;
         else
             image.sprite = notSprite;
+
+        SaveData.Instance.Save();
+#if UNITY_WEBGL && !UNITY_EDITOR
+        SaveData.Instance.SaveYandex();
+#endif
     }
 
     public void Victory()
@@ -101,18 +139,33 @@ public class UIBehaviour : MonoBehaviour
         _joystickPanel.SetActive(false);
     }
 
-    public void Continue()
+    private IEnumerator CheckRewarded()
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
-        Time.timeScale = 0f;
-        YandexAds.Instance.ShowRewardAd();
-#endif
+        while (YandexAds.Instance.IsRewarded == false)
+        {
+            yield return null;
+        }
 
         _gameOverPanel.SetActive(false);
         _joystickPanel.SetActive(true);
         PlayerModifier.Instance.Reberth();
         PlayerMove.Instance.ResumeMovement();
         PlayerMove.Instance.ApplyInvulnerable();
+    }
+
+    public void Continue()
+    {
+#if UNITY_WEBGL && !UNITY_EDITOR
+        Time.timeScale = 0f;
+        YandexAds.Instance.ShowRewardAd();
+        StartCoroutine(CheckRewarded());
+#else
+        _gameOverPanel.SetActive(false);
+        _joystickPanel.SetActive(true);
+        PlayerModifier.Instance.Reberth();
+        PlayerMove.Instance.ResumeMovement();
+        PlayerMove.Instance.ApplyInvulnerable();
+#endif
     }
 
     public void GameOver(bool _isBoss)

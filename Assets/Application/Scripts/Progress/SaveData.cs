@@ -93,4 +93,6 @@ public class DataHolder
     public int Score;
     public int CurrentLevel;
     public int FakeLevel;
+    public bool muteMusic;
+    public bool muteEffects;
 }

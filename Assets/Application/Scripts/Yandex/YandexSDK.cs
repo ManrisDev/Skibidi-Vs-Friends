@@ -46,8 +46,8 @@ public class YandexSDK : MonoBehaviour
         _levelLoader.LoadLevel(SaveData.Instance.Data.CurrentLevel);
         yield return null;
 #else
-
         yield return YandexGamesSdk.Initialize();
+
         _language = YandexGamesSdk.Environment.i18n.lang;
 
         yield return GetData();
@@ -106,6 +106,8 @@ public class YandexSDK : MonoBehaviour
 
         if (PlayerAccount.IsAuthorized)
         {
+            PlayerAccount.RequestPersonalProfileDataPermission();
+
             string loadedString = "None";
 
             PlayerAccount.GetCloudSaveData((data) =>
