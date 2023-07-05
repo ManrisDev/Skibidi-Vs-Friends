@@ -9,7 +9,7 @@ public class BossFight : MonoBehaviour
     [SerializeField] private GameObject _effectHitPrefab;
     [SerializeField] private Transform _particleHitPosition;
     [SerializeField] private ParticleSystem _effectDiePrefab;
-    [SerializeField] private CinemachineVirtualCamera _bossFightCamera;
+    public CinemachineVirtualCamera _bossFightCamera;
     [SerializeField] private string _nameBossDiedSound;
 
     [Header("Player references")]
