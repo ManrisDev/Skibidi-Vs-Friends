@@ -21,6 +21,9 @@ public class PlayerMove : MonoBehaviour
     private bool _isInvulnerble = false;
 
     public bool IsInvulnerble => _isInvulnerble;
+    private float _input;
+
+    [SerializeField] private Joystick _joystick;
 
     private void Awake()
     {
