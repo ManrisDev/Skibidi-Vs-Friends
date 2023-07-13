@@ -10,12 +10,7 @@ public class SoundsManager : MonoBehaviour
 
     [Header("Audio Sources")]
     [SerializeField] private SourceAudio _soundsDatabase;
-    [SerializeField] private AudioSource musicAudioSource;
     [SerializeField] private AudioSource effectsAudioSource;
-
-    [Header("Clips")]
-    [SerializeField] private Music[] backgroundMusic;
-    [SerializeField] private Sound[] effects;
 
     private float _startVolume;
 
@@ -38,7 +33,7 @@ public class SoundsManager : MonoBehaviour
     {
         int levelNumber = SceneManager.GetActiveScene().buildIndex;
 
-        if(levelNumber <= backgroundMusic.Length)
+        if(levelNumber <= 6)
         {
             _soundsDatabase.Play(levelNumber.ToString());
         }
@@ -60,17 +55,7 @@ public class SoundsManager : MonoBehaviour
 
     public void PlaySound(string name)
     {
-        Sound s = Array.Find(effects, sound => sound.name == name);
-
-        if (s == null)
-        {
-            Debug.LogError(name + " not found.");
-            return;
-        }
-
-        effectsAudioSource.playOnAwake = true;
-        effectsAudioSource.volume = s.Volume;
-        effectsAudioSource.PlayOneShot(s.audioClip);
+        _soundsDatabase.PlayOneShot(name);
     }
 
     public void Mute(string source, bool value)

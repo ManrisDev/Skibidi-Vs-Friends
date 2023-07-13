@@ -17,35 +17,113 @@ MonoBehaviour:
     Key: 1
     FolderPath: Application\Content\Audio\Sounds\
     Name: level1.mp3
-    Preload: 1
+    Preload: 0
     _id: 4e5dfa85-d82a-42ce-8282-e4bc77127270
   - Clip: {fileID: 8300000, guid: 63d0393501b850d46a4bf2dc8b8831a1, type: 3}
     Key: 2
     FolderPath: Application\Content\Audio\Sounds\
     Name: level2.mp3
-    Preload: 1
+    Preload: 0
     _id: 0daeb8af-900c-4071-9e06-43699f3b36e4
   - Clip: {fileID: 8300000, guid: 36a485ca9da3c3846a4e7320560f64ef, type: 3}
     Key: 3
     FolderPath: Application\Content\Audio\Sounds\
     Name: level3.mp3
-    Preload: 1
+    Preload: 0
     _id: 23887aa8-8e2f-4cd3-a0ac-d3430f9d287b
   - Clip: {fileID: 8300000, guid: 920495fb54fc1ff459040f962dbdfe97, type: 3}
     Key: 4
     FolderPath: Application\Content\Audio\Sounds\
     Name: level4.mp3
-    Preload: 1
+    Preload: 0
     _id: 3d9f770e-75b6-461b-b494-9b429d8729e9
   - Clip: {fileID: 8300000, guid: 3208a5ce7e4ad4c4696cd00b44cc06bb, type: 3}
     Key: 5
     FolderPath: Application\Content\Audio\Sounds\
     Name: level5.mp3
-    Preload: 1
+    Preload: 0
     _id: d7f6cce4-4b4c-48a2-a796-09b3137bbc75
   - Clip: {fileID: 8300000, guid: 5a2b6b8d4828f5c4eada3befb80de544, type: 3}
     Key: 6
     FolderPath: Application\Content\Audio\Sounds\
     Name: level6.mp3
-    Preload: 1
+    Preload: 0
     _id: 6933a00c-d2a8-47c5-914c-413fd3e2a191
+  - Clip: {fileID: 8300000, guid: 05ade9d51f86b3e4e94fb7c62cf6d300, type: 3}
+    Key: CoinUp
+    FolderPath: Application\Content\Audio\Effects\
+    Name: CoinBackUp.mp3
+    Preload: 0
+    _id: 09ab1860-c14e-47d5-8e00-3fe71f43c175
+  - Clip: {fileID: 8300000, guid: cc437aa4b000ee04f9a725f3c7631266, type: 3}
+    Key: Mushroom
+    FolderPath: Application\Content\Audio\Effects\
+    Name: inecraft_pick_u(2) (mp3cut.net).mp3
+    Preload: 0
+    _id: 375cc085-2a21-4ce1-a3d7-6df2672f8919
+  - Clip: {fileID: 8300000, guid: f28e5862159846e43a867afe564fe2f9, type: 3}
+    Key: BossHit
+    FolderPath: Application\Content\Audio\Effects\
+    Name: "\u0423\u0434\u0430\u0440 \u0431\u043E\u0441\u0441\u0430.mp3"
+    Preload: 0
+    _id: 5086fca5-7a05-4c15-b4bd-b78d882f91fe
+  - Clip: {fileID: 8300000, guid: f28e5862159846e43a867afe564fe2f9, type: 3}
+    Key: EnemyHit
+    FolderPath: Application\Content\Audio\Effects\
+    Name: "\u0423\u0434\u0430\u0440 \u0431\u043E\u0441\u0441\u0430.mp3"
+    Preload: 0
+    _id: 7a99b76c-c534-48f5-abcb-334d8f024b46
+  - Clip: {fileID: 8300000, guid: 7ea63accb7b173c4eb4c822b07527705, type: 3}
+    Key: Teleport
+    FolderPath: Application\Content\Audio\Effects\
+    Name: enderman_teleport.mp3
+    Preload: 0
+    _id: 3290d3a8-f9f7-4b4a-ad3f-633a6ce69409
+  - Clip: {fileID: 8300000, guid: 080c1dc10b3e17c4da6d92793e1e476d, type: 3}
+    Key: Nitro
+    FolderPath: Application\Content\Audio\Effects\
+    Name: nitro.mp3
+    Preload: 0
+    _id: 1c6df540-c7ec-4fc2-b2f5-d4152971d08a
+  - Clip: {fileID: 8300000, guid: 320652d9693139c4482ca5f717feee52, type: 3}
+    Key: HaggyWaggyDied
+    FolderPath: Application\Content\Audio\Sounds\EnemyDied\
+    Name: haggy waggy died.mp3
+    Preload: 0
+    _id: 24a57c16-a33e-4d8e-b58e-4bbe68a19fef
+  - Clip: {fileID: 8300000, guid: 05da46041de7f5a4b97e7ffb77da96a3, type: 3}
+    Key: AmogusDied
+    FolderPath: Application\Content\Audio\Sounds\EnemyDied\
+    Name: amogus died.mp3
+    Preload: 0
+    _id: a9ff56cb-0814-4fc0-be5c-d46d1a3a421f
+  - Clip: {fileID: 8300000, guid: 7c7559c07d4dc724d88e527ee5d0bf1c, type: 3}
+    Key: BlueDied
+    FolderPath: Application\Content\Audio\Sounds\EnemyDied\
+    Name: BlueDied.mp3
+    Preload: 0
+    _id: eed1e5de-587f-4515-ab02-0d9acde4a45f
+  - Clip: {fileID: 8300000, guid: 5bad1788de72bca409c8896b9bf0315e, type: 3}
+    Key: CameramanDied
+    FolderPath: Application\Content\Audio\Sounds\EnemyDied\
+    Name: cameramandied.mp3
+    Preload: 0
+    _id: 981c7872-ff5b-4e53-8d8f-ba3f3c43ce4d
+  - Clip: {fileID: 8300000, guid: 868e2282ef53f8e40b41e4120fea4e67, type: 3}
+    Key: KissyDied
+    FolderPath: Application\Content\Audio\Sounds\EnemyDied\
+    Name: KissyDied.mp3
+    Preload: 0
+    _id: adbfb38c-73ec-4e9d-a6c8-32dce63c19c0
+  - Clip: {fileID: 8300000, guid: b906894a774d90d4ab815693b7c662bc, type: 3}
+    Key: Increase
+    FolderPath: Application\Content\Audio\Effects\
+    Name: fast_airy_zoom_002_33377.mp3
+    Preload: 0
+    _id: c1847889-53a7-44cb-a2cf-c8b337999353
+  - Clip: {fileID: 8300000, guid: 65f27e916c8360c489938cf29af349ff, type: 3}
+    Key: OrangeDied
+    FolderPath: Application\Content\Audio\Sounds\EnemyDied\
+    Name: OrangeDied.mp3
+    Preload: 0
+    _id: 06f65d8c-ca83-4560-9193-ad2a4e64cf2b

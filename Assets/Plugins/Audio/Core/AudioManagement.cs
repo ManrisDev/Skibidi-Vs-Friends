@@ -32,6 +32,14 @@ namespace Plugins.Audio.Core
             PreloadAudio();
         }
 
+        public AudioClip GetClip(string key)
+        {
+            AudioClip audioClip;
+            AudioData audioData = _database.GetData(key);
+            audioClip = audioData.Clip;
+            return audioClip;
+        }
+
         public IEnumerator GetClip(string key, Action<AudioClip> result)
         {
             if (_cechAudio.TryGetValue(key, out AudioClip clip))

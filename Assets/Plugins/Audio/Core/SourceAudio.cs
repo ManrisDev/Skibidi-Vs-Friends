@@ -6,6 +6,7 @@ namespace Plugins.Audio.Core
     [RequireComponent(typeof(AudioSource))]
     public class SourceAudio : MonoBehaviour
     {
+        [SerializeField] private AudioSource _effectsAudioSource;
         [HideInInspector] public bool Loop;
     
         public float Volume
@@ -84,6 +85,17 @@ namespace Plugins.Audio.Core
             }
             
             _playRoutine = StartCoroutine(PlayRoutine(key));
+        }
+
+        public void PlayOneShot(string key)
+        {
+            if (string.IsNullOrEmpty(key))
+            {
+                Debug.LogError("key is empty, Source Audio PlaySound: " + gameObject.name);
+                return;
+            }
+
+            _effectsAudioSource.PlayOneShot(AudioManagement.Instance.GetClip(key));
         }
 
         private IEnumerator PlayRoutine(string key)
