@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4645132edefd4c74968a0c941a98fb89, type: 3}
+  m_Name: SoundsDatabase
+  m_EditorClassIdentifier: 
+  _items:
+  - Clip: {fileID: 8300000, guid: 1adeda5e6bdafde48837a738ec53ab82, type: 3}
+    Key: 1
+    FolderPath: Application\Content\Audio\Sounds\
+    Name: level1.mp3
+    Preload: 1
+    _id: 4e5dfa85-d82a-42ce-8282-e4bc77127270
+  - Clip: {fileID: 8300000, guid: 63d0393501b850d46a4bf2dc8b8831a1, type: 3}
+    Key: 2
+    FolderPath: Application\Content\Audio\Sounds\
+    Name: level2.mp3
+    Preload: 1
+    _id: 0daeb8af-900c-4071-9e06-43699f3b36e4
+  - Clip: {fileID: 8300000, guid: 36a485ca9da3c3846a4e7320560f64ef, type: 3}
+    Key: 3
+    FolderPath: Application\Content\Audio\Sounds\
+    Name: level3.mp3
+    Preload: 1
+    _id: 23887aa8-8e2f-4cd3-a0ac-d3430f9d287b
+  - Clip: {fileID: 8300000, guid: 920495fb54fc1ff459040f962dbdfe97, type: 3}
+    Key: 4
+    FolderPath: Application\Content\Audio\Sounds\
+    Name: level4.mp3
+    Preload: 1
+    _id: 3d9f770e-75b6-461b-b494-9b429d8729e9
+  - Clip: {fileID: 8300000, guid: 3208a5ce7e4ad4c4696cd00b44cc06bb, type: 3}
+    Key: 5
+    FolderPath: Application\Content\Audio\Sounds\
+    Name: level5.mp3
+    Preload: 1
+    _id: d7f6cce4-4b4c-48a2-a796-09b3137bbc75
+  - Clip: {fileID: 8300000, guid: 5a2b6b8d4828f5c4eada3befb80de544, type: 3}
+    Key: 6
+    FolderPath: Application\Content\Audio\Sounds\
+    Name: level6.mp3
+    Preload: 1
+    _id: 6933a00c-d2a8-47c5-914c-413fd3e2a191

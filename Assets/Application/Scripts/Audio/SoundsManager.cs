@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Plugins.Audio.Core;
 
 public class SoundsManager : MonoBehaviour
 {
     public static SoundsManager Instance = null;
 
     [Header("Audio Sources")]
+    [SerializeField] private SourceAudio _soundsDatabase;
     [SerializeField] private AudioSource musicAudioSource;
     [SerializeField] private AudioSource effectsAudioSource;
 
@@ -29,15 +31,7 @@ public class SoundsManager : MonoBehaviour
             //DontDestroyOnLoad(gameObject);
         }
         //else
-            //Destroy(gameObject);
-    }
-
-    private void Update()
-    {
-        if (!musicAudioSource.isPlaying && SceneManager.GetActiveScene().buildIndex != 0)
-        {
-            PlayBackgroundMusic();
-        }
+        //Destroy(gameObject);
     }
 
     private void Start()
@@ -46,21 +40,14 @@ public class SoundsManager : MonoBehaviour
 
         if(levelNumber <= backgroundMusic.Length)
         {
-            Music m = Array.Find(backgroundMusic, music => music.levelNumber == levelNumber);
-
-            //m ??= Array.Find(backgroundMusic, music => music.levelNumber == UnityEngine.Random.Range(0, backgroundMusic.Length) + 1);
-
-            musicAudioSource.clip = m.audio;
+            _soundsDatabase.Play(levelNumber.ToString());
         }
         else
         {
-            Music r = backgroundMusic[UnityEngine.Random.Range(0, backgroundMusic.Length)];
-
-            musicAudioSource.clip = r.audio;
+            _soundsDatabase.Play(UnityEngine.Random.Range(1, 7).ToString());
         }
 
-        musicAudioSource.Play();
-        _startVolume = musicAudioSource.volume;
+        _soundsDatabase.Loop = true;
     }
 
     public void PlayBackgroundMusic()
@@ -69,7 +56,6 @@ public class SoundsManager : MonoBehaviour
         /*if (currentClip == backgroundMusic.Length)
             currentClip = 0;*/
         //musicAudioSource.clip = backgroundMusic[currentClip++].audio;
-        musicAudioSource.Play();
     }
 
     public void PlaySound(string name)
@@ -81,6 +67,8 @@ public class SoundsManager : MonoBehaviour
             Debug.LogError(name + " not found.");
             return;
         }
+
+        effectsAudioSource.playOnAwake = true;
         effectsAudioSource.volume = s.Volume;
         effectsAudioSource.PlayOneShot(s.audioClip);
     }
@@ -88,7 +76,7 @@ public class SoundsManager : MonoBehaviour
     public void Mute(string source, bool value)
     {
         if (source.Equals("music"))
-            musicAudioSource.mute = value;
+            _soundsDatabase.Mute = value;
         else
             effectsAudioSource.mute = value;
     }
@@ -105,11 +93,11 @@ public class SoundsManager : MonoBehaviour
         while(elapsedTime < _fadeDuration)
         {
             elapsedTime += Time.deltaTime;
-            musicAudioSource.volume = Mathf.Lerp(_startVolume, 0.0f, elapsedTime / _fadeDuration);
+            _soundsDatabase.Volume = Mathf.Lerp(_startVolume, 0.0f, elapsedTime / _fadeDuration);
             yield return null;
         }
 
-        musicAudioSource.Stop();
+        _soundsDatabase.Stop();
     }
 }
 

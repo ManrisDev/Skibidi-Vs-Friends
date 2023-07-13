@@ -158,6 +158,7 @@ public class CasesManager : MonoBehaviour
     {
         gameObject.SetActive(false);
         LevelBehaviour.Instance.NextLevel();
+        SaveData.Instance.Save();
         SaveData.Instance.SaveYandex();
     }
 }

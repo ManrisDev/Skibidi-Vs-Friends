@@ -22,6 +22,7 @@ public class CoinManager : MonoBehaviour
     public void AddMoney(int value)
     {
         SaveData.Instance.Data.Coins += value;
+        SaveData.Instance.Save();
         SaveData.Instance.SaveYandex();
         UpdateView();
     }
