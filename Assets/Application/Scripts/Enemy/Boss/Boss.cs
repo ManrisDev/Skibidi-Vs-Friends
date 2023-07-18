@@ -12,6 +12,7 @@ public class Boss : MonoBehaviour
     [SerializeField] private ForceManager _forceManager;
 
     private bool _isNeedDie = true;
+    private BossFight _bossFight;
 
     public event UnityAction<Boss> Fight;
     public event UnityAction<int> HealthChanged;
@@ -37,10 +38,9 @@ public class Boss : MonoBehaviour
 
     public void TakeDamage(int amountDifference)
     {
-        CameraShake();
-
-        if (FindObjectOfType<BossFight>()._isFight)
+        if (FindObjectOfType<BossFight>()._isFight == true)
         {
+            CameraShake();
             Health -= amountDifference;
 
             if (Health < MinHealth)
