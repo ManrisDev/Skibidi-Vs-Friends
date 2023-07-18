@@ -41,16 +41,6 @@ public class BossFight : MonoBehaviour
             float rotation = Mathf.MoveTowardsAngle(_player.transform.eulerAngles.y, 0, Time.deltaTime * 100f);
             _player.transform.localEulerAngles = new Vector3(0, rotation, 0);
         }
-
-        if (_isFight)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                PlayerAnimationController.Instance.BossHit();
-                SoundsManager.Instance.PlaySound("BossHit");
-                Instantiate(_effectHitPrefab, _particleHitPosition.position, transform.rotation);
-            }
-        }
     }
 
     private void OnEnable()
@@ -69,6 +59,12 @@ public class BossFight : MonoBehaviour
     {
         _boss.Fight -= OnBossFighted;
         _boss.Die -= OnBossDied;
+    }
+
+    public void Hit()
+    {
+        SoundsManager.Instance.PlaySound("BossHit");
+        Instantiate(_effectHitPrefab, _particleHitPosition.position, transform.rotation);
     }
 
     // Сражение началось

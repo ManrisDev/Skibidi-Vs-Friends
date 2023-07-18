@@ -226,5 +226,7 @@ public class UIBehaviour : MonoBehaviour
     public void HitBoss(int _damageCount) 
     {
         Boss.Instance.TakeDamage(_damageCount);
+        PlayerAnimationController.Instance.BossHit();
+        FindObjectOfType<BossFight>().Hit();
     }
 }
