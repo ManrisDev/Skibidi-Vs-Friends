@@ -80,6 +80,8 @@ public class YandexSDK : MonoBehaviour
         Time.timeScale = value ? 0f : 1f;
         AudioListener.pause = value;
         AudioListener.volume = value ? 0f : 1f;
+        SoundsManager.Instance.Mute("music", value);
+        SoundsManager.Instance.Mute("effects", value);
     }
 
     private void StartGame()
@@ -107,24 +109,31 @@ public class YandexSDK : MonoBehaviour
 
     private IEnumerator GetData()
     {
-        string loadedString = "None";
-
-        PlayerAccount.GetCloudSaveData((data) =>
+        if (YandexGamesSdk.IsInitialized)
         {
-            loadedString = data;
-        });
+            string loadedString = "None";
 
-        while (loadedString == "None")
-        {
-            yield return null;
+            PlayerAccount.GetCloudSaveData((data) =>
+            {
+                loadedString = data;
+            });
+
+            while (loadedString == "None")
+            {
+                yield return null;
+            }
+
+            if (loadedString == "{}")
+            {
+                yield break;
+            }
+
+            SaveData.Instance._data = JsonUtility.FromJson<DataHolder>(loadedString);
+            SaveManager.Save(_saveKey, SaveData.Instance._data);
         }
-
-        if (loadedString == "{}")
+        else
         {
-            yield break;
+            yield return YandexGamesSdk.Initialize();
         }
-
-        SaveData.Instance._data = JsonUtility.FromJson<DataHolder>(loadedString);
-        SaveManager.Save(_saveKey, SaveData.Instance._data);
     }
 }

@@ -103,12 +103,6 @@ MonoBehaviour:
     Name: BlueDied.mp3
     Preload: 0
     _id: eed1e5de-587f-4515-ab02-0d9acde4a45f
-  - Clip: {fileID: 8300000, guid: 5bad1788de72bca409c8896b9bf0315e, type: 3}
-    Key: CameramanDied
-    FolderPath: Application\Content\Audio\Sounds\EnemyDied\
-    Name: cameramandied.mp3
-    Preload: 0
-    _id: 981c7872-ff5b-4e53-8d8f-ba3f3c43ce4d
   - Clip: {fileID: 8300000, guid: 868e2282ef53f8e40b41e4120fea4e67, type: 3}
     Key: KissyDied
     FolderPath: Application\Content\Audio\Sounds\EnemyDied\
