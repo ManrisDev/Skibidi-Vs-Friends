@@ -5155,27 +5155,7 @@ PrefabInstance:
     - target: {fileID: 1856826758812215901, guid: a78f8acf6b409934fae8a16b5edea551,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2864650247666680304, guid: a78f8acf6b409934fae8a16b5edea551,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2864650247666680304, guid: a78f8acf6b409934fae8a16b5edea551,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2864650247666680304, guid: a78f8acf6b409934fae8a16b5edea551,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -124.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2864650247666680304, guid: a78f8acf6b409934fae8a16b5edea551,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3227535361982765825, guid: a78f8acf6b409934fae8a16b5edea551,
         type: 3}
@@ -5287,16 +5267,6 @@ PrefabInstance:
       propertyPath: _forceCanvas
       value: 
       objectReference: {fileID: 1939918891}
-    - target: {fileID: 4598829118324738014, guid: a78f8acf6b409934fae8a16b5edea551,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 223.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 4598829118324738014, guid: a78f8acf6b409934fae8a16b5edea551,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 47.6
-      objectReference: {fileID: 0}
     - target: {fileID: 8274755869130482666, guid: a78f8acf6b409934fae8a16b5edea551,
         type: 3}
       propertyPath: m_Name
