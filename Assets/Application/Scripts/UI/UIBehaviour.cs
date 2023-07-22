@@ -90,7 +90,8 @@ public class UIBehaviour : MonoBehaviour
     {
         _startMenuPanel.SetActive(false);
         _inGamePanel.SetActive(true);
-        _forceCanvas.transform.localPosition = _inGameForceCanvasPosition;
+        //_forceCanvas.SetActive(true);
+        //_forceCanvas.transform.localPosition = _inGameForceCanvasPosition;
         PlayerMove.Instance.ResumeMovement();
         FindObjectOfType<PlayerBehaviour>().Play();
     }

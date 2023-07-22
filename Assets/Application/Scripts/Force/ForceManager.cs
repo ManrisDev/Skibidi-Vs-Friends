@@ -6,7 +6,8 @@ public class ForceManager : MonoBehaviour
     public static ForceManager Instance;
 
     [SerializeField] private int _numberOfForce;
-    [SerializeField] private TextMeshProUGUI _countForceText;
+    //[SerializeField] private TextMeshProUGUI _countForceInGameText;
+    private TextMeshProUGUI _countForceUIText;
     public int NumberOfForce => _numberOfForce;
 
     private void Awake()
@@ -17,14 +18,15 @@ public class ForceManager : MonoBehaviour
 
     private void Start()
     {
-        _countForceText.text = _numberOfForce.ToString();
+        _countForceUIText = FindObjectOfType<UIBehaviour>().transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>();
+        //_countForceInGameText.text = _numberOfForce.ToString();
+        _countForceUIText.text = _numberOfForce.ToString();
     }
 
     public void AddForce(int value)
     {
         _numberOfForce += value;
-        //SaveData.Instance.Data.Score += value;
-        _countForceText.text = _numberOfForce.ToString();
-        //SaveData.Instance.SaveYandex();
+        //_countForceInGameText.text = _numberOfForce.ToString();
+        _countForceUIText.text = _numberOfForce.ToString();
     }
 }
