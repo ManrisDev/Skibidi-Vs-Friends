@@ -80,8 +80,7 @@ public class BossFight : MonoBehaviour
 
     private void OnBossDied()
     {
-        SoundsManager.Instance.FadeOut();
-        SoundsManager.Instance.PlaySound(_nameBossDiedSound);
+        SoundsManager.Instance.PlayeMusic(_nameBossDiedSound);
         _effectDiePrefab.Play();
         _animator.SetTrigger("Die");
         _isFight = false;

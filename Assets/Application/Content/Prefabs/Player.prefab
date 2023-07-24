@@ -189,6 +189,7 @@ MonoBehaviour:
   rotationSpeed: 10
   movementLimit: {x: -3.5, y: 3.5}
   _timeApplyInvulnerble: 0.1
+  _joystick: {fileID: 0}
 --- !u!54 &6617439916668814354
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -446,7 +447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &608920810879191931
 RectTransform:
   m_ObjectHideFlags: 0

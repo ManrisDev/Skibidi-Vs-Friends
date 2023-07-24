@@ -53,6 +53,12 @@ public class SoundsManager : MonoBehaviour
         //musicAudioSource.clip = backgroundMusic[currentClip++].audio;
     }
 
+    public void PlayeMusic(string key)
+    {
+        _soundsDatabase.Loop = false;
+        _soundsDatabase.Play(key);
+    }
+
     public void PlaySound(string name)
     {
         _soundsDatabase.PlayOneShot(name);
