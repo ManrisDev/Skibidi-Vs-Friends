@@ -1,6 +1,6 @@
 using System;
-using Agava.YandexGames;
 using UnityEngine;
+using YG;
 
 public class SaveData : MonoBehaviour
 {
@@ -62,28 +62,18 @@ public class SaveData : MonoBehaviour
     public void SetLeaderboardScore()
     {
         int current = _data.Score;
-
-#if UNITY_WEBGL && !UNITY_EDITOR
-        Leaderboard.GetPlayerEntry(_leaderboardTxt, (result) =>
-        {
-            if (current >= result.score)
-                SaveBestScore(current);
-        });
-#endif
     }
 
     public void SaveYandex()
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
-        string jsonDataString = JsonUtility.ToJson(_data, true);
+        YandexGame.savesData.Coins = Data.Coins;
+        YandexGame.savesData.Score = Data.Score;
+        YandexGame.savesData.CurrentLevel = Data.CurrentLevel;
+        YandexGame.savesData.FakeLevel = Data.FakeLevel;
+        YandexGame.savesData.muteEffects = Data.muteEffects;
+        YandexGame.savesData.muteMusic = Data.muteMusic;
 
-        PlayerAccount.SetCloudSaveData(jsonDataString);
-#endif
-    }
-
-    private void SaveBestScore(int bestScore)
-    {
-        Leaderboard.SetScore(_leaderboardTxt, bestScore);
+        YandexGame.SaveProgress();
     }
 }
 

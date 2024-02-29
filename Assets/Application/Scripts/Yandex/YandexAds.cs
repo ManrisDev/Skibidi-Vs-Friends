@@ -1,6 +1,6 @@
-using Agava.YandexGames;
 using System;
 using UnityEngine;
+using YG;
 
 public class YandexAds : MonoBehaviour
 {
@@ -22,43 +22,62 @@ public class YandexAds : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        YandexGame.RewardVideoEvent += Rewarded;
+    }
+
+    private void OnDisable()
+    {
+        YandexGame.RewardVideoEvent -= Rewarded;
+    }
+
+    private void Rewarded(int id)
+    {
+        if(id == 1)
+        {
+            OnAdRewarded();
+        }
+        else if(id == 2)
+        {
+
+        }
+    }
+
     public void ShowInterstitial()
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
-        InterstitialAd.Show(OnAdOpen, OnIterstitialAddClose);
-#endif
+        //TimerBeforeAdsYG.Instance.TimerAddShow();
+        YandexGame.FullscreenShow();
     }
 
-    public void ShowRewardAd(Action onRewardedCallback = null)
+    public void ShowRewardAd(int id)
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
-        VideoAd.Show(OnAdOpen, OnAdRewarded, OnAdClose);
-#endif
+        YandexGame.RewVideoShow(id);
     }
 
-    public void OnAdOpen()
+    /*public void OnAdOpen()
     {
         YandexSDK.Instance.IsAdRunning = true;
         Time.timeScale = 0;
         AudioListener.volume = 0;
-    }
+    }*/
 
-    public void OnAdClose()
+    /*public void OnAdClose()
     {
         YandexSDK.Instance.IsAdRunning = false;
         Time.timeScale = 1;
         AudioListener.volume = 1;
         _isRewarded = false;
-    }
+    }*/
 
     public void OnAdRewarded()
     {
         _isRewarded = true;
     }
 
-    public void OnIterstitialAddClose(bool value)
+    /*public void OnIterstitialAddClose(bool value)
     {
         Time.timeScale = 1;
         AudioListener.volume = 1;
-    }
+    }*/
 }

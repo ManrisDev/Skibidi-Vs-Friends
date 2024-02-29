@@ -109,7 +109,7 @@ public class UIBehaviour : MonoBehaviour
             SoundsManager.Instance.Mute(type, muteMusic);
         }
         else
-        { 
+        {
             image = effectsButton.transform.GetChild(1).GetComponent<UnityEngine.UI.Image>();
             muteEffects = !muteEffects;
             SaveData.Instance.Data.muteEffects = muteEffects;
@@ -156,17 +156,9 @@ public class UIBehaviour : MonoBehaviour
 
     public void Continue()
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
-        Time.timeScale = 0f;
-        YandexAds.Instance.ShowRewardAd();
+        //Time.timeScale = 0f;
+        YandexAds.Instance.ShowRewardAd(1);
         StartCoroutine(CheckRewarded());
-#else
-        _gameOverPanel.SetActive(false);
-        _joystickPanel.SetActive(true);
-        PlayerModifier.Instance.Reberth();
-        PlayerMove.Instance.ResumeMovement();
-        PlayerMove.Instance.ApplyInvulnerable();
-#endif
     }
 
     public void GameOver(bool _isBoss)
@@ -192,9 +184,7 @@ public class UIBehaviour : MonoBehaviour
 
     public void Advertisement()
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
-        YandexAds.Instance.ShowRewardAd();
-#endif
+        YandexAds.Instance.ShowRewardAd(1);
     }
 
     public void UpdateCoins(int count)
@@ -224,11 +214,11 @@ public class UIBehaviour : MonoBehaviour
         SoundsManager.Instance.PlaySound("Increase");
     }
 
-    public void HitBoss(int _damageCount) 
+    public void HitBoss(int _damageCount)
     {
         Boss.Instance.TakeDamage(_damageCount);
 
-        if(FindObjectOfType<BossFight>()._isFight == true)
+        if (FindObjectOfType<BossFight>()._isFight == true)
         {
             PlayerAnimationController.Instance.BossHit();
             FindObjectOfType<BossFight>().Hit();

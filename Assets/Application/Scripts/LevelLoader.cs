@@ -3,18 +3,36 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using YG;
+using System;
+using UnityEngine.Events;
 
 public class LevelLoader : MonoBehaviour
 {
     public Slider slider;
     public TMP_Text progressText;
 
-    public void LoadLevel (int sceneBuildIndex) 
+    public static LevelLoader Instance;
+
+    private void Awake()
     {
-        StartCoroutine(LoadAsyncronously(sceneBuildIndex));
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    private IEnumerator LoadAsyncronously (int sceneBuildIndex) {
+    public void LoadLevel (int sceneBuildIndex, Action onLoaded = null) 
+    {
+        StartCoroutine(LoadAsyncronously(sceneBuildIndex, onLoaded));
+    }
+
+    private IEnumerator LoadAsyncronously (int sceneBuildIndex, Action onLoaded) {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneBuildIndex);
 
         while (operation.isDone == false)
@@ -26,5 +44,7 @@ public class LevelLoader : MonoBehaviour
 
             yield return null;
         }
+
+        onLoaded?.Invoke();
     }
 }

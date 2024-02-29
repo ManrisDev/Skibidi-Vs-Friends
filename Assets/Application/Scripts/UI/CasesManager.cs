@@ -74,7 +74,7 @@ public class CasesManager : MonoBehaviour
             else
             {
 #if UNITY_WEBGL && !UNITY_EDITOR
-                YandexAds.Instance.ShowRewardAd();
+                YandexAds.Instance.ShowRewardAd(1);
                 StartCoroutine(CheckRewarded(buttonId));
 #else
                 OpenCase(buttonId);
@@ -144,7 +144,7 @@ public class CasesManager : MonoBehaviour
     public void WatchAds()
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
-        YandexAds.Instance.ShowRewardAd();
+        YandexAds.Instance.ShowRewardAd(1);
         StartCoroutine(CheckRewarded());
 #else
         SaveData.Instance.Data.Coins += _amount;

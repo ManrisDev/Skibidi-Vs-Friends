@@ -1,4 +1,3 @@
-using Agava.YandexGames;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -32,9 +31,9 @@ public class LevelBehaviour : MonoBehaviour
             SaveData.Instance.Data.CurrentLevel = next;
             SaveData.Instance.Save();
         }
-#if UNITY_WEBGL && !UNITY_EDITOR
+/*#if UNITY_WEBGL && !UNITY_EDITOR
         YandexAds.Instance.ShowInterstitial();
-#endif
+#endif*/
         SceneManager.LoadScene(next);
     }
 
